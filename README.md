@@ -1,3 +1,18 @@
+# Tidy-Family
+
+### An App for managing weekly family chores. 
+
+## Planning
+
+## WireFrame
+https://www.figma.com/file/yMUWi5qsjeeRdSTHcqikoT/Untitled?node-id=6%3A3398
+
+## ERD
+https://lucid.app/invitations/accept/2aeabe95-c1d2-4869-ac0d-614abd6f5338
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
