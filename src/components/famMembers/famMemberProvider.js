@@ -6,12 +6,12 @@ export const FamMemProvider = (props) => {
     const [famMembers, setFamMembers] = useState([])
 
     const getFamMembers = () => {
-        return fetch("http://localhost:8088/familyMembers")
+        return fetch("http://localhost:8088/familyMembers?_expand=profilePic")
             .then(res => res.json())
             .then(setFamMembers)
     }
     const addFamMember = famMemberObj => {
-        return fetch("http://localhost:8088/familyMembers", {
+        return fetch("http://localhost:8088/familyMembers?_expand=profilePic", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
