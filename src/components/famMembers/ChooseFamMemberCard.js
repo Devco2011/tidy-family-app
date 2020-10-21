@@ -1,12 +1,28 @@
 import React from "react"
+import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom"
+import {
+    Card, Button, CardImg, CardTitle, CardText, CardDeck,
+    CardSubtitle, CardBody
+} from 'reactstrap';
 
-export const ChooseFamMemberCard = ({ famMember }) => (
+export const ChooseFamMemberCard = ({ famMember }) =>
 
-    <section className="famMember">
-        <h3 className="famMember__name">{famMember.name}</h3>
-        <h3 className="famMember__points">Current Points: {famMember.points}</h3>
+    (
 
 
-    </section>
-)
+        < div >
+
+            <Card>
+                <CardImg top width="100%" src="/images/oldMan.svg" alt="Card image cap" />
+                <CardBody>
+                    <CardTitle>{famMember.name}</CardTitle>
+                    <Button onClick={event => {
+                        event.preventDefault()
+                        sessionStorage.setItem("family_member", famMember.name)
+                    }}><Link to="/">This is me!</Link></Button>
+                </CardBody>
+            </Card>
+
+        </div >
+    )
