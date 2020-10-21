@@ -1,13 +1,17 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { Container, ListGroup, ListGroupItem } from 'reactstrap';
+
 
 export const FamMemberCard = ({ famMember }) => (
-    <section className="famMember">
-        <h3 className="famMember__name">{famMember.name}</h3>
-        <h3 className="famMember__points">{famMember.points}</h3>
+    <Container>
+        <ListGroup>
+            <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
+                <h3 className="text-warning">{famMember.name}</h3>
+                <h5 className="text-success">Current Points: {famMember.points}</h5>
+            </Link></ListGroupItem>
+        </ListGroup>
+    </Container>
+);
 
-        <Link to={`/famMembers/detail/${famMember.id}`}>
-            <h4>Details</h4>
-        </Link>
-    </section>
-)
+

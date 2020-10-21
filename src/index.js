@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom"
 import { TidyFamily } from "./components/TidyFamily.js";
 import * as serviceWorker from './serviceWorker';
+import "./custom.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 
 
 
