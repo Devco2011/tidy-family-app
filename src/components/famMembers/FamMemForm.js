@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
-import { FamMemberContext } from "./FamMemberProvider"
+import { FamMemberContext } from "./FamMemProvider"
 import { useHistory, useParams } from 'react-router-dom';
 
 export const FamMemberForm = () => {
