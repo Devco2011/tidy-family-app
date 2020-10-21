@@ -1,7 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
-import { FamMemProvider } from "./famMembers/FamMemberProvider.js"
+import { FamMemProvider } from "./famMembers/FamMemProvider.js"
 import { FamMembersList } from "./famMembers/FamMemList.js";
 import { FamMemberForm } from "./famMembers/FamMemForm.js";
 import { FamMemberDetail } from "./famMembers/FamMemDetails.js";

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import { FamMemberContext } from "./FamMemberProvider"
+import { FamMemberContext } from "./FamMemProvider"
 import { useParams, useHistory } from "react-router-dom"
 
 export const FamMemberDetail = () => {

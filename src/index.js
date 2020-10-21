@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom"
-import './index.css';
 import { TidyFamily } from "./components/TidyFamily.js";
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
