@@ -5,12 +5,23 @@ import { FamMemProvider } from "./famMembers/FamMemProvider.js"
 import { FamMembersList } from "./famMembers/FamMemList.js";
 import { FamMemberForm } from "./famMembers/FamMemForm.js";
 import { FamMemberDetail } from "./famMembers/FamMemDetails.js";
+import { ChooseFamMemberList } from "./famMembers/ChooseFamMemberList";
+
+
 import { Container, Row, Col } from "reactstrap"
 
 export const ApplicationViews = () => {
     return (
         <>
             {/* Render the location list when http://localhost:3000/ */}
+            <FamMemProvider>
+                <Route exact path="/famMembers/choose">
+                    <Home />
+                    <Col xs="6 pt-5"><ChooseFamMemberList /></Col>
+                </Route>
+            </FamMemProvider>
+
+
             <FamMemProvider>
                 <Route exact path="/">
                     <Home />

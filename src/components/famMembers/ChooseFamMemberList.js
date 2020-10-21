@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react"
 import { FamMemberContext } from "./FamMemProvider"
-import { FamMemberCard } from "./FamMemCard"
+import { ChooseFamMemberCard } from "./ChooseFamMemberCard"
 import { useHistory } from "react-router-dom";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, CardGroup } from 'reactstrap';
 
-export const ChooseFamMember = () => {
+export const ChooseFamMemberList = () => {
     const { famMembers, getFamMembers } = useContext(FamMemberContext)
     const history = useHistory()
 
@@ -13,17 +13,14 @@ export const ChooseFamMember = () => {
     }, [])
     return (
         <>
-            <Container fluid className='bg-danger' >
-                <h4>Family Members</h4>
-                <button onClick={() => { history.push("/famMembers/create") }}>
-                    Add A Family Member
-        </button>
-                <div className="famMembers">
+            <Container fluid >
+                <h4>Hey there! Which family member are you?</h4>
+                <CardGroup>
                     {famMembers.map(famMember => {
                         return <ChooseFamMemberCard key={famMember.id} famMember={famMember} />
                     })
                     }
-                </div>
+                </CardGroup>
             </Container>
         </>
     )

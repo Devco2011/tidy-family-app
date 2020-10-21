@@ -1,14 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import { Container, ListGroup, ListGroupItem } from 'reactstrap';
+import { Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 
 
 export const FamMemberCard = ({ famMember }) => (
     <Container>
         <ListGroup>
             <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
-                <h3 className="text-warning">{famMember.name}</h3>
-                <h5 className="text-success">Current Points: {famMember.points}</h5>
+                {famMember.name}
+                <Row>Current Points: {famMember.points}</Row>
+                <img src={famMember.profilePic.src} alt="Picture" />
             </Link></ListGroupItem>
         </ListGroup>
     </Container>

@@ -24,7 +24,7 @@ export const Login = props => {
             .then(exists => {
                 if (exists) {
                     localStorage.setItem("family_name", exists.famName)
-                    history.push("/")
+                    history.push("famMembers/choose/")
                 } else {
                     existDialog.current.showModal()
                 }
