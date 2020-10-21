@@ -5,6 +5,7 @@ import { FamMemProvider } from "./famMembers/FamMemProvider.js"
 import { FamMembersList } from "./famMembers/FamMemList.js";
 import { FamMemberForm } from "./famMembers/FamMemForm.js";
 import { FamMemberDetail } from "./famMembers/FamMemDetails.js";
+import { Container, Row, Col } from "reactstrap"
 
 export const ApplicationViews = () => {
     return (
@@ -13,7 +14,7 @@ export const ApplicationViews = () => {
             <FamMemProvider>
                 <Route exact path="/">
                     <Home />
-                    <FamMembersList />
+                    <Col xs="6 pt-5"><FamMembersList /></Col>
                 </Route>
             </FamMemProvider>
 

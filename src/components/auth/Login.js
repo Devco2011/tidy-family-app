@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"
 
 
 
+
 export const Login = props => {
     const email = useRef()
     const famName = useRef()
@@ -39,8 +40,6 @@ export const Login = props => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Tidy Family</h1>
-                    <h2>Sign in and get busy!</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input ref={email} type="email"
