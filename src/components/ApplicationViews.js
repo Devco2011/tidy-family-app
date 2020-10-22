@@ -6,6 +6,7 @@ import { FamMembersList } from "./famMembers/FamMemList.js";
 import { FamMemberForm } from "./famMembers/FamMemForm.js";
 import { FamMemberDetail } from "./famMembers/FamMemDetails.js";
 import { ChooseFamMemberList } from "./famMembers/ChooseFamMemberList";
+import { AddFirstMember } from "./famMembers/AddFirstMember"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -14,6 +15,13 @@ export const ApplicationViews = () => {
     return (
         <>
             {/* Render the location list when http://localhost:3000/ */}
+            <FamMemProvider>
+                <Route exact path="/famMembers/firstMember">
+                    <Home />
+                    <Col xs="6 pt-5"><AddFirstMember /></Col>
+                </Route>
+            </FamMemProvider>
+
             <FamMemProvider>
                 <Route exact path="/famMembers/choose">
                     <Home />
@@ -32,7 +40,7 @@ export const ApplicationViews = () => {
             <FamMemProvider>
                 <Route exact path="/famMembers/detail/:famMemberId(\d+)">
                     <Home />
-                    <FamMemberDetail />
+                    <Col xs="6 pt-5"><FamMemberDetail /></Col>
                 </Route>
             </FamMemProvider>
 

@@ -1,6 +1,8 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
+import { Container, Row, Col, CardGroup } from 'reactstrap';
+import "./Login.css";
 
 
 
@@ -8,6 +10,7 @@ import { useHistory } from "react-router-dom"
 export const Login = props => {
     const email = useRef()
     const famName = useRef()
+    const id = useRef()
     const existDialog = useRef()
     const history = useHistory()
 
@@ -24,6 +27,7 @@ export const Login = props => {
             .then(exists => {
                 if (exists) {
                     localStorage.setItem("family_name", exists.famName)
+                    localStorage.setItem("family_id", exists.id)
                     history.push("famMembers/choose/")
                 } else {
                     existDialog.current.showModal()
@@ -32,7 +36,11 @@ export const Login = props => {
     }
 
     return (
+
+
         <main className="container--login">
+
+            <h2>Log in and get busy!</h2>
             <dialog className="dialog dialog--auth" ref={existDialog}>
                 <div>User does not exist</div>
                 <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
@@ -64,7 +72,8 @@ export const Login = props => {
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Register</Link>
+                <h2>OR</h2>
+                <Link to="/register">Register Your Family</Link>
             </section>
         </main>
     )

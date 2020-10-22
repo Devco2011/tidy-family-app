@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import { FamMemberContext } from "./FamMemProvider"
 import { useHistory, useParams } from 'react-router-dom';
 
-export const FamMemberForm = () => {
+export const AddFirstMember = () => {
     const { addFamMember, getFamMemberById, updateFamMember } = useContext(FamMemberContext)
 
 
@@ -20,7 +20,7 @@ export const FamMemberForm = () => {
         //When changing a state object or array, 
         //always create a copy make changes, and then set state.
         const newFamMember = { ...famMember }
-        //animal is an object with properties. 
+        //newFamMember is an object with properties. 
         //set the property to the new value
         newFamMember[event.target.name] = event.target.value
         //update state
@@ -53,6 +53,8 @@ export const FamMemberForm = () => {
                 updateFamMember({
                     id: famMember.id,
                     name: famMember.name,
+                    points: 0,
+                    admin: "true",
                     profilePicId: parseInt(famMember.profilePicId)
                 })
                     .then(() => history.push(`/famMembers/detail/${famMember.id}`))
@@ -60,7 +62,10 @@ export const FamMemberForm = () => {
                 //POST - add
                 addFamMember({
                     name: famMember.name,
-                    profilePicId: parseInt(famMember.profilePicId)
+                    famiyId: parseInt(localStorage.getItem("family_id")),
+                    points: 0,
+                    admin: "true",
+                    profilePicId: famMember.profilePicId
                 })
                     .then(() => history.push("/"))
             }
@@ -69,7 +74,8 @@ export const FamMemberForm = () => {
 
     return (
         <form className="famMemberForm">
-            <h2 className="famMemberForm__title">Add a Family Member</h2>
+            <h2 className="famMemberForm__title">Add your first family member.</h2>
+            <h5>Because this is the first member of your family, this person will be given admin control.</h5>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="famMemberName">Family member name: </label>
@@ -85,6 +91,7 @@ export const FamMemberForm = () => {
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
                     constructFamMemberObject()
+                    sessionStorage.setItem("family_member", famMember.name)
                 }}>
                 {famMemberId ? <>Save Family Member</> : <>Add Family Member</>}</button>
         </form>
