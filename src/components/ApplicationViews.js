@@ -7,6 +7,8 @@ import { FamMemberForm } from "./famMembers/FamMemForm.js";
 import { FamMemberDetail } from "./famMembers/FamMemDetails.js";
 import { ChooseFamMemberList } from "./famMembers/ChooseFamMemberList";
 import { AddFirstMember } from "./famMembers/AddFirstMember"
+import { ProfilePicProvider } from "./profilePics/ProfilePicProvider";
+import { ProfilePicList } from "./profilePics/ProfilePicList"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -16,10 +18,12 @@ export const ApplicationViews = () => {
         <>
             {/* Render the location list when http://localhost:3000/ */}
             <FamMemProvider>
-                <Route exact path="/famMembers/firstMember">
-                    <Home />
-                    <Col xs="6 pt-5"><AddFirstMember /></Col>
-                </Route>
+                <ProfilePicProvider>
+                    <Route exact path="/famMembers/firstMember">
+                        <Home />
+                        <Col xs="6 pt-5"><AddFirstMember /></Col>
+                    </Route>
+                </ProfilePicProvider>
             </FamMemProvider>
 
             <FamMemProvider>
