@@ -29,13 +29,15 @@ export const Register = (props) => {
                         body: JSON.stringify({
                             email: email.current.value,
                             famName: `${famName.current.value}`,
+
                         })
                     })
                         .then(_ => _.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("family_name", createdUser.famName)
-                                history.push("/")
+                                localStorage.setItem("family_id", createdUser.id)
+                                history.push("/famMembers/firstMember")
                             }
                         })
                 }

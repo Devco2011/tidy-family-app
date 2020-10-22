@@ -17,7 +17,8 @@ export const ChooseFamMemberList = () => {
                 <h4>Hey there! Which family member are you?</h4>
                 <CardGroup>
                     {famMembers.map(famMember => {
-                        return <ChooseFamMemberCard key={famMember.id} famMember={famMember} />
+                        if (famMember?.familyId === parseInt(localStorage.getItem("family_id")))
+                            return <ChooseFamMemberCard key={famMember.id} famMember={famMember} />
                     })
                     }
                 </CardGroup>

@@ -20,7 +20,8 @@ export const FamMembersList = () => {
         </button>
                 <div className="famMembers">
                     {famMembers.map(famMember => {
-                        return <FamMemberCard key={famMember.id} famMember={famMember} />
+                        if (famMember?.familyId === parseInt(localStorage.getItem("family_id")))
+                            return <FamMemberCard key={famMember.id} famMember={famMember} />
                     })
                     }
                 </div>

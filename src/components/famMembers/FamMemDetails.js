@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
 import { FamMemberContext } from "./FamMemProvider"
-import { useParams, useHistory } from "react-router-dom"
+import { useParams, useHistory, Link } from "react-router-dom"
+import {
+    Card, Button, CardHeader, CardFooter, CardBody,
+    CardTitle, CardText, Container, Row
+} from 'reactstrap';
 
 export const FamMemberDetail = () => {
     const { getFamMemberById } = useContext(FamMemberContext)
@@ -21,12 +25,17 @@ export const FamMemberDetail = () => {
     }, [])
 
     return (
-        <section className="famMember">
-            <h3 className="famMember__name">{famMember.name}</h3>
-            <button onClick={() => {
-                history.push(`/famMembers/edit/${famMember.id}`)
-            }}>Edit</button>
+        <Container>
+            <Card>
+                <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
+                <CardBody>
+                    <CardTitle>Current Points: {famMember.points}</CardTitle>
+                    <Button>Available Chores</Button>
+                    <Row><Button>Completed Chores</Button></Row>
+                </CardBody>
 
-        </section>
+            </Card>
+        </Container>
+
     )
 }

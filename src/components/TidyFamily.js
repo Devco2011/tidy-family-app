@@ -24,11 +24,10 @@ export const TidyFamily = () => (
     }} />
 
     <Route path="/login">
-      <Home />
       <Login />
     </Route>
+
     <Route path="/register">
-      <Home />
       <Register />
     </Route>
   </>
