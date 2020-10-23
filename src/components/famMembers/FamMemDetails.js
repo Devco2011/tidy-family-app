@@ -30,7 +30,7 @@ export const FamMemberDetail = () => {
                 <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
                 <CardBody>
                     <CardTitle>Current Points: {famMember.points}</CardTitle>
-                    <Button>Available Chores</Button>
+                    <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
                     <Row><Button>Completed Chores</Button></Row>
                 </CardBody>
 

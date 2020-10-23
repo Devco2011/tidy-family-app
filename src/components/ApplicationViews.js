@@ -9,6 +9,8 @@ import { ChooseFamMemberList } from "./famMembers/ChooseFamMemberList";
 import { AddFirstMember } from "./famMembers/AddFirstMember"
 import { ProfilePicProvider } from "./profilePics/ProfilePicProvider";
 import { ProfilePicList } from "./profilePics/ProfilePicList"
+import { ChoreProvider } from "./chores/ChoreProvider";
+import { AvailableChoreList } from "./chores/AvailableChoreList";
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -60,6 +62,13 @@ export const ApplicationViews = () => {
                     <FamMemberForm />
                 </Route>
             </FamMemProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/available">
+                    <Home />
+                    <AvailableChoreList />
+                </Route>
+            </ChoreProvider>
         </>
     )
 }

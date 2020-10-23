@@ -6,9 +6,9 @@ export const ChoreProvider = (props) => {
     const [chores, setChores] = useState([])
 
     const getChores = () => {
-        return fetch(`http://localhost:8088/chores`)
+        return fetch(`http://localhost:8088/chores?_expand=familyMember`)
             .then(res => res.json())
-            .then(setLocations)
+            .then(setChores)
     }
     const addChore = choreObj => {
         return fetch("http://localhost:8088/chores", {
@@ -22,7 +22,7 @@ export const ChoreProvider = (props) => {
     }
 
     const getChoreById = (id) => {
-        return fetch(`http://localhost:8088/chores/${id}`)
+        return fetch(`http://localhost:8088/chores/${id}_expand=familyMember`)
             .then(res => res.json())
     }
 
