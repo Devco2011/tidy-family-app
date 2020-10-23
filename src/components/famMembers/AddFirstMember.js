@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState, useEffect } from "react"
 import { FamMemberContext } from "./FamMemProvider";
 import { ProfilePicContext } from "../profilePics/ProfilePicProvider";
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams, Link } from 'react-router-dom';
 import { ProfilePicCard } from "../profilePics/ProfilePicCard"
 import { Container, CardGroup } from 'reactstrap';
 
@@ -22,7 +22,7 @@ export const AddFirstMember = () => {
 
         addFamMember({
             name: `${famMemberName.current.value}`,
-            famiyId: parseInt(localStorage.getItem("family_id")),
+            familyId: parseInt(localStorage.getItem("family_id")),
             points: 0,
             admin: "true",
             profilePicId: parseInt(sessionStorage.getItem("profilePic"))
