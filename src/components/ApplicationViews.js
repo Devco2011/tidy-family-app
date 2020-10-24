@@ -11,6 +11,7 @@ import { ProfilePicProvider } from "./profilePics/ProfilePicProvider";
 import { ProfilePicList } from "./profilePics/ProfilePicList"
 import { ChoreProvider } from "./chores/ChoreProvider";
 import { AvailableChoreList } from "./chores/AvailableChoreList";
+import { CompletedChoreList } from "./chores/CompletedChoreList";
 import { CompletedChoreModal } from "./chores/CompletedChoreModal";
 
 
@@ -68,6 +69,13 @@ export const ApplicationViews = () => {
                 <Route exact path="/chores/available">
                     <Home />
                     <AvailableChoreList />
+                </Route>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/completed">
+                    <Home />
+                    <CompletedChoreList />
                 </Route>
             </ChoreProvider>
 

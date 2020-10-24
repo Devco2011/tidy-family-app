@@ -31,7 +31,7 @@ export const FamMemberDetail = () => {
                 <CardBody>
                     <CardTitle>Current Points: {famMember.points}</CardTitle>
                     <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
-                    <Row><Button>Completed Chores</Button></Row>
+                    <Row><Button onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button></Row>
                 </CardBody>
 
             </Card>

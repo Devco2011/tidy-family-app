@@ -5,12 +5,17 @@ import { Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 
 export const ChoreCard = ({ chore }) => (
     <Container>
-        <ListGroup>
-            <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
-                {famMember.name}
-                <Row>Current Points: {famMember.points}</Row>
-                <img src={famMember.profilePic.src} alt="Picture" />
-            </Link></ListGroupItem>
-        </ListGroup>
+        <Card>
+            <CardHeader tag="h3">{chore.name}</CardHeader>
+            <CardBody>
+                <CardTitle>Instructions</CardTitle>
+                <CardText>{chore.instructions}</CardText>
+                <Button onClick={event => {
+                    event.preventDefault()
+                }}><Link to={`/chores/completedForm/${chore.id}`}>
+                        I Completed This!</Link></Button>
+            </CardBody>
+            <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
+        </Card>
     </Container>
 );

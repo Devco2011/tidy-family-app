@@ -26,7 +26,7 @@ export const ChoreProvider = (props) => {
             .then(res => res.json())
     }
     const updateChore = chore => {
-        return fetch(`http://localhost:8088/chores/${chore.id}`, {
+        return fetch(`http://localhost:8088/chores/${chore.id}?_expand=familyMember`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
