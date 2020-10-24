@@ -22,13 +22,23 @@ export const ChoreProvider = (props) => {
     }
 
     const getChoreById = (id) => {
-        return fetch(`http://localhost:8088/chores/${id}_expand=familyMember`)
+        return fetch(`http://localhost:8088/chores/${id}?_expand=familyMember`)
             .then(res => res.json())
+    }
+    const updateChore = chore => {
+        return fetch(`http://localhost:8088/chores/${chore.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(chore)
+        })
+            .then(getChores)
     }
 
     return (
         <ChoreContext.Provider value={{
-            chores, getChores, addChore, getChoreById
+            chores, getChores, addChore, getChoreById, updateChore
         }}>
             {props.children}
         </ChoreContext.Provider>
