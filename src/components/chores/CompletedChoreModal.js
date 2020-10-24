@@ -52,7 +52,8 @@ export const CompletedChoreModal = () => {
                 familyId: chore.familyId,
                 familyMemberId: parseInt(sessionStorage.getItem("family_memberId")),
                 completed: "true",
-                date: new Date().toLocaleString()
+                date: new Date().toLocaleString(),
+
             })
                 .then(() => history.push("/chores/available"))
         }
@@ -75,7 +76,7 @@ export const CompletedChoreModal = () => {
                         disabled={isLoading}
                         onClick={event => {
                             event.preventDefault()
-                            constructChoreObject()
+                            constructChoreObject().then()
                         }}>
                         Yeah, baby!</Button>
                 </CardBody>
