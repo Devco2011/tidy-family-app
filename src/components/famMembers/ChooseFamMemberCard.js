@@ -20,6 +20,7 @@ export const ChooseFamMemberCard = ({ famMember }) =>
                     <Button onClick={event => {
                         event.preventDefault()
                         sessionStorage.setItem("family_member", famMember.name)
+                        sessionStorage.setItem("family_memberId", famMember.id)
                     }}><Link to="/">This is me!</Link></Button>
                 </CardBody>
             </Card>
