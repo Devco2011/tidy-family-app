@@ -52,6 +52,7 @@ export const CompletedChoreModal = () => {
                 familyId: chore.familyId,
                 familyMemberId: parseInt(sessionStorage.getItem("family_memberId")),
                 completed: "true",
+                date: new Date().toLocaleString()
             })
                 .then(() => history.push("/chores/available"))
         }
