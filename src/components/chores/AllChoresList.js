@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "./ChoreProvider"
-import { ChoreCard } from "./AvailableChoreCard"
+import { ChoreCard } from "./ChoreCard"
 import { useHistory } from "react-router-dom"
 
 export const AllChoresList = () => {

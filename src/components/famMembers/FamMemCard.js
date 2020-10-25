@@ -4,7 +4,9 @@ import { Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 
 
 export const FamMemberCard = ({ famMember }) => (
+
     <Container>
+
         <ListGroup>
             <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
                 {famMember.name}
