@@ -18,14 +18,7 @@ export const CompletedChoreModal = () => {
 
     const { choreId } = useParams();
     const history = useHistory();
-    const handleControlledInputChange = (event) => {
 
-        const newChore = { ...chore }
-
-        newChore[event.target.completed] = event.target.value
-
-        setChores(newChore)
-    }
 
     useEffect(() => {
 
@@ -77,6 +70,7 @@ export const CompletedChoreModal = () => {
                         onClick={event => {
                             event.preventDefault()
                             constructChoreObject()
+
                         }}>
                         Yeah, baby!</Button>
                 </CardBody>
