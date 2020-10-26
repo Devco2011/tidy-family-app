@@ -16,7 +16,7 @@ export const CompletedChoreList = () => {
 
             <div className="chores">
                 {chores.map(chore => {
-                    if (chore?.familyId === parseInt(localStorage.getItem("family_id")) && chore?.completed === "true")
+                    if (chore?.familyId === parseInt(localStorage.getItem("family_id")) && chore?.completed === true)
                         return <CompletedChoreCard key={chore.id} chore={chore} />
                 })
                 }

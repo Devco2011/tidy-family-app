@@ -20,7 +20,7 @@ export const FamMemberForm = () => {
         //When changing a state object or array, 
         //always create a copy make changes, and then set state.
         const newFamMember = { ...famMember }
-        //animal is an object with properties. 
+        //famMember is an object with properties. 
         //set the property to the new value
         newFamMember[event.target.name] = event.target.value
         //update state

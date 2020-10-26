@@ -18,14 +18,7 @@ export const CompletedChoreModal = () => {
 
     const { choreId } = useParams();
     const history = useHistory();
-    const handleControlledInputChange = (event) => {
 
-        const newChore = { ...chore }
-
-        newChore[event.target.completed] = event.target.value
-
-        setChores(newChore)
-    }
 
     useEffect(() => {
 
@@ -51,7 +44,7 @@ export const CompletedChoreModal = () => {
                 pointsValue: chore.pointsValue,
                 familyId: chore.familyId,
                 familyMemberId: parseInt(sessionStorage.getItem("family_memberId")),
-                completed: "true",
+                completed: true,
                 date: new Date().toLocaleString(),
 
             })
@@ -76,7 +69,8 @@ export const CompletedChoreModal = () => {
                         disabled={isLoading}
                         onClick={event => {
                             event.preventDefault()
-                            constructChoreObject().then()
+                            constructChoreObject()
+
                         }}>
                         Yeah, baby!</Button>
                 </CardBody>
