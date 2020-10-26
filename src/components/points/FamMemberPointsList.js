@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
-import { CompletedChoreCard } from "../chores/CompletedChoreCard"
 import { useHistory } from "react-router-dom"
 
 export const FamMemberPointsList = () => {
@@ -40,7 +39,7 @@ export const FamMemberPointsList = () => {
 
     return (
         <>
-            <h2>Completed Chores</h2>
+            <h2>Current Points: {totalPoints}</h2>
 
 
         </>
