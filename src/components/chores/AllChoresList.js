@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "./ChoreProvider"
 import { ChoreCard } from "./ChoreCard"
 import { useHistory } from "react-router-dom"
+import { Button } from 'reactstrap';
 
 export const AllChoresList = () => {
     const { chores, getChores } = useContext(ChoreContext)
@@ -13,6 +14,9 @@ export const AllChoresList = () => {
     return (
         <>
             <h2>Manage All Chores</h2>
+
+            <Button>
+                Add a Chore</Button>
 
             <div className="chores">
                 {chores.map(chore => {
