@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { FamMemberContext } from "../famMembers/FamMemProvider"
 import { useHistory } from "react-router-dom"
+import { Container } from 'reactstrap';
 
 export const FamMemberPointsList = () => {
     const { chores, getChores } = useContext(ChoreContext)
@@ -42,21 +43,22 @@ export const FamMemberPointsList = () => {
 
     return (
         <>
-            <div className="famMembers">
-                {famMembers.map(famMember => {
-                    if (famMember?.familyId === parseInt(localStorage.getItem("family_id"))) {
+            <Container>
+                <div className="famMembers">
+                    {famMembers.map(famMember => {
+                        if (famMember?.familyId === parseInt(localStorage.getItem("family_id"))) {
 
-                        getFamMemberChores(famMember.id)
-                        console.log(familyMembers)
-                        getFamMemberPoints()
-                        console.log(points)
-                        return <h2>Current Points: {totalPoints()}</h2>
+                            getFamMemberChores(famMember.id)
+                            console.log(familyMembers)
+                            getFamMemberPoints()
+                            console.log(points)
+                            return <h2 key={famMember.id}>Current Points: {totalPoints()}</h2>
+                        }
+                    })
                     }
-                })
-                }
-            </div>
-            <h2>Current Points: {totalPoints}</h2>
+                </div>
 
+            </Container>
 
         </>
     )
