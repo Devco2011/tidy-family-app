@@ -8,7 +8,7 @@ export const FamMemberPointsList = () => {
     const { chores, getChores } = useContext(ChoreContext)
     const { famMembers, getFamMembers } = useContext(FamMemberContext)
     const history = useHistory()
-    let familyMembers = [];
+    let familyMemberChores = [];
     let points = [];
     const intitialValue = 0;
 
@@ -18,22 +18,22 @@ export const FamMemberPointsList = () => {
 
     }, [])
 
-
+    // Filter all chores and get the ones that match the family member id, return a new array called familyMemberChores
     const getFamMemberChores = (familyMemberId) => {
 
-        return familyMembers = chores.filter(chore => chore.familyMemberId === familyMemberId)
+        return familyMemberChores = chores.filter(chore => chore.familyMemberId === familyMemberId)
 
     }
 
 
-
+    // Map over familyMemberChores and get the points value for each chore
     const getFamMemberPoints = () => {
 
-        return points = familyMembers.map((familyMember) => familyMember.pointsValue)
+        return points = familyMemberChores.map((familyMember) => familyMember.pointsValue)
 
     }
 
-
+    // Add the points values of each chore together
     const reducer = (accumulator, item) => {
         return accumulator + item;
 
@@ -45,14 +45,15 @@ export const FamMemberPointsList = () => {
         <>
             <Container>
                 <div className="famMembers">
+                    {/* Map over all family members and get those that match the family Id in local storage */}
                     {famMembers.map(famMember => {
                         if (famMember?.familyId === parseInt(localStorage.getItem("family_id"))) {
 
                             getFamMemberChores(famMember.id)
-                            console.log(familyMembers)
+                            console.log(familyMemberChores)
                             getFamMemberPoints()
                             console.log(points)
-                            return <h2 key={famMember.id}>Current Points: {totalPoints()}</h2>
+                            return <h2 key={famMember.id}>{famMember.name} Current Points: {totalPoints()}</h2>
                         }
                     })
                     }
