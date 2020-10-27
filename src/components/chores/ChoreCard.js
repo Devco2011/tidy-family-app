@@ -16,7 +16,11 @@ export const ChoreCard = ({ chore }) => (
                 <Button onClick={event => {
                     event.preventDefault()
                 }}><Link to={`/chores/completedForm/${chore.id}`}>
-                        I Completed This!</Link></Button>
+                        Edit</Link></Button>
+                <Button onClick={event => {
+                    event.preventDefault()
+                }}><Link to={`/chores/completedForm/${chore.id}`}>
+                        Delete</Link></Button>
             </CardBody>
             <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
         </Card>

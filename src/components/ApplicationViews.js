@@ -11,6 +11,7 @@ import { ProfilePicProvider } from "./profilePics/ProfilePicProvider";
 import { ProfilePicList } from "./profilePics/ProfilePicList"
 import { ChoreProvider } from "./chores/ChoreProvider";
 import { AvailableChoreList } from "./chores/AvailableChoreList";
+import { AllChoresList } from "./chores/AllChoresList";
 import { CompletedChoreList } from "./chores/CompletedChoreList";
 import { CompletedChoreModal } from "./chores/CompletedChoreModal";
 import { FamMemberPointsList } from "./points/FamMemberPointsList"
@@ -94,6 +95,13 @@ export const ApplicationViews = () => {
                         <FamMemberPointsList />
                     </Route>
                 </FamMemProvider>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/allChores">
+                    <Home />
+                    <AllChoresList />
+                </Route>
             </ChoreProvider>
 
 

@@ -45,6 +45,17 @@ export const FamMemberDetail = () => {
                 </Container>
 
                 <Container>
+                    <Card>
+                        <CardHeader><h3>Admin</h3></CardHeader>
+                        <CardBody>
+                            <Row><Button onClick={() => { history.push("/chores/allChores") }}>Manage All Chores</Button></Row>
+                            <Row><Button onClick={() => { history.push("/awards/allAwards") }}>Manage All Awards</Button></Row>
+                        </CardBody>
+
+                    </Card>
+                </Container>
+
+                <Container>
                     <ChoreProvider>
                         <AllChoresList />
                     </ChoreProvider>
