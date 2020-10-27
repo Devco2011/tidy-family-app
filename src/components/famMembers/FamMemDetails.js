@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react"
 import { FamMemberContext } from "./FamMemProvider"
 import { AllChoresList } from "../chores/AllChoresList"
 import { ChoreProvider } from "../chores/ChoreProvider"
+import { MainAwardsProvider } from "../awards/MainAwardsProvider"
+import { MainAwardsList } from "../awards/MainAwardsList"
 import { useParams, useHistory, Link } from "react-router-dom"
 import {
     Card, Button, CardHeader, CardFooter, CardBody,
@@ -39,10 +41,18 @@ export const FamMemberDetail = () => {
 
                     </Card>
                 </Container>
+
                 <Container>
                     <ChoreProvider>
                         <AllChoresList />
                     </ChoreProvider>
+                </Container>
+
+                <Container>
+                    <h2>Manage Main Awards</h2>
+                    <MainAwardsProvider>
+                        <MainAwardsList />
+                    </MainAwardsProvider>
                 </Container>
 
             </>
