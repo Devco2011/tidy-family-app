@@ -16,6 +16,7 @@ import { CompletedChoreList } from "./chores/CompletedChoreList";
 import { CompletedChoreModal } from "./chores/CompletedChoreModal";
 import { FamMemberPointsList } from "./points/FamMemberPointsList";
 import { PointsCounter } from "./points/PointsCounter";
+import { FamiliesProvider } from "./families/FamilyProvider"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -99,12 +100,12 @@ export const ApplicationViews = () => {
             </ChoreProvider>
 
             <ChoreProvider>
-                <FamMemProvider>
+                <FamiliesProvider>
                     <Route exact path="/chores/totalPoints">
                         <Home />
                         <PointsCounter />
                     </Route>
-                </FamMemProvider>
+                </FamiliesProvider>
             </ChoreProvider>
 
             <ChoreProvider>

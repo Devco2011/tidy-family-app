@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
-import { FamMemberContext } from "../famMembers/FamMemProvider"
+import { FamiliesContext } from "../families/FamilyProvider"
 import { useHistory } from "react-router-dom"
 import { Container } from 'reactstrap';
 
 export const PointsCounter = () => {
     const { chores, getChores } = useContext(ChoreContext)
-    const { famMembers, getFamMembers } = useContext(FamMemberContext)
+    const { families, getFamilies } = useContext(FamiliesContext)
     const history = useHistory()
     let familyChores = [];
     let points = [];
@@ -14,12 +14,13 @@ export const PointsCounter = () => {
 
     useEffect(() => {
         getChores()
+        getFamilies()
     }, [])
 
     // Filter all chores and get the ones that have been completed, return a new array called familyMemberChores
-    const getFamChores = () => {
+    const getFamChores = (familyId) => {
 
-        return familyChores = chores.filter(chore => chore.completed === true)
+        return familyChores = chores.filter(chore => chore.familyId === familyId && chore.completed === true)
 
     }
 
@@ -37,19 +38,19 @@ export const PointsCounter = () => {
     }
     const totalPoints = () => points.reduce(reducer, intitialValue)
 
-    getFamPoints()
+
     return (
         <>
             <Container>
                 <div className="chores">
                     {/* Map over all chores and get those that match the family Id in local storage */}
-                    {chores.map(chore => {
-                        if (chore?.familyId === parseInt(localStorage.getItem("family_id")))
-                            getFamChores()
+                    {families.map(family => {
+                        if (family?.id === parseInt(localStorage.getItem("family_id")))
+                            getFamChores(family.id)
                         console.log(familyChores)
                         getFamPoints()
                         console.log(points)
-                        return <h2 key={chore.id}> Family Points: {totalPoints()}</h2>
+                        return <h2 key={family.id}> Family Points: {totalPoints()}</h2>
                     }
                     )
                     }
