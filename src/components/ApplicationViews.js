@@ -88,10 +88,12 @@ export const ApplicationViews = () => {
             </ChoreProvider>
 
             <ChoreProvider>
-                <Route path="/chores/points">
-                    <Home />
-                    <FamMemberPointsList />
-                </Route>
+                <FamMemProvider>
+                    <Route exact path="/chores/points">
+                        <Home />
+                        <FamMemberPointsList />
+                    </Route>
+                </FamMemProvider>
             </ChoreProvider>
 
 

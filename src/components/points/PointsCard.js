@@ -10,14 +10,8 @@ export const PointsCard = ({ chore }) => (
 
     <Container>
         <Card>
-            <CardHeader tag="h3">Current Points:</CardHeader>
-            <CardBody>
-                <CardTitle>Instructions:</CardTitle>
-                <CardText>{chore.instructions}</CardText>
-                <CardTitle>Completed by: {chore.familyMember.name}</CardTitle>
-                <CardTitle>When this chore was completed: {chore.date}</CardTitle>
-            </CardBody>
-            <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
+
+            <CardFooter className="text-muted">`${totalPoints}</CardFooter>
         </Card>
     </Container>
 
