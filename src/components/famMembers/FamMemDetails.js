@@ -4,6 +4,8 @@ import { AllChoresList } from "../chores/AllChoresList"
 import { ChoreProvider } from "../chores/ChoreProvider"
 import { MainAwardsProvider } from "../awards/MainAwardsProvider"
 import { MainAwardsList } from "../awards/MainAwardsList"
+import { WheelAwardsProvider } from "../awards/WheelAwardsProvider"
+import { WheelAwardsList } from "../awards/WheelAwardsList"
 import { useParams, useHistory, Link } from "react-router-dom"
 import {
     Card, Button, CardHeader, CardFooter, CardBody,
@@ -53,6 +55,13 @@ export const FamMemberDetail = () => {
                     <MainAwardsProvider>
                         <MainAwardsList />
                     </MainAwardsProvider>
+                </Container>
+
+                <Container>
+                    <h2>Manage Wheel Awards</h2>
+                    <WheelAwardsProvider>
+                        <WheelAwardsList />
+                    </WheelAwardsProvider>
                 </Container>
 
             </>
