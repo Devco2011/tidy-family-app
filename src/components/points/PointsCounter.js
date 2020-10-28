@@ -55,10 +55,7 @@ export const PointsCounter = () => {
 
                         }
 
-                    }
-
-                    )
-
+                    })
                     }
                     <h2>Current Family Points: {totalPoints()}</h2>
                 </div>

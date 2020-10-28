@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { FamMemberContext } from "../famMembers/FamMemProvider"
-import { useHistory } from "react-router-dom"
-import { Container } from 'reactstrap';
+import { useHistory, Link } from "react-router-dom"
+import { Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 
 export const FamMemberPointsList = () => {
     const { chores, getChores } = useContext(ChoreContext)
@@ -53,7 +53,16 @@ export const FamMemberPointsList = () => {
                             console.log(familyMemberChores)
                             getFamMemberPoints()
                             console.log(points)
-                            return <h2 key={famMember.id}>{famMember.name} Current Points: {totalPoints()}</h2>
+                            return <Container key={famMember.id}>
+
+                                <ListGroup>
+                                    <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
+                                        {famMember.name}
+                                        <img src={famMember.profilePic.src} alt="Picture" />
+                                    </Link></ListGroupItem>
+                                    <ListGroupItem>Current Points: {totalPoints()}</ListGroupItem>
+                                </ListGroup>
+                            </Container>
                         }
                     })
                     }

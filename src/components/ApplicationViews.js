@@ -50,10 +50,12 @@ export const ApplicationViews = () => {
             </FamMemProvider>
 
             <FamMemProvider>
-                <Route exact path="/famMembers/detail/:famMemberId(\d+)">
-                    <Home />
-                    <Col xs="6 pt-5"><FamMemberDetail /></Col>
-                </Route>
+                <ChoreProvider>
+                    <Route exact path="/famMembers/detail/:famMemberId(\d+)">
+                        <Home />
+                        <Col xs="6 pt-5"><FamMemberDetail /></Col>
+                    </Route>
+                </ChoreProvider>
             </FamMemProvider>
 
             <FamMemProvider>

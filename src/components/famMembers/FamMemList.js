@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { FamMemberContext } from "./FamMemProvider"
 import { FamMemberCard } from "./FamMemCard"
-import { FamMemberPointsList } from "../points/FamMemberPointsList"
-import { ChoreProvider } from "../chores/ChoreProvider"
 import { useHistory } from "react-router-dom";
 import { Container, Row, Col } from 'reactstrap';
 
@@ -28,9 +26,7 @@ export const FamMembersList = () => {
                     })
                     }
                 </div>
-                <ChoreProvider>
-                    <FamMemberPointsList />
-                </ChoreProvider>
+
             </Container>
         </>
     )
