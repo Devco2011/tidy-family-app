@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
-$body-bg: #dc3545;
+$body-bg: #d05a5a;
 
 $theme-colors: (
-  "danger": #dc3545
+  "danger": #dc4e4e
 );
  
+$link-color: #e1dddd;
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";

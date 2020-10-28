@@ -1,12 +1,10 @@
 import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
-import { FamiliesContext } from "../families/FamilyProvider"
 import { useHistory } from "react-router-dom"
 import { Container } from 'reactstrap';
 
 export const PointsCounter = () => {
     const { chores, getChores } = useContext(ChoreContext)
-    const { families, getFamilies } = useContext(FamiliesContext)
     const history = useHistory()
     let familyChores = [];
     let points = [];
@@ -14,17 +12,21 @@ export const PointsCounter = () => {
 
     useEffect(() => {
         getChores()
-        getFamilies()
     }, [])
 
-    // Filter all chores and get the ones that have been completed, return a new array called familyMemberChores
-    const getFamChores = (familyId) => {
 
-        return familyChores = chores.filter(chore => chore.familyId === familyId && chore.completed === true)
+
+    // getFamChores filters all chores and get the ones that have been completed, defined as newFamilyChores. 
+    //Then return a new array called familyChores and add (push) all the newFamilyChores to familyChores via spread operater
+
+    const getFamChores = (familyId) => {
+        let newFamilyChores = chores.filter(chore => chore.familyId === familyId && chore.completed === true)
+        return familyChores.push(...newFamilyChores)
 
     }
 
     // Map over familyChores and get the points value for each chore
+
     const getFamPoints = () => {
 
         return points = familyChores.map((familyChore) => familyChore.pointsValue)
@@ -32,6 +34,7 @@ export const PointsCounter = () => {
     }
 
     // Add the points values of each chore together
+
     const reducer = (accumulator, item) => {
         return accumulator + item;
 
@@ -43,17 +46,21 @@ export const PointsCounter = () => {
         <>
             <Container>
                 <div className="chores">
-                    {/* Map over all chores and get those that match the family Id in local storage */}
-                    {families.map(family => {
-                        if (family?.id === parseInt(localStorage.getItem("family_id")))
-                            getFamChores(family.id)
-                        console.log(familyChores)
-                        getFamPoints()
-                        console.log(points)
-                        return <h2 key={family.id}> Family Points: {totalPoints()}</h2>
+                    {/* Using forEach here because it does not require a return like map does.  Gettiing chores that match the family Id in local storage */}
+                    {chores.forEach(chore => {
+
+                        if (chore.familyId === parseInt(localStorage.getItem("family_id"))) {
+                            getFamChores(chore.id)
+                            getFamPoints()
+
+                        }
+
                     }
+
                     )
+
                     }
+                    <h2>Current Family Points: {totalPoints()}</h2>
                 </div>
 
             </Container>

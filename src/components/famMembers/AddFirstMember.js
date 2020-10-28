@@ -24,7 +24,7 @@ export const AddFirstMember = () => {
             name: `${famMemberName.current.value}`,
             familyId: parseInt(localStorage.getItem("family_id")),
             points: 0,
-            admin: "true",
+            admin: true,
             profilePicId: parseInt(sessionStorage.getItem("profilePic"))
         })
             .then(() => history.push("/"))

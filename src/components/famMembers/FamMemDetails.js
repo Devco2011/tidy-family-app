@@ -36,7 +36,7 @@ export const FamMemberDetail = () => {
                     <Card>
                         <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
                         <CardBody>
-                            <CardTitle>Current Points: {famMember.points}</CardTitle>
+                            <CardTitle></CardTitle>
                             <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
                             <Row><Button onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button></Row>
                         </CardBody>
@@ -55,7 +55,7 @@ export const FamMemberDetail = () => {
                     </Card>
                 </Container>
 
-                <Container>
+                {/* <Container>
                     <ChoreProvider>
                         <AllChoresList />
                     </ChoreProvider>
@@ -73,7 +73,7 @@ export const FamMemberDetail = () => {
                     <WheelAwardsProvider>
                         <WheelAwardsList />
                     </WheelAwardsProvider>
-                </Container>
+                </Container> */}
 
             </>
 
