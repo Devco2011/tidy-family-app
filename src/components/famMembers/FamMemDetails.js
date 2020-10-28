@@ -1,11 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { FamMemberContext } from "./FamMemProvider"
-import { AllChoresList } from "../chores/AllChoresList"
-import { ChoreProvider } from "../chores/ChoreProvider"
-import { MainAwardsProvider } from "../awards/MainAwardsProvider"
-import { MainAwardsList } from "../awards/MainAwardsList"
-import { WheelAwardsProvider } from "../awards/WheelAwardsProvider"
-import { WheelAwardsList } from "../awards/WheelAwardsList"
+import { ChoreContext } from "../chores/ChoreProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
 import {
     Card, Button, CardHeader, CardFooter, CardBody,
@@ -14,6 +9,11 @@ import {
 
 export const FamMemberDetail = () => {
     const { getFamMemberById } = useContext(FamMemberContext)
+    const { chores, getChores } = useContext(ChoreContext)
+    let familyMemberChores = [];
+    let points = [];
+    const intitialValue = 0;
+
 
     const [famMember, setFamMember] = useState({})
     //const [location, setLocation] = useState({})
@@ -28,15 +28,46 @@ export const FamMemberDetail = () => {
             .then((response) => {
                 setFamMember(response)
             })
+
+        getChores()
+
+
     }, [])
+
+    // Filter all chores and get the ones that match the family member id, return a new array called familyMemberChores
+    const getFamMemberChores = (familyMemberId) => {
+
+        return familyMemberChores = chores.filter(chore => chore.familyMemberId === familyMemberId)
+
+    }
+
+
+    // Map over familyMemberChores and get the points value for each chore
+    const getFamMemberPoints = () => {
+
+        return points = familyMemberChores.map((familyMember) => familyMember.pointsValue)
+
+    }
+
+    // Add the points values of each chore together
+    const reducer = (accumulator, item) => {
+        return accumulator + item;
+
+    }
+    const totalPoints = () => points.reduce(reducer, intitialValue)
     if (famMember.admin === true) {
+
+        console.log(familyMemberChores)
+        getFamMemberChores(famMember.id)
+        getFamMemberPoints()
+        console.log(points)
         return (
             <>
                 <Container>
                     <Card>
                         <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
                         <CardBody>
-                            <CardTitle></CardTitle>
+                            <CardTitle>Current Points: {totalPoints()}</CardTitle>
                             <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
                             <Row><Button onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button></Row>
                         </CardBody>
@@ -55,36 +86,22 @@ export const FamMemberDetail = () => {
                     </Card>
                 </Container>
 
-                {/* <Container>
-                    <ChoreProvider>
-                        <AllChoresList />
-                    </ChoreProvider>
-                </Container>
-
-                <Container>
-                    <h2>Manage Main Awards</h2>
-                    <MainAwardsProvider>
-                        <MainAwardsList />
-                    </MainAwardsProvider>
-                </Container>
-
-                <Container>
-                    <h2>Manage Wheel Awards</h2>
-                    <WheelAwardsProvider>
-                        <WheelAwardsList />
-                    </WheelAwardsProvider>
-                </Container> */}
 
             </>
 
         )
     }
     else {
+
+        getFamMemberChores(famMember.id)
+        getFamMemberPoints()
+
+
         return (<Container>
             <Card>
                 <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
                 <CardBody>
-                    <CardTitle>Current Points: {famMember.points}</CardTitle>
+                    <CardTitle>Current Points: {totalPoints()}</CardTitle>
                     <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
                     <Row><Button onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button></Row>
                 </CardBody>

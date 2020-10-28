@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { FamMemberContext } from "../famMembers/FamMemProvider"
-import { useHistory } from "react-router-dom"
-import { Container } from 'reactstrap';
+import { useHistory, Link } from "react-router-dom"
+import { Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 
-export const FamMemberPointsList = () => {
+export const FamMemberList = () => {
     const { chores, getChores } = useContext(ChoreContext)
     const { famMembers, getFamMembers } = useContext(FamMemberContext)
     const history = useHistory()
@@ -44,6 +44,10 @@ export const FamMemberPointsList = () => {
     return (
         <>
             <Container>
+                <h4>Family Members</h4>
+                <button onClick={() => { history.push("/famMembers/create") }}>
+                    Add A Family Member
+        </button>
                 <div className="famMembers">
                     {/* Map over all family members and get those that match the family Id in local storage */}
                     {famMembers.map(famMember => {
@@ -53,7 +57,16 @@ export const FamMemberPointsList = () => {
                             console.log(familyMemberChores)
                             getFamMemberPoints()
                             console.log(points)
-                            return <h2 key={famMember.id}>{famMember.name} Current Points: {totalPoints()}</h2>
+                            return <Container key={famMember.id}>
+
+                                <ListGroup>
+                                    <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
+                                        {famMember.name}
+                                        <img src={famMember.profilePic.src} alt="Picture" />
+                                    </Link></ListGroupItem>
+                                    <ListGroupItem>Current Points: {totalPoints()}</ListGroupItem>
+                                </ListGroup>
+                            </Container>
                         }
                     })
                     }
