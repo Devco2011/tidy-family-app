@@ -42,7 +42,7 @@ export const Login = props => {
 
             <h2>Log in and get busy!</h2>
             <dialog className="dialog dialog--auth" ref={existDialog}>
-                <div>User does not exist</div>
+                <div>Not Found! Try again or register your family.</div>
                 <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
             </dialog>
 

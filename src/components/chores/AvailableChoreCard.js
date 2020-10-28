@@ -15,7 +15,7 @@ export const AvailableChoreCard = ({ chore }) => (
             <CardBody>
                 <CardTitle>Instructions</CardTitle>
                 <CardText>{chore.instructions}</CardText>
-                <Button onClick={event => {
+                <Button className="completedChore" onClick={event => {
                     event.preventDefault()
                 }}><Link to={`/chores/completedForm/${chore.id}`}>
                         I Completed This!</Link></Button>

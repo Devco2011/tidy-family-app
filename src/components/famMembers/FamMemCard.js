@@ -10,7 +10,7 @@ export const FamMemberCard = ({ famMember }) => (
         <ListGroup>
             <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
                 {famMember.name}
-                <Row>Current Points: {famMember.points}</Row>
+
                 <img src={famMember.profilePic.src} alt="Picture" />
             </Link></ListGroupItem>
         </ListGroup>
