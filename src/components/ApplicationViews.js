@@ -34,7 +34,7 @@ export const ApplicationViews = () => {
                 <ProfilePicProvider>
                     <Route exact path="/famMembers/firstMember">
                         <Home />
-                        <Col xs="6 pt-5"><AddFirstMember /></Col>
+                        <AddFirstMember />
                     </Route>
                 </ProfilePicProvider>
             </FamMemProvider>
