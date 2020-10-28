@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
+import { Container } from 'reactstrap'
 import "./Login.css"
 
 export const Register = (props) => {
@@ -50,6 +51,10 @@ export const Register = (props) => {
 
     return (
         <main style={{ textAlign: "center" }}>
+            <Container fluid>
+                <h1 className="display-3">Tidy Family</h1>
+                <p className="lead">Clean up, get stuff.</p>
+            </Container>
 
             <dialog className="dialog dialog--password" ref={conflictDialog}>
                 <div>Account with that email address already exists</div>
@@ -57,14 +62,14 @@ export const Register = (props) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Welcome to the Family!</h1>
-                <fieldset>
-                    <label htmlFor="inputEmail"> Email address </label>
-                    <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
-                </fieldset>
+                <h2 className="h3 mb-3 font-weight-normal">Welcome to the Family!</h2>
                 <fieldset>
                     <label htmlFor="famName"> Family Name </label>
                     <input ref={famName} type="text" name="famName" className="form-control" placeholder="Family name" required autoFocus />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="inputEmail"> Email address </label>
+                    <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
                 </fieldset>
 
                 <fieldset>
