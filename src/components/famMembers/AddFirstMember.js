@@ -19,34 +19,43 @@ export const AddFirstMember = () => {
     }, [])
 
     const constructFamMemberObject = () => {
+        if (famMemberName.current.value === "" || (sessionStorage.getItem("profilePic")) === null) {
+            window.alert("Please enter your name and select an avatar!")
+        } else {
 
-        addFamMember({
-            name: `${famMemberName.current.value}`,
-            familyId: parseInt(localStorage.getItem("family_id")),
-            points: 0,
-            admin: true,
-            profilePicId: parseInt(sessionStorage.getItem("profilePic"))
-        })
-            .then(() => history.push("/"))
+            addFamMember({
+                name: `${famMemberName.current.value}`,
+                familyId: parseInt(localStorage.getItem("family_id")),
+                points: 0,
+                admin: true,
+                profilePicId: parseInt(sessionStorage.getItem("profilePic"))
+            })
+                .then(() => history.push("/"))
+        }
     }
 
 
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main >
             <form className="famMemberForm">
-                <h2 className="famMemberForm__title">Add your first family member.</h2>
-                <h5>Because this is the first member of your family, this person will be given admin control.</h5>
+                <h2 style={{ textAlign: "center" }} className="famMemberForm__title">Add your first family member.</h2>
+                <p>Because you are the first member of your family, you will be given admin control so you can start adding family members and chores!</p>
+
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="famMemberName">Family member name: </label>
-                        <input type="text" id="famMemberName" name="name" required className="form-control"
+                        <label htmlFor="famMemberName">What does your family call you? </label>
+                        <input ref={famMemberName} type="text"
+                            id="famMemberName"
+                            name="name"
+                            className="form-control"
                             placeholder="Family member name"
-                            ref={famMemberName} />
+                            required autoFocus />
                     </div>
 
                 </fieldset>
                 <Container>
+                    <h5>Please select an avatar:</h5>
                     <CardGroup>
 
                         {
