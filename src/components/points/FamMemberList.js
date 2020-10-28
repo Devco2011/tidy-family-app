@@ -45,9 +45,7 @@ export const FamMemberList = () => {
         <>
             <Container>
                 <h4>Family Members</h4>
-                <button onClick={() => { history.push("/famMembers/create") }}>
-                    Add A Family Member
-        </button>
+
                 <div className="famMembers">
                     {/* Map over all family members and get those that match the family Id in local storage */}
                     {famMembers.map(famMember => {
@@ -71,7 +69,9 @@ export const FamMemberList = () => {
                     })
                     }
                 </div>
-
+                <button onClick={() => { history.push("/famMembers/create") }}>
+                    Add A Family Member
+        </button>
             </Container>
 
         </>
