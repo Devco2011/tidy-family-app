@@ -61,9 +61,9 @@ export const CompletedChoreModal = () => {
 
         <Container>
             <Card>
-                <CardHeader tag="h3">{chore.name}</CardHeader>
+                <CardHeader tag="h3">Just confirming... Did you {chore.name}?</CardHeader>
                 <CardBody>
-                    <CardTitle>Instructions</CardTitle>
+                    <CardTitle>Did you follow these instructions?</CardTitle>
                     <CardText>{chore.instructions}</CardText>
                     <Button className="completedChore"
                         disabled={isLoading}
@@ -73,6 +73,9 @@ export const CompletedChoreModal = () => {
 
                         }}>
                         Yeah, baby!</Button>
+                    <Button type="button" onClick={() => history.goBack()}>
+                        Nope!
+      </Button>
                 </CardBody>
                 <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
             </Card>
