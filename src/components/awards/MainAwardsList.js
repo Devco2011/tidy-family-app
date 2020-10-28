@@ -15,6 +15,7 @@ export const MainAwardsList = () => {
 
 
             <div className="mainAwards">
+                <h4>Main Awards</h4>
                 {mainAwards.map(mainAward => {
                     if (mainAward?.familyId === parseInt(localStorage.getItem("family_id")))
                         return <MainAwardCard key={mainAward.id} mainAward={mainAward} />

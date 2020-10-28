@@ -16,6 +16,12 @@ import { CompletedChoreModal } from "./chores/CompletedChoreModal";
 import { FamMemberList } from "./points/FamMemberList";
 import { PointsCounter } from "./points/PointsCounter";
 import { FamiliesProvider } from "./families/FamilyProvider"
+import { NavBar } from "./nav/NavBar";
+import { MyDashNavBar } from "./nav/MyDashNav";
+import { MainAwardsList } from "./awards/MainAwardsList";
+import { MainAwardsProvider } from "./awards/MainAwardsProvider";
+import { WheelAwardsProvider } from "./awards/WheelAwardsProvider";
+import { WheelAwardsList } from "./awards/WheelAwardsList";
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -54,6 +60,7 @@ export const ApplicationViews = () => {
                 <ChoreProvider>
                     <Route exact path="/famMembers/detail/:famMemberId(\d+)">
                         <Home />
+                        <NavBar />
                         <Col xs="6 pt-5"><FamMemberDetail /></Col>
                     </Route>
                 </ChoreProvider>
@@ -73,8 +80,9 @@ export const ApplicationViews = () => {
             </FamMemProvider>
 
             <ChoreProvider>
-                <Route exact path="/chores/available">
+                <Route exact path="/chores/available/">
                     <Home />
+                    <MyDashNavBar />
                     <AvailableChoreList />
                 </Route>
             </ChoreProvider>
@@ -82,6 +90,7 @@ export const ApplicationViews = () => {
             <ChoreProvider>
                 <Route exact path="/chores/completed">
                     <Home />
+                    <MyDashNavBar />
                     <CompletedChoreList />
                 </Route>
             </ChoreProvider>
@@ -114,9 +123,21 @@ export const ApplicationViews = () => {
             <ChoreProvider>
                 <Route exact path="/chores/allChores">
                     <Home />
+                    <MyDashNavBar />
                     <AllChoresList />
                 </Route>
             </ChoreProvider>
+
+            <MainAwardsProvider>
+                <WheelAwardsProvider>
+                    <Route exact path="/awards/allAwards">
+                        <Home />
+                        <MyDashNavBar />
+                        <MainAwardsList />
+                        <WheelAwardsList />
+                    </Route>
+                </WheelAwardsProvider>
+            </MainAwardsProvider>
 
 
         </>
