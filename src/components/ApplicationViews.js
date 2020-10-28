@@ -2,7 +2,6 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
 import { FamMemProvider } from "./famMembers/FamMemProvider.js"
-import { FamMembersList } from "./famMembers/FamMemList.js";
 import { FamMemberForm } from "./famMembers/FamMemForm.js";
 import { FamMemberDetail } from "./famMembers/FamMemDetails.js";
 import { ChooseFamMemberList } from "./famMembers/ChooseFamMemberList";
@@ -14,7 +13,7 @@ import { AvailableChoreList } from "./chores/AvailableChoreList";
 import { AllChoresList } from "./chores/AllChoresList";
 import { CompletedChoreList } from "./chores/CompletedChoreList";
 import { CompletedChoreModal } from "./chores/CompletedChoreModal";
-import { FamMemberPointsList } from "./points/FamMemberPointsList";
+import { FamMemberList } from "./points/FamMemberList";
 import { PointsCounter } from "./points/PointsCounter";
 import { FamiliesProvider } from "./families/FamilyProvider"
 
@@ -42,12 +41,14 @@ export const ApplicationViews = () => {
             </FamMemProvider>
 
 
-            <FamMemProvider>
-                <Route exact path="/">
-                    <Home />
-                    <Col xs="6 pt-5"><FamMembersList /></Col>
-                </Route>
-            </FamMemProvider>
+            <ChoreProvider>
+                <FamMemProvider>
+                    <Route exact path="/">
+                        <Home />
+                        <Col xs="6 pt-5"><FamMemberList /></Col>
+                    </Route>
+                </FamMemProvider>
+            </ChoreProvider>
 
             <FamMemProvider>
                 <ChoreProvider>
@@ -96,7 +97,7 @@ export const ApplicationViews = () => {
                 <FamMemProvider>
                     <Route exact path="/chores/points">
                         <Home />
-                        <FamMemberPointsList />
+                        <FamMemberList />
                     </Route>
                 </FamMemProvider>
             </ChoreProvider>

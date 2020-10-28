@@ -4,7 +4,7 @@ import { FamMemberContext } from "../famMembers/FamMemProvider"
 import { useHistory, Link } from "react-router-dom"
 import { Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 
-export const FamMemberPointsList = () => {
+export const FamMemberList = () => {
     const { chores, getChores } = useContext(ChoreContext)
     const { famMembers, getFamMembers } = useContext(FamMemberContext)
     const history = useHistory()
@@ -44,6 +44,10 @@ export const FamMemberPointsList = () => {
     return (
         <>
             <Container>
+                <h4>Family Members</h4>
+                <button onClick={() => { history.push("/famMembers/create") }}>
+                    Add A Family Member
+        </button>
                 <div className="famMembers">
                     {/* Map over all family members and get those that match the family Id in local storage */}
                     {famMembers.map(famMember => {
