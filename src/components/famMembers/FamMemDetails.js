@@ -16,7 +16,7 @@ export const FamMemberDetail = () => {
 
 
     const [famMember, setFamMember] = useState({})
-    //const [location, setLocation] = useState({})
+
 
 
     const { famMemberId } = useParams();

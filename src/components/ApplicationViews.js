@@ -18,10 +18,13 @@ import { PointsCounter } from "./points/PointsCounter";
 import { FamiliesProvider } from "./families/FamilyProvider"
 import { NavBar } from "./nav/NavBar";
 import { MyDashNavBar } from "./nav/MyDashNav";
-import { MainAwardsList } from "./awards/MainAwardsList";
-import { MainAwardsProvider } from "./awards/MainAwardsProvider";
-import { WheelAwardsProvider } from "./awards/WheelAwardsProvider";
-import { WheelAwardsList } from "./awards/WheelAwardsList";
+import { MainAwardsList } from "./mainAwards/MainAwardsList";
+import { MainAwardsProvider } from "./mainAwards/MainAwardsProvider";
+import { WheelAwardsProvider } from "./wheelAwards/WheelAwardsProvider";
+import { WheelAwardsList } from "./wheelAwards/WheelAwardsList";
+import { MainAwardsForm } from "./mainAwards/MainAwardsForm"
+import { MainAwardsDetail } from "./mainAwards/MainAwardsDetail"
+import { WheelAwardsDetail } from "./wheelAwards/WheelAwardsDetail";
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -46,15 +49,16 @@ export const ApplicationViews = () => {
                 </Route>
             </FamMemProvider>
 
-
-            <ChoreProvider>
-                <FamMemProvider>
-                    <Route exact path="/">
-                        <Home />
-                        <Col xs="6 pt-5"><FamMemberList /></Col>
-                    </Route>
-                </FamMemProvider>
-            </ChoreProvider>
+            <Container>
+                <ChoreProvider>
+                    <FamMemProvider>
+                        <Route exact path="/">
+                            <Home />
+                            <Col xs="6 pt-5"><FamMemberList /></Col>
+                        </Route>
+                    </FamMemProvider>
+                </ChoreProvider>
+            </Container>
 
             <FamMemProvider>
                 <ChoreProvider>
@@ -130,16 +134,72 @@ export const ApplicationViews = () => {
                 </Route>
             </ChoreProvider>
 
+
             <MainAwardsProvider>
                 <WheelAwardsProvider>
                     <Route exact path="/awards/allAwards">
                         <Home />
+
                         <MyDashNavBar />
-                        <MainAwardsList />
-                        <WheelAwardsList />
+                        <Container>
+                            <Row>
+                                <Col><MainAwardsList /></Col>
+                                <Col><WheelAwardsList /></Col>
+                            </Row>
+                        </Container>
                     </Route>
                 </WheelAwardsProvider>
             </MainAwardsProvider>
+
+            <MainAwardsProvider>
+                <Route exact path="/mainAwards/detail/:mainAwardsId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><MainAwardsDetail /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </MainAwardsProvider>
+
+            <MainAwardsProvider>
+                <Route exact path="/mainAwards/edit/:mainAwardsId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><MainAwardsForm /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </MainAwardsProvider>
+
+            <WheelAwardsProvider>
+                <Route exact path="/wheelAwards/detail/:wheelAwardsId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><WheelAwardsDetail /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </WheelAwardsProvider>
+
+            <MainAwardsProvider>
+                <Route exact path="/mainAwards/create">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><MainAwardsForm /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </MainAwardsProvider>
+
+
 
 
         </>
