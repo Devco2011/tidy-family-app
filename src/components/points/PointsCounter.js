@@ -2,9 +2,11 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { useHistory } from "react-router-dom"
 import { Container } from 'reactstrap';
+import { FamiliesContext } from "../families/FamilyProvider";
 
 export const PointsCounter = () => {
     const { chores, getChores } = useContext(ChoreContext)
+    const { families, getFamilies } = useContext(FamiliesContext)
     const history = useHistory()
     let familyChores = [];
     let points = [];
@@ -12,6 +14,7 @@ export const PointsCounter = () => {
 
     useEffect(() => {
         getChores()
+        getFamilies()
     }, [])
 
 
@@ -21,6 +24,7 @@ export const PointsCounter = () => {
 
     const getFamChores = (familyId) => {
         let newFamilyChores = chores.filter(chore => chore.familyId === familyId && chore.completed === true)
+        console.log(newFamilyChores)
         return familyChores.push(...newFamilyChores)
 
     }
@@ -47,10 +51,11 @@ export const PointsCounter = () => {
             <Container>
                 <div className="chores">
                     {/* Using forEach here because it does not require a return like map does.  Gettiing chores that match the family Id in local storage */}
-                    {chores.forEach(chore => {
+                    {families.forEach(family => {
 
-                        if (chore.familyId === parseInt(localStorage.getItem("family_id"))) {
-                            getFamChores(chore.id)
+                        if (family.id === parseInt(localStorage.getItem("family_id"))) {
+                            getFamChores(family.id)
+
                             getFamPoints()
 
                         }

@@ -39,6 +39,10 @@ export const Login = props => {
 
 
         <main className="container--login">
+            <Container fluid>
+                <h1 className="display-3">Tidy Family</h1>
+                <p className="lead">Clean up, get stuff.</p>
+            </Container>
 
             <h2>Log in and get busy!</h2>
             <dialog className="dialog dialog--auth" ref={existDialog}>

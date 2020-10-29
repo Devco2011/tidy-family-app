@@ -29,6 +29,7 @@ import { WheelAwardsForm } from "./wheelAwards/WheelAwardsForm";
 import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
 
+
 import { Container, Row, Col } from "reactstrap"
 
 export const ApplicationViews = () => {
@@ -54,10 +55,17 @@ export const ApplicationViews = () => {
             <Container>
                 <ChoreProvider>
                     <FamMemProvider>
-                        <Route exact path="/">
-                            <Home />
-                            <Col xs="6 pt-5"><FamMemberList /></Col>
-                        </Route>
+                        <FamiliesProvider>
+                            <Route exact path="/">
+                                <Home />
+                                <Container>
+                                    <Row>
+                                        <Col xs="6 pt-5"><FamMemberList /></Col>
+                                        <Col xs="6 pt-5"><PointsCounter /></Col>
+                                    </Row>
+                                </Container>
+                            </Route>
+                        </FamiliesProvider>
                     </FamMemProvider>
                 </ChoreProvider>
             </Container>
@@ -139,8 +147,6 @@ export const ApplicationViews = () => {
                     </Container>
                 </Route>
             </ChoreProvider>
-
-
 
             <MainAwardsProvider>
                 <WheelAwardsProvider>
@@ -251,6 +257,12 @@ export const ApplicationViews = () => {
                             <Col><ChoreForm /></Col>
                         </Row>
                     </Container>
+                </Route>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/familyPoints/">
+                    <PointsCounter />
                 </Route>
             </ChoreProvider>
 
