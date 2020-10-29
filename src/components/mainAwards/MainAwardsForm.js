@@ -55,7 +55,7 @@ export const MainAwardsForm = (props) => {
                     id: mainAward.id,
                     name: mainAward.name,
                     description: mainAward.description,
-                    pointsValue: mainAward.pointsValue,
+                    pointsValue: parseInt(mainAward.pointsValue),
                     familyId: parseInt(localStorage.getItem("family_id"))
                 })
                     .then(() => history.push(`/mainAwards/detail/${mainAward.id}`))
@@ -63,7 +63,7 @@ export const MainAwardsForm = (props) => {
                 //POST - add
                 addMainAwards({
                     name: mainAward.name,
-                    pointsValue: mainAward.pointsValue,
+                    pointsValue: parseInt(mainAward.pointsValue),
                     description: mainAward.description,
                     familyId: parseInt(localStorage.getItem("family_id"))
                 })

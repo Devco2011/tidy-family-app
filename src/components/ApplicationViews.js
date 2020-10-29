@@ -187,6 +187,19 @@ export const ApplicationViews = () => {
                 </Route>
             </WheelAwardsProvider>
 
+            <MainAwardsProvider>
+                <Route exact path="/mainAwards/create">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><MainAwardsForm /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </MainAwardsProvider>
+
+
 
 
         </>
