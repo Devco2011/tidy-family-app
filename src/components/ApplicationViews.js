@@ -22,6 +22,7 @@ import { MainAwardsList } from "./awards/MainAwardsList";
 import { MainAwardsProvider } from "./awards/MainAwardsProvider";
 import { WheelAwardsProvider } from "./awards/WheelAwardsProvider";
 import { WheelAwardsList } from "./awards/WheelAwardsList";
+import { MainAwardsForm } from "./awards/MainAwardsForm"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -46,15 +47,16 @@ export const ApplicationViews = () => {
                 </Route>
             </FamMemProvider>
 
-
-            <ChoreProvider>
-                <FamMemProvider>
-                    <Route exact path="/">
-                        <Home />
-                        <Col xs="6 pt-5"><FamMemberList /></Col>
-                    </Route>
-                </FamMemProvider>
-            </ChoreProvider>
+            <Container>
+                <ChoreProvider>
+                    <FamMemProvider>
+                        <Route exact path="/">
+                            <Home />
+                            <Col xs="6 pt-5"><FamMemberList /></Col>
+                        </Route>
+                    </FamMemProvider>
+                </ChoreProvider>
+            </Container>
 
             <FamMemProvider>
                 <ChoreProvider>
@@ -130,16 +132,35 @@ export const ApplicationViews = () => {
                 </Route>
             </ChoreProvider>
 
+
             <MainAwardsProvider>
                 <WheelAwardsProvider>
                     <Route exact path="/awards/allAwards">
                         <Home />
+
                         <MyDashNavBar />
-                        <MainAwardsList />
-                        <WheelAwardsList />
+                        <Container>
+                            <Row>
+                                <Col><MainAwardsList /></Col>
+                                <Col><WheelAwardsList /></Col>
+                            </Row>
+                        </Container>
                     </Route>
                 </WheelAwardsProvider>
             </MainAwardsProvider>
+
+            <MainAwardsProvider>
+                <Route exact path="/mainAwards/edit/:mainAwards(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><MainAwardsForm /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </MainAwardsProvider>
+
 
 
         </>

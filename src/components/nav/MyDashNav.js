@@ -13,7 +13,7 @@ export const MyDashNavBar = (props) => {
       </Button>
 
             <Button type="button" onClick={() => history.goBack()}>
-                My Dashboard
+                Go Back
       </Button>
         </div>
 

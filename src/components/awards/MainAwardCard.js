@@ -15,7 +15,7 @@ export const MainAwardCard = ({ mainAward }) => (
                 <CardText>{mainAward.description}</CardText>
                 <Button onClick={event => {
                     event.preventDefault()
-                }}><Link to={`/chores/completedForm/${mainAward.id}`}>
+                }}><Link to={`/mainAwards/edit/${mainAward.id}`}>
                         Edit</Link></Button>
             </CardBody>
             <CardFooter className="text-muted">Points Value: {mainAward.pointsValue}</CardFooter>

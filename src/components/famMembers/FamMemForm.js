@@ -107,7 +107,7 @@ export const FamMemberForm = (props) => {
 
             <UncontrolledDropdown>
                 <DropdownToggle caret>
-                    Dropdown
+                    Admin?
       </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem header>Make Admin?</DropdownItem>
