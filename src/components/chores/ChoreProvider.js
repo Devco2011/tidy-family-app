@@ -36,9 +36,16 @@ export const ChoreProvider = (props) => {
             .then(getChores)
     }
 
+    const deleteChore = choreId => {
+        return fetch(`http://localhost:8088/chores/${choreId}`, {
+            method: "DELETE"
+        })
+            .then(getChores)
+    }
+
     return (
         <ChoreContext.Provider value={{
-            chores, getChores, addChore, getChoreById, updateChore
+            chores, getChores, addChore, getChoreById, updateChore, deleteChore
         }}>
             {props.children}
         </ChoreContext.Provider>

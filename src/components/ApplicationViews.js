@@ -26,6 +26,8 @@ import { MainAwardsForm } from "./mainAwards/MainAwardsForm"
 import { MainAwardsDetail } from "./mainAwards/MainAwardsDetail"
 import { WheelAwardsDetail } from "./wheelAwards/WheelAwardsDetail";
 import { WheelAwardsForm } from "./wheelAwards/WheelAwardsForm";
+import { ChoreDetail } from "./chores/ChoreDetail";
+import { ChoreForm } from "./chores/ChoreForm";
 
 import { Container, Row, Col } from "reactstrap"
 
@@ -130,9 +132,14 @@ export const ApplicationViews = () => {
                 <Route exact path="/chores/allChores">
                     <Home />
                     <MyDashNavBar />
-                    <AllChoresList />
+                    <Container>
+                        <Row>
+                            <Col><AllChoresList /></Col>
+                        </Row>
+                    </Container>
                 </Route>
             </ChoreProvider>
+
 
 
             <MainAwardsProvider>
@@ -140,6 +147,7 @@ export const ApplicationViews = () => {
                     <Route exact path="/awards/allAwards">
                         <Home />
                         <MyDashNavBar />
+                        <h3>Manage All Awards</h3>
                         <Container>
                             <Row>
                                 <Col><MainAwardsList /></Col>
@@ -209,6 +217,42 @@ export const ApplicationViews = () => {
                     </Container>
                 </Route>
             </MainAwardsProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/detail/:choreId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><ChoreDetail /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/edit/:choreId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><ChoreForm /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/create/">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><ChoreForm /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </ChoreProvider>
 
 
 
