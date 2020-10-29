@@ -67,10 +67,12 @@ export const ApplicationViews = () => {
             </FamMemProvider>
 
             <FamMemProvider>
-                <Route exact path="/famMembers/create">
-                    <Home />
-                    <FamMemberForm />
-                </Route>
+                <ProfilePicProvider>
+                    <Route exact path="/famMembers/create">
+                        <Home />
+                        <FamMemberForm />
+                    </Route>
+                </ProfilePicProvider>
             </FamMemProvider>
 
             <FamMemProvider>
