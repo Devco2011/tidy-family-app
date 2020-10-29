@@ -27,6 +27,7 @@ import { MainAwardsDetail } from "./mainAwards/MainAwardsDetail"
 import { WheelAwardsDetail } from "./wheelAwards/WheelAwardsDetail";
 import { WheelAwardsForm } from "./wheelAwards/WheelAwardsForm";
 import { ChoreDetail } from "./chores/ChoreDetail";
+import { ChoreForm } from "./chores/ChoreForm";
 
 import { Container, Row, Col } from "reactstrap"
 
@@ -224,6 +225,30 @@ export const ApplicationViews = () => {
                     <Container>
                         <Row>
                             <Col><ChoreDetail /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/edit/:choreId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><ChoreForm /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/create/">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><ChoreForm /></Col>
                         </Row>
                     </Container>
                 </Route>
