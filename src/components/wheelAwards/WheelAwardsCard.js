@@ -15,7 +15,7 @@ export const WheelAwardCard = ({ wheelAward }) => (
                 <CardText>{wheelAward.description}</CardText>
                 <Button onClick={event => {
                     event.preventDefault()
-                }}><Link to={`/chores/completedForm/${wheelAward.id}`}>
+                }}><Link to={`/wheelAwards/detail/${wheelAward.id}`}>
                         Edit</Link></Button>
             </CardBody>
 

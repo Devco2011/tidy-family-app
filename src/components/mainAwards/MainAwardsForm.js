@@ -12,7 +12,7 @@ export const MainAwardsForm = (props) => {
     //wait for data before button is active
     const [isLoading, setIsLoading] = useState(true);
 
-    const { mainAwardId } = useParams();
+    const { mainAwardsId } = useParams();
 
     const history = useHistory();
 
@@ -31,8 +31,8 @@ export const MainAwardsForm = (props) => {
 
     // If mainAwardId is in the URL, getMainAwardById
     useEffect(() => {
-        if (mainAwardId) {
-            getMainAwardById(mainAwardId)
+        if (mainAwardsId) {
+            getMainAwardById(mainAwardsId)
                 .then(mainAward => {
                     setMainAwards(mainAward)
                     setIsLoading(false)
@@ -49,7 +49,7 @@ export const MainAwardsForm = (props) => {
         } else {
             //disable the button - no extra clicks
             setIsLoading(true);
-            if (mainAwardId) {
+            if (mainAwardsId) {
                 //PUT - update
                 updateMainAward({
                     id: mainAward.id,
@@ -74,7 +74,7 @@ export const MainAwardsForm = (props) => {
 
     return (
         <form className="mainAwardsForm">
-            <h2 className="mainAwardsForm__title">New Main Award</h2>
+            <h2 className="mainAwardsForm__title">{mainAwardsId ? `Edit ${mainAward.name}` : "New Main Award"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="mainAwardName">Award name: </label>
@@ -110,7 +110,7 @@ export const MainAwardsForm = (props) => {
                     event.preventDefault() // Prevent browser from submitting the form
                     constructMainAwardObject()
                 }}>
-                {mainAwardId ? <>Save Award</> : <>Add Award</>}</button>
+                {mainAwardsId ? <>Save Award</> : <>Add Award</>}</button>
         </form>
     )
 }

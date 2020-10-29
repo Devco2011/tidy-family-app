@@ -12,13 +12,13 @@ export const MainAwardsDetail = () => {
     const [mainAward, setMainAward] = useState({})
 
 
-
-    const { mainAwardId } = useParams();
+    // mainAwardsId comes from the route in application views
+    const { mainAwardsId } = useParams();
     const history = useHistory();
 
     useEffect(() => {
-        console.log("useEffect", mainAwardId)
-        getMainAwardById(mainAwardId)
+        console.log("useEffect", mainAwardsId)
+        getMainAwardById(mainAwardsId)
             .then((response) => {
                 setMainAward(response)
             })
