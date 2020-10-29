@@ -13,12 +13,11 @@ export const WheelAwardsDetail = () => {
 
 
 
-    const { wheelAwardId } = useParams();
+    const { wheelAwardsId } = useParams();
     const history = useHistory();
 
     useEffect(() => {
-        console.log("useEffect", wheelAwardId)
-        getWheelAwardById(wheelAwardId)
+        getWheelAwardById(wheelAwardsId)
             .then((response) => {
                 setWheelAward(response)
             })
@@ -37,7 +36,7 @@ export const WheelAwardsDetail = () => {
                     }}><Link to={`/wheelAwards/edit/${wheelAward.id}`}>
                             Edit</Link></Button>
                 </CardBody>
-                <CardFooter className="text-muted">Points Value: {wheelAward.pointsValue}</CardFooter>
+                <CardFooter className="text-muted"></CardFooter>
             </Card>
         </Container>
 

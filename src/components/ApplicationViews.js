@@ -25,7 +25,7 @@ import { WheelAwardsList } from "./wheelAwards/WheelAwardsList";
 import { MainAwardsForm } from "./mainAwards/MainAwardsForm"
 import { MainAwardsDetail } from "./mainAwards/MainAwardsDetail"
 import { WheelAwardsDetail } from "./wheelAwards/WheelAwardsDetail";
-
+import { WheelAwardsForm } from "./wheelAwards/WheelAwardsForm";
 
 import { Container, Row, Col } from "reactstrap"
 
@@ -139,7 +139,6 @@ export const ApplicationViews = () => {
                 <WheelAwardsProvider>
                     <Route exact path="/awards/allAwards">
                         <Home />
-
                         <MyDashNavBar />
                         <Container>
                             <Row>
@@ -182,6 +181,18 @@ export const ApplicationViews = () => {
                     <Container>
                         <Row>
                             <Col><WheelAwardsDetail /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </WheelAwardsProvider>
+
+            <WheelAwardsProvider>
+                <Route exact path="/wheelAwards/edit/:wheelAwardsId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><WheelAwardsForm /></Col>
                         </Row>
                     </Container>
                 </Route>
