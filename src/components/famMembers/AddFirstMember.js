@@ -26,7 +26,6 @@ export const AddFirstMember = () => {
             addFamMember({
                 name: `${famMemberName.current.value}`,
                 familyId: parseInt(localStorage.getItem("family_id")),
-                points: 0,
                 admin: true,
                 profilePicId: parseInt(sessionStorage.getItem("profilePic"))
             })

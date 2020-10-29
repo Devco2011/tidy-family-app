@@ -1,10 +1,15 @@
-import React, { useContext, useState, useEffect } from "react"
-import { FamMemberContext } from "./FamMemProvider"
+import React, { useContext, useState, useEffect, useRef } from "react"
+import { FamMemberContext } from "./FamMemProvider";
+import { ProfilePicContext } from "../profilePics/ProfilePicProvider";
+import { ProfilePicCard } from "../profilePics/ProfilePicCard";
 import { useHistory, useParams } from 'react-router-dom';
+import { Container, CardGroup, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-export const FamMemberForm = () => {
+export const FamMemberForm = (props) => {
     const { addFamMember, getFamMemberById, updateFamMember } = useContext(FamMemberContext)
-
+    const famMemberName = useRef()
+    const admin = useRef()
+    const { profilePics, getProfilePics } = useContext(ProfilePicContext)
 
     //for edit, hold on to state of fam member in this view
     const [famMember, setFamMembers] = useState({})
@@ -37,14 +42,15 @@ export const FamMemberForm = () => {
                     setIsLoading(false)
                 })
         } else {
+            getProfilePics()
             setIsLoading(false)
         }
 
     }, [])
 
     const constructFamMemberObject = () => {
-        if (parseInt(famMember.profilePicId) === 0) {
-            window.alert("Please select a profile picture!")
+        if (famMemberName.current.value === "" || (sessionStorage.getItem("profilePic")) === null) {
+            window.alert("Please enter your name and select an avatar!")
         } else {
             //disable the button - no extra clicks
             setIsLoading(true);
@@ -59,8 +65,10 @@ export const FamMemberForm = () => {
             } else {
                 //POST - add
                 addFamMember({
-                    name: famMember.name,
-                    profilePicId: parseInt(famMember.profilePicId)
+                    name: `${famMemberName.current.value}`,
+                    familyId: parseInt(localStorage.getItem("family_id")),
+                    admin: famMember.admin,
+                    profilePicId: parseInt(sessionStorage.getItem("profilePic"))
                 })
                     .then(() => history.push("/"))
             }
@@ -72,13 +80,50 @@ export const FamMemberForm = () => {
             <h2 className="famMemberForm__title">Add a Family Member</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="famMemberName">Family member name: </label>
-                    <input type="text" id="famMemberName" name="name" required autoFocus className="form-control"
+                    <label htmlFor="famMemberName">What does your family call you? </label>
+                    <input ref={famMemberName} type="text"
+                        id="famMemberName"
+                        name="name"
+                        className="form-control"
                         placeholder="Family member name"
+                        required autoFocus
                         onChange={handleControlledInputChange}
                         defaultValue={famMember.name} />
                 </div>
+
             </fieldset>
+            <Container>
+                <h5>Please select an avatar:</h5>
+                <CardGroup>
+
+                    {
+                        profilePics?.map(profilePic => {
+                            return <ProfilePicCard key={profilePic.id} src={profilePic.src} profilePic={profilePic} />
+
+                        })
+                    }
+                </CardGroup>
+            </Container>
+
+            <UncontrolledDropdown>
+                <DropdownToggle caret>
+                    Dropdown
+      </DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem header>Make Admin?</DropdownItem>
+
+                    <DropdownItem onClick={event => {
+                        event.preventDefault()
+                        famMember.admin = true
+                    }}>Yes</DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem onClick={event => {
+                        event.preventDefault()
+                        famMember.admin = false
+                    }}>No</DropdownItem>
+                </DropdownMenu>
+            </UncontrolledDropdown>
+
 
             <button className="btn btn-primary"
                 disabled={isLoading}
