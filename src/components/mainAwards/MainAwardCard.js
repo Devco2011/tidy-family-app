@@ -11,12 +11,10 @@ export const MainAwardCard = ({ mainAward }) => (
         <Card>
             <CardHeader tag="h3">{mainAward.name}</CardHeader>
             <CardBody>
-                <CardTitle>Description:</CardTitle>
-                <CardText>{mainAward.description}</CardText>
                 <Button onClick={event => {
                     event.preventDefault()
-                }}><Link to={`/mainAwards/edit/${mainAward.id}`}>
-                        Edit</Link></Button>
+                }}><Link to={`/mainAwards/detail/${mainAward.id}`}>
+                        Get the Deets</Link></Button>
             </CardBody>
             <CardFooter className="text-muted">Points Value: {mainAward.pointsValue}</CardFooter>
         </Card>

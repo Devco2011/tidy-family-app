@@ -18,11 +18,12 @@ import { PointsCounter } from "./points/PointsCounter";
 import { FamiliesProvider } from "./families/FamilyProvider"
 import { NavBar } from "./nav/NavBar";
 import { MyDashNavBar } from "./nav/MyDashNav";
-import { MainAwardsList } from "./awards/MainAwardsList";
-import { MainAwardsProvider } from "./awards/MainAwardsProvider";
-import { WheelAwardsProvider } from "./awards/WheelAwardsProvider";
-import { WheelAwardsList } from "./awards/WheelAwardsList";
-import { MainAwardsForm } from "./awards/MainAwardsForm"
+import { MainAwardsList } from "./mainAwards/MainAwardsList";
+import { MainAwardsProvider } from "./mainAwards/MainAwardsProvider";
+import { WheelAwardsProvider } from "./wheelAwards/WheelAwardsProvider";
+import { WheelAwardsList } from "./wheelAwards/WheelAwardsList";
+import { MainAwardsForm } from "./mainAwards/MainAwardsForm"
+import { MainAwardsDetail } from "./mainAwards/MainAwardsDetail"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -150,7 +151,19 @@ export const ApplicationViews = () => {
             </MainAwardsProvider>
 
             <MainAwardsProvider>
-                <Route exact path="/mainAwards/edit/:mainAwards(\d+)">
+                <Route exact path="/mainAwards/detail/:mainAwardsId(\d+)">
+                    <Home />
+                    <MyDashNavBar />
+                    <Container>
+                        <Row>
+                            <Col><MainAwardsDetail /></Col>
+                        </Row>
+                    </Container>
+                </Route>
+            </MainAwardsProvider>
+
+            <MainAwardsProvider>
+                <Route exact path="/mainAwards/edit/:mainAwardsId(\d+)">
                     <Home />
                     <MyDashNavBar />
                     <Container>

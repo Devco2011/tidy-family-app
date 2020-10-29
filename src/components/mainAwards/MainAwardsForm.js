@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
-import { MainAwardContext } from "../awards/MainAwardsProvider"
+import { MainAwardContext } from "./MainAwardsProvider"
 import { useHistory, useParams } from 'react-router-dom';
 
 export const MainAwardsForm = (props) => {
