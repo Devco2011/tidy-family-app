@@ -15,7 +15,7 @@ export const AllChoresList = () => {
         <>
             <h2>Manage All Chores</h2>
 
-            <Button>
+            <Button onClick={() => history.push("/chores/create")}>
                 Add a Chore</Button>
 
             <div className="chores">

@@ -11,16 +11,10 @@ export const ChoreCard = ({ chore }) => (
         <Card>
             <CardHeader tag="h3">{chore.name}</CardHeader>
             <CardBody>
-                <CardTitle>Instructions</CardTitle>
-                <CardText>{chore.instructions}</CardText>
                 <Button onClick={event => {
                     event.preventDefault()
-                }}><Link to={`/chores/completedForm/${chore.id}`}>
-                        Edit</Link></Button>
-                <Button onClick={event => {
-                    event.preventDefault()
-                }}><Link to={`/chores/completedForm/${chore.id}`}>
-                        Delete</Link></Button>
+                }}><Link to={`/chores/detail/${chore.id}`}>
+                        Chore Details</Link></Button>
             </CardBody>
             <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
         </Card>
