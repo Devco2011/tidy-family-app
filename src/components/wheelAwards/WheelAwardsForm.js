@@ -55,7 +55,8 @@ export const WheelAwardsForm = (props) => {
                     id: wheelAward.id,
                     name: wheelAward.name,
                     description: wheelAward.description,
-                    familyId: parseInt(localStorage.getItem("family_id"))
+                    familyId: parseInt(localStorage.getItem("family_id")),
+                    pointsReq: parseInt(wheelAward.pointsReq)
                 })
                     .then(() => history.push("/awards/allAwards"))
             } else {
@@ -63,7 +64,8 @@ export const WheelAwardsForm = (props) => {
                 addWheelAwards({
                     name: wheelAward.name,
                     description: wheelAward.description,
-                    familyId: parseInt(localStorage.getItem("family_id"))
+                    familyId: parseInt(localStorage.getItem("family_id")),
+                    pointsReq: parseInt(wheelAward.pointsReq)
                 })
                     .then(() => history.push("/awards/allAwards"))
             }
@@ -72,7 +74,7 @@ export const WheelAwardsForm = (props) => {
 
     return (
         <form className="wheelAwardsForm">
-            <h2 className="wheelAwardsForm__title">{wheelAwardsId ? `Edit ${wheelAward.name}` : "New Wheel Award"}</h2>
+            <h2 className="wheelAwardsForm__title">{wheelAwardsId ? `Edit: ${wheelAward.name}` : "New Wheel Award"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="wheelAwardName">Award name: </label>
@@ -89,6 +91,15 @@ export const WheelAwardsForm = (props) => {
                         placeholder="Description"
                         onChange={handleControlledInputChange}
                         defaultValue={wheelAward.description} />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="wheelAwardPointsReq">Points Required: </label>
+                    <input type="text" id="wheelAwardPointsReq" name="pointsReq" required autoFocus className="form-control"
+                        placeholder="Points Required"
+                        onChange={handleControlledInputChange}
+                        defaultValue={wheelAward.pointsReq} />
                 </div>
             </fieldset>
 
