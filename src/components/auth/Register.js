@@ -33,14 +33,30 @@ export const Register = (props) => {
 
                         })
                     })
+
+
+
                         .then(_ => _.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
+                                fetch("http://localhost:8088/wheelAwards", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify({
+                                        email: email.current.value,
+                                        famName: `${famName.current.value}`,
+
+                                    })
+                                })
                                 localStorage.setItem("family_name", createdUser.famName)
                                 localStorage.setItem("family_id", createdUser.id)
                                 history.push("/famMembers/firstMember")
+
                             }
                         })
+
                 }
                 else {
                     conflictDialog.current.showModal()

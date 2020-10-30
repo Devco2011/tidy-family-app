@@ -28,6 +28,8 @@ import { WheelAwardsDetail } from "./wheelAwards/WheelAwardsDetail";
 import { WheelAwardsForm } from "./wheelAwards/WheelAwardsForm";
 import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
+import { SelectedMainList } from "./mainAwards/SelectedMainList";
+import { IndiWheelList } from "./wheelAwards/IndiWheelList";
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -56,15 +58,19 @@ export const ApplicationViews = () => {
                 <ChoreProvider>
                     <FamMemProvider>
                         <FamiliesProvider>
-                            <Route exact path="/">
-                                <Home />
-                                <Container>
-                                    <Row>
-                                        <Col xs="6 pt-5"><FamMemberList /></Col>
-                                        <Col xs="6 pt-5"><PointsCounter /></Col>
-                                    </Row>
-                                </Container>
-                            </Route>
+                            <MainAwardsProvider>
+                                <Route exact path="/">
+                                    <Home />
+                                    <Container>
+                                        <Row>
+                                            <Col xs="6 pt-5"><FamMemberList /></Col>
+                                            <Col xs="6 pt-5"><SelectedMainList />
+                                                <PointsCounter />
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </Route>
+                            </MainAwardsProvider>
                         </FamiliesProvider>
                     </FamMemProvider>
                 </ChoreProvider>
@@ -72,11 +78,18 @@ export const ApplicationViews = () => {
 
             <FamMemProvider>
                 <ChoreProvider>
-                    <Route exact path="/famMembers/detail/:famMemberId(\d+)">
-                        <Home />
-                        <NavBar />
-                        <Col xs="6 pt-5"><FamMemberDetail /></Col>
-                    </Route>
+                    <WheelAwardsProvider>
+                        <Route exact path="/famMembers/detail/:famMemberId(\d+)">
+                            <Home />
+                            <NavBar />
+                            <Container>
+                                <Row>
+                                    <Col xs="6 pt-5"><FamMemberDetail /></Col>
+                                    <Col xs="6 pt-5"><IndiWheelList /></Col>
+                                </Row>
+                            </Container>
+                        </Route>
+                    </WheelAwardsProvider>
                 </ChoreProvider>
             </FamMemProvider>
 
