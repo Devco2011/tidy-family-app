@@ -13,10 +13,13 @@ export const WheelAwardCard = ({ wheelAward }) => (
             <CardBody>
                 <CardTitle>Description:</CardTitle>
                 <CardText>{wheelAward.description}</CardText>
+                <CardTitle>This Award Requires {wheelAward.pointsReq} Points</CardTitle>
+
                 <Button onClick={event => {
                     event.preventDefault()
                 }}><Link to={`/wheelAwards/detail/${wheelAward.id}`}>
-                        Edit</Link></Button>
+                        Details</Link></Button>
+
             </CardBody>
 
         </Card>

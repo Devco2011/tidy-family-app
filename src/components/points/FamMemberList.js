@@ -58,8 +58,9 @@ export const FamMemberList = () => {
                             return <Container key={famMember.id}>
 
                                 <ListGroup>
+                                    <ListGroupItem>{famMember.name}</ListGroupItem>
                                     <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
-                                        {famMember.name}
+
                                         <img src={famMember.profilePic.src} alt="Picture" />
                                     </Link></ListGroupItem>
                                     <ListGroupItem>Current Points: {totalPoints()}</ListGroupItem>

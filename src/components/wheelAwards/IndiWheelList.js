@@ -3,7 +3,7 @@ import { WheelAwardContext } from "./WheelAwardsProvider"
 import { WheelAwardCard } from "./WheelAwardsCard"
 import { useHistory } from "react-router-dom"
 
-export const WheelAwardsList = () => {
+export const IndiWheelList = () => {
     const { wheelAwards, getWheelAwards } = useContext(WheelAwardContext)
     const history = useHistory()
 
@@ -15,10 +15,15 @@ export const WheelAwardsList = () => {
 
 
             <div className="WheelAwards">
-                <h4>Wheel Awards</h4>
+                <h4>Keep earning those points and you can get:</h4>
                 {wheelAwards.map(wheelAward => {
                     if (wheelAward?.familyId === parseInt(localStorage.getItem("family_id")))
-                        return <WheelAwardCard key={wheelAward.id} wheelAward={wheelAward} />
+                        return (
+                            <div className="selected_main">
+                                <h4>{wheelAward.name}</h4>
+                                <p>{wheelAward.description}</p>
+                                <h5>You need a total of {wheelAward.pointsReq} points to get this award!</h5>
+                            </div>)
 
                 })
                 }

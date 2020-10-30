@@ -57,10 +57,10 @@ export const FamMemberDetail = () => {
     const totalPoints = () => points.reduce(reducer, intitialValue)
     if (famMember.admin === true) {
 
-        console.log(familyMemberChores)
+
         getFamMemberChores(famMember.id)
         getFamMemberPoints()
-        console.log(points)
+
         return (
             <>
                 <Container>
