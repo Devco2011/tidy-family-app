@@ -11,9 +11,6 @@ export const WheelAwardCard = ({ wheelAward }) => (
         <Card>
             <CardHeader tag="h3">{wheelAward.name}</CardHeader>
             <CardBody>
-                <CardTitle>Description:</CardTitle>
-                <CardText>{wheelAward.description}</CardText>
-                <CardTitle>This Award Requires {wheelAward.pointsReq} Points</CardTitle>
 
                 <Button onClick={event => {
                     event.preventDefault()

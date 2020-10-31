@@ -14,7 +14,7 @@ export const MainAwardCard = ({ mainAward }) => (
                 <Button onClick={event => {
                     event.preventDefault()
                 }}><Link to={`/mainAwards/detail/${mainAward.id}`}>
-                        Get the Deets</Link></Button>
+                        Details</Link></Button>
             </CardBody>
             <CardFooter className="text-muted">Points Value: {mainAward.pointsValue}</CardFooter>
         </Card>
