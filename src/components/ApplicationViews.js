@@ -30,6 +30,7 @@ import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
 import { IndiWheelList } from "./wheelAwards/IndiWheelList";
+import { Wheel } from "./wheel/WheelComponent"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -290,6 +291,12 @@ export const ApplicationViews = () => {
                     <PointsCounter />
                 </Route>
             </ChoreProvider>
+
+
+            <Route path="/wheel">
+                <Wheel />
+            </Route>
+
 
 
 
