@@ -1,0 +1,8 @@
+.countDown {
+    padding-left: 1em;
+    background-color: rgb(219, 219, 219);
+    border-radius: 20px;
+    box-shadow: 7px 7px 15px rgb(78, 76, 76);
+    width: 45%;
+    text-decoration: firebrick;
+} 

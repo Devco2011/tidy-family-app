@@ -31,6 +31,7 @@ import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
 import { IndiWheelList } from "./wheelAwards/IndiWheelList";
 import { Wheel } from "./wheel/WheelComponent"
+import { CountDown } from "./countDown/CountDown"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -67,6 +68,7 @@ export const ApplicationViews = () => {
                                             <Col xs="6 pt-5"><FamMemberList /></Col>
                                             <Col xs="6 pt-5"><SelectedMainList />
                                                 <PointsCounter />
+                                                <CountDown />
                                             </Col>
                                         </Row>
                                     </Container>
@@ -86,7 +88,7 @@ export const ApplicationViews = () => {
                             <Container>
                                 <Row>
                                     <Col xs="6 pt-5"><FamMemberDetail /></Col>
-                                    <Col xs="6 pt-5"><IndiWheelList /></Col>
+                                    <Col xs="6 pt-5"><Wheel /></Col>
                                 </Row>
                             </Container>
                         </Route>
@@ -292,11 +294,11 @@ export const ApplicationViews = () => {
                 </Route>
             </ChoreProvider>
 
-
-            <Route path="/wheel">
-                <Wheel />
-            </Route>
-
+            <WheelAwardsProvider>
+                <Route path="/wheel">
+                    <Wheel />
+                </Route>
+            </WheelAwardsProvider>
 
 
 

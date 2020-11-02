@@ -5,6 +5,11 @@ import 'react-wheel-of-prizes/dist/index.css'
 
 export const Wheel = () => {
     const segments = ['Ice Cream Night', 'won 70', 'won 10', 'better luck next time', 'won 2', 'won uber pass', 'better luck next time', 'won a voucher'];
+
+
+
+
+
     const segColors = [
         "#EE4040",
         "#F0CF50",
@@ -23,7 +28,7 @@ export const Wheel = () => {
         segColors={segColors}
 
         onFinished={(winner) => onFinished(winner)}
-        primaryColor='grey'
-        contrastColor='white'
+        primaryColor='white'
+        contrastColor='black'
         buttonText='Spin' />
 }
