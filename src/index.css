@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
+
+.selected_main {
+  color: whitesmoke;
+}
+
+
+
 h6 {
  color: rgb(240, 20, 20);
 }

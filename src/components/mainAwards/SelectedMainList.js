@@ -7,7 +7,7 @@ import { Button } from 'reactstrap';
 export const SelectedMainList = () => {
     const { mainAwards, getMainAwards } = useContext(MainAwardContext)
     const history = useHistory()
-
+    let pointsNeeded
     useEffect(() => {
         getMainAwards()
     }, [])
@@ -15,15 +15,18 @@ export const SelectedMainList = () => {
         <>
 
 
-            <div className="mainAwards">
-                <h4>This week's BIG award:</h4>
+            <div className="mainAwards" align="center">
+                <h4>This week's Goal:</h4>
                 {mainAwards.map(mainAward => {
                     if (mainAward?.familyId === parseInt(localStorage.getItem("family_id")) && mainAward.inUse === true)
                         return (
                             <div className="selected_main">
-                                <h3>{mainAward.name}</h3>
+                                <h3 align="center" color="#ff0000">{mainAward.name}</h3>
+                                <h4>({mainAward.pointsValue} Points)</h4>
                                 <p>{mainAward.description}</p>
-                                <h2>Total points needed: {mainAward.pointsValue}</h2>
+
+                                < h4 > Points needed: {pointsNeeded = +mainAward.pointsValue - +(sessionStorage.getItem("fam_points"))}</h4>
+
                             </div>)
                 })
                 }

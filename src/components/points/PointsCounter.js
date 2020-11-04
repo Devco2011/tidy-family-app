@@ -57,6 +57,7 @@ export const PointsCounter = () => {
                             getFamChores(family.id)
 
                             getFamPoints()
+                            sessionStorage.setItem("fam_points", `${totalPoints()}`)
 
                         }
 
