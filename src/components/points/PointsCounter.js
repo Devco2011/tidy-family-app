@@ -48,8 +48,8 @@ export const PointsCounter = () => {
 
     return (
         <>
-            <Container>
-                <div className="chores">
+            <Container align="center">
+                <div className="total_fam_points" align="center">
                     {/* Using forEach here because it does not require a return like map does.  Gettiing chores that match the family Id in local storage */}
                     {families.forEach(family => {
 
@@ -63,7 +63,8 @@ export const PointsCounter = () => {
 
                     })
                     }
-                    <h2>Current Family Points: {totalPoints()}</h2>
+                    <h2>{totalPoints()}</h2>
+                    <h5>Points so far!!</h5>
                 </div>
 
             </Container>

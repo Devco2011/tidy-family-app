@@ -4,11 +4,15 @@
     box-sizing: border-box;
 }
 
+.countDown {
+    padding-top: 8em;
+}
+
 body {
     font-family: 'Lato', sans-serif;
 }
 
-h1 {
+h2 {
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;

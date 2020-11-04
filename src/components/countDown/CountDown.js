@@ -35,8 +35,8 @@ export class CountDown extends React.Component {
         const { days, hours, minutes, seconds } = this.state;
 
         return (
-            <div>
-                <h1>Time Remaining:</h1>
+            <div className="countDown">
+                <h2>Time Remaining:</h2>
                 <div className="countdown-wrapper">
                     <div className="countdown-item">
                         {days}

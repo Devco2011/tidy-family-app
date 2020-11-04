@@ -16,18 +16,19 @@ export const SelectedMainList = () => {
 
 
             <div className="mainAwards" align="center">
-                <h4>This week's Goal:</h4>
+                <p>This week's Goal:</p>
                 {mainAwards.map(mainAward => {
                     if (mainAward?.familyId === parseInt(localStorage.getItem("family_id")) && mainAward.inUse === true)
                         return (
-                            <div className="selected_main">
+                            <section className="selected_main">
                                 <h3 align="center" color="#ff0000">{mainAward.name}</h3>
-                                <h4>({mainAward.pointsValue} Points)</h4>
-                                <p>{mainAward.description}</p>
+                                <p>({mainAward.pointsValue} Points)</p>
 
-                                < h4 > Points needed: {pointsNeeded = +mainAward.pointsValue - +(sessionStorage.getItem("fam_points"))}</h4>
-
-                            </div>)
+                                <div className="points_needed">
+                                    < h2 > {pointsNeeded = +mainAward.pointsValue - +(sessionStorage.getItem("fam_points"))}</h2>
+                                    <h5>Points to go!!</h5>
+                                </div>
+                            </section>)
                 })
                 }
             </div>
