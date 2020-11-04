@@ -15,9 +15,9 @@ export const WheelAwardsList = () => {
         <>
 
 
-            <div className="WheelAwards">
-                <h4>Individual Awards</h4><Button onClick={() => history.push("/wheelAwards/create")}>
-                    Add a Individual                   Award</Button>
+            <div className="wheel_awards">
+                <h4>Wheel Awards</h4><Button onClick={() => history.push("/wheelAwards/create")}>
+                    Add a Wheel Award</Button>
                 {wheelAwards.map(wheelAward => {
                     if (wheelAward?.familyId === parseInt(localStorage.getItem("family_id")))
                         return <WheelAwardsDetail key={wheelAward.id} wheelAward={wheelAward} />
