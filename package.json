@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.3",
     "cloudinary-react": "^1.6.7",
+    "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-countdown": "^2.3.1",

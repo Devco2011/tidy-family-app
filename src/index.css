@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
+h6 {
+ color: rgb(240, 20, 20);
+}
+
 body {
   background-color: rgb(240, 81, 81);
   margin: 0;

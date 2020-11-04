@@ -68,7 +68,7 @@ export const ApplicationViews = () => {
                                             <Col xs="6 pt-5"><FamMemberList /></Col>
                                             <Col xs="6 pt-5"><SelectedMainList />
                                                 <PointsCounter />
-                                                <CountDown />
+                                                <CountDown timeTillDate="11 11 2020, 12:10 am" timeFormat="MM DD YYYY, h:mm a" />
                                             </Col>
                                         </Row>
                                     </Container>

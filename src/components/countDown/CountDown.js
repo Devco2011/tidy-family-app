@@ -1,50 +1,62 @@
-import React, { useEffect, useState } from "react";
+import React from 'react';
+import moment from 'moment';
 import "./countDown.css"
 
-
-export const CountDown = () => {
-    const calculateTimeLeft = () => {
-        var d = new Date();
-        const difference = +d.setDate(d.getDate() + 7) - +new Date();
-        let timeLeft = {};
-
-        if (difference > 0) {
-            timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-
-            };
-        }
-
-        return timeLeft;
+export class CountDown extends React.Component {
+    state = {
+        days: undefined,
+        hours: undefined,
+        minutes: undefined,
+        seconds: undefined
     };
 
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-    const [year] = useState(new Date().getFullYear());
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            const { timeTillDate, timeFormat } = this.props;
+            const then = moment(timeTillDate, timeFormat);
+            const now = moment();
+            const countdown = moment(then - now);
+            const days = countdown.format('D');
+            const hours = countdown.format('HH');
+            const minutes = countdown.format('mm');
+            const seconds = countdown.format('ss');
 
-    useEffect(() => {
-        setTimeout(() => {
-            setTimeLeft(calculateTimeLeft());
+            this.setState({ days, hours, minutes, seconds });
         }, 1000);
-    });
+    }
 
-    const timerComponents = [];
-
-    Object.keys(timeLeft).forEach((interval) => {
-        if (!timeLeft[interval]) {
-            return;
+    componentWillUnmount() {
+        if (this.interval) {
+            clearInterval(this.interval);
         }
+    }
 
-        timerComponents.push(
-            <span>
-                {timeLeft[interval]} {interval}{" "}left this week!
-            </span>
+    render() {
+        const { days, hours, minutes, seconds } = this.state;
+
+        return (
+            <div>
+                <h1>Time Remaining:</h1>
+                <div className="countdown-wrapper">
+                    <div className="countdown-item">
+                        {days}
+                        <span>days</span>
+                    </div>
+                    <div className="countdown-item">
+                        {hours}
+                        <span>hours</span>
+                    </div>
+                    <div className="countdown-item">
+                        {minutes}
+                        <span>minutes</span>
+                    </div>
+                    <div className="countdown-item">
+                        {seconds}
+                        <span>seconds</span>
+                    </div>
+                </div>
+            </div>
         );
-    });
-    return (
-        <div className="countDown">
-
-
-            {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-        </div>
-    );
+    }
 }
+

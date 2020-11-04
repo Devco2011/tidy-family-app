@@ -1,8 +1,48 @@
-.countDown {
-    padding-left: 1em;
-    background-color: rgb(219, 219, 219);
-    border-radius: 20px;
-    box-shadow: 7px 7px 15px rgb(78, 76, 76);
-    width: 45%;
-    text-decoration: firebrick;
-} 
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.countdown-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: ghostwhite;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px;
+    
+}
+
+.countdown-item {
+    color: rgb(226, 12, 12);
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 30px;
+    margin: 2px;
+    padding-top: 10px;
+    position: relative;
+    width: 90px;
+    height: 100px;
+}
+
+.countdown-item span {
+    color: rgb(223, 5, 5);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
