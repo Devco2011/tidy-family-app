@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { MainAwardContext } from "./MainAwardsProvider"
 import { useHistory, useParams } from 'react-router-dom';
+import { Button } from 'reactstrap';
 
 export const MainAwardsForm = (props) => {
-    const { addMainAwards, getMainAwardById, updateMainAward } = useContext(MainAwardContext)
+    const { addMainAwards, getMainAwardById, updateMainAward, deleteMainAward } = useContext(MainAwardContext)
 
     const mainAwardName = useRef()
 
@@ -58,7 +59,7 @@ export const MainAwardsForm = (props) => {
                     pointsValue: parseInt(mainAward.pointsValue),
                     familyId: parseInt(localStorage.getItem("family_id"))
                 })
-                    .then(() => history.push(`/mainAwards/detail/${mainAward.id}`))
+                    .then(() => history.push("/awards/allAwards"))
             } else {
                 //POST - add
                 addMainAwards({
@@ -111,6 +112,14 @@ export const MainAwardsForm = (props) => {
                     constructMainAwardObject()
                 }}>
                 {mainAwardsId ? <>Save Award</> : <>Add Award</>}</button>
+
+            <Button onClick={
+                () => {
+                    deleteMainAward(mainAward.id)
+                        .then(() => {
+                            history.push("/awards/allAwards")
+                        })
+                }}>Delete Award</Button>
         </form>
     )
 }

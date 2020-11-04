@@ -23,7 +23,7 @@ export const SelectedMainList = () => {
                             <div className="selected_main">
                                 <h3>{mainAward.name}</h3>
                                 <p>{mainAward.description}</p>
-                                <h2>The family needs a total of {mainAward.pointsValue} points to get this award!</h2>
+                                <h2>Total points needed: {mainAward.pointsValue}</h2>
                             </div>)
                 })
                 }
