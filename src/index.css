@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
+.loginGetBusy {
+  padding-top: 3em;
+}
+
+.bg-white {
+  box-shadow: 5px 5px 10px;
+}
+
 
 .selected_main {
   color: whitesmoke;
@@ -35,6 +43,10 @@ color: whitesmoke;
 
 h6 {
  color: rgb(240, 20, 20);
+}
+
+h2 {
+  text-shadow: 2px 2px 3px;
 }
 
 body {

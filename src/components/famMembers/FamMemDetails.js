@@ -4,6 +4,7 @@ import { ChoreContext } from "../chores/ChoreProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
 import { Wheel } from "../wheel/WheelComponent"
 import { WheelAwardsProvider } from "../wheelAwards/WheelAwardsProvider";
+import { CountDown } from "../countDown/CountDown"
 import { SpinButton } from "../wheelAwards/SpinButton"
 import {
     Card, Button, CardHeader, CardFooter, CardBody,
@@ -118,6 +119,7 @@ export const FamMemberDetail = () => {
 
                     <Col xs="6 pt-5">
                         <SpinButton />
+                        <CountDown timeTillDate="11 11 2020, 12:10 am" timeFormat="MM DD YYYY, h:mm a" />
                     </Col>
                 </Row>
             </Container>)

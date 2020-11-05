@@ -89,7 +89,6 @@ export const ApplicationViews = () => {
                             <Container>
                                 <Row>
                                     <Col><FamMemberDetail /></Col>
-
                                 </Row>
                             </Container>
                         </Route>

@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import { Container, Row, Col, CardGroup } from 'reactstrap';
+import TidyFamily from '../images/TidyFamily.png'
 import "./Login.css";
 
 
@@ -40,16 +41,17 @@ export const Login = props => {
 
         <main className="container--login">
             <Container fluid>
-                <h1 className="display-3">Tidy Family</h1>
-                <p className="lead">Clean up, get stuff.</p>
+                <div>
+                    <img width="40%" src={TidyFamily} alt="Tidy Family" />
+                </div>
             </Container>
-
-            <h2>Log in and get busy!</h2>
-            <dialog className="dialog dialog--auth" ref={existDialog}>
-                <div>Not Found! Try again or register your family.</div>
-                <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
-            </dialog>
-
+            <div className="loginGetBusy">
+                <h4>Log in and get busy!</h4>
+                <dialog className="dialog dialog--auth" ref={existDialog}>
+                    <div>Not Found! Try again or register your family.</div>
+                    <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
+                </dialog>
+            </div>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <fieldset>
