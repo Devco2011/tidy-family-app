@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
+
 import WheelComponent from 'react-wheel-of-prizes'
 import 'react-wheel-of-prizes/dist/index.css'
 
 export const Wheel = () => {
-    const segments = ['Ice Cream Night', 'won 70', 'won 10', 'better luck next time', 'won 2', 'won uber pass', 'better luck next time', 'won a voucher'];
+    const segments = ["You get ice cream!", "You get another new toy!", "A new game!", "You get dinner date!", "Get a new sweater!", "Get a new car!", "Get a new shirt!", "Get a candy bar!"];
 
 
 
@@ -23,7 +24,7 @@ export const Wheel = () => {
     const onFinished = (winner) => {
         console.log(winner);
     }
-
+    console.log(segments)
     return <WheelComponent
         segments={segments}
         segColors={segColors}

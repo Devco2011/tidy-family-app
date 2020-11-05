@@ -295,12 +295,12 @@ export const ApplicationViews = () => {
                 </Route>
             </ChoreProvider>
 
-
-            <Route exact path="/spin-the-wheel">
-                <Home />
-                <Wheel />
-
-            </Route>
+            <WheelAwardsProvider>
+                <Route exact path="/spin-the-wheel">
+                    <Home />
+                    <Wheel />
+                </Route>
+            </WheelAwardsProvider>
 
 
 
