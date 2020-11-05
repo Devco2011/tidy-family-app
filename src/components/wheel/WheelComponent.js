@@ -23,6 +23,7 @@ export const Wheel = () => {
     const onFinished = (winner) => {
         console.log(winner);
     }
+
     return <WheelComponent
         segments={segments}
         segColors={segColors}

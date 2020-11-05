@@ -4,6 +4,7 @@ import { ChoreContext } from "../chores/ChoreProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
 import { Wheel } from "../wheel/WheelComponent"
 import { WheelAwardsProvider } from "../wheelAwards/WheelAwardsProvider";
+import { SpinButton } from "../wheelAwards/SpinButton"
 import {
     Card, Button, CardHeader, CardFooter, CardBody,
     CardTitle, CardText, Container, Row, Col
@@ -62,7 +63,7 @@ export const FamMemberDetail = () => {
 
         getFamMemberChores(famMember.id)
         getFamMemberPoints()
-
+        sessionStorage.setItem("fam_member_points", `${totalPoints()}`)
         return (
             <>
                 <Container>
@@ -97,6 +98,7 @@ export const FamMemberDetail = () => {
 
         getFamMemberChores(famMember.id)
         getFamMemberPoints()
+        sessionStorage.setItem("fam_member_points", `${totalPoints()}`)
 
 
         return (
@@ -114,9 +116,9 @@ export const FamMemberDetail = () => {
                         </Card>
                     </Col>
 
-                    <WheelAwardsProvider>
-                        <Col xs="6 pt-5"><Wheel /></Col>
-                    </WheelAwardsProvider>
+                    <Col xs="6 pt-5">
+                        <SpinButton />
+                    </Col>
                 </Row>
             </Container>)
     }

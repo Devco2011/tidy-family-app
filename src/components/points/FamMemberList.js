@@ -52,7 +52,6 @@ export const FamMemberList = () => {
                         if (famMember?.familyId === parseInt(localStorage.getItem("family_id"))) {
 
                             getFamMemberChores(famMember.id)
-                            console.log(familyMemberChores)
                             getFamMemberPoints()
                             console.log(points)
                             return <Container key={famMember.id}>

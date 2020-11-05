@@ -30,6 +30,7 @@ import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
 import { IndiWheelList } from "./wheelAwards/IndiWheelList";
+import { Wheel } from "./wheel/WheelComponent"
 
 import { CountDown } from "./countDown/CountDown"
 
@@ -87,7 +88,7 @@ export const ApplicationViews = () => {
                             <NavBar />
                             <Container>
                                 <Row>
-                                    <Col xs="6 pt-5"><FamMemberDetail /></Col>
+                                    <Col><FamMemberDetail /></Col>
 
                                 </Row>
                             </Container>
@@ -293,6 +294,13 @@ export const ApplicationViews = () => {
                     <PointsCounter />
                 </Route>
             </ChoreProvider>
+
+
+            <Route exact path="/spin-the-wheel">
+                <Home />
+                <Wheel />
+
+            </Route>
 
 
 

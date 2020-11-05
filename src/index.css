@@ -4,6 +4,13 @@
 .selected_main {
   color: whitesmoke;
 }
+.spinWinHeading {
+color: whitesmoke;
+}
+
+.spinWinButton {
+  padding-top: 3em;
+}
 
 .points_needed {
   background-color: rgb(194, 193, 193);
