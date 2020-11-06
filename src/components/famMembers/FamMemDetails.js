@@ -107,15 +107,16 @@ export const FamMemberDetail = () => {
             <Container>
                 <Row>
                     <Col xs="6 pt-5">
-                        <Card>
-                            <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
-                            <CardBody>
+                        <div className="individualCard">
+                            <img width="30%" hieght="35%" src={famMember.profilePic?.src} alt="Picture" />
+                            <CardBody align="center">
+                                <CardTitle><h4>{famMember.name}</h4></CardTitle>
                                 <CardTitle>Current Points: {totalPoints()}</CardTitle>
-                                <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
-                                <Row><Button onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button></Row>
+                                <Button color="warning" className="mb-2 mr-2" onClick={() => { history.push("/chores/available") }}>Available Chores</Button>{''}
+                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button>
                             </CardBody>
 
-                        </Card>
+                        </div>
                     </Col>
 
                     <Col xs="6 pt-5">
