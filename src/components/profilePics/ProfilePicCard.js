@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, Button, CardImg, CardBody, Container } from 'reactstrap';
 
 export const ProfilePicCard = ({ profilePic }) => (
-    <Container>
-        <img src={profilePic.src} alt="Picture" />
+    <div>
+        <img width="60%" hieght="65%" src={profilePic.src} alt="Picture" />
 
         <CardBody>
             <Button onClick={event => {
@@ -12,5 +12,5 @@ export const ProfilePicCard = ({ profilePic }) => (
                 sessionStorage.setItem("profilePic", profilePic.id)
             }}>Select</Button>
         </CardBody>
-    </Container>
+    </div>
 );

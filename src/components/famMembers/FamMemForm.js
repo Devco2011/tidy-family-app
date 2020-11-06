@@ -3,7 +3,7 @@ import { FamMemberContext } from "./FamMemProvider";
 import { ProfilePicContext } from "../profilePics/ProfilePicProvider";
 import { ProfilePicCard } from "../profilePics/ProfilePicCard";
 import { useHistory, useParams } from 'react-router-dom';
-import { Container, CardGroup, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Container, Button, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 export const FamMemberForm = (props) => {
     const { addFamMember, getFamMemberById, updateFamMember } = useContext(FamMemberContext)
@@ -76,11 +76,11 @@ export const FamMemberForm = (props) => {
     }
 
     return (
-        <form className="famMemberForm">
+        <form align="center" className="famMemberForm">
             <h2 className="famMemberForm__title">Add a Family Member</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="famMemberName">What does your family call you? </label>
+                    <label htmlFor="famMemberName">What does the family call this person? </label>
                     <input ref={famMemberName} type="text"
                         id="famMemberName"
                         name="name"
@@ -92,20 +92,21 @@ export const FamMemberForm = (props) => {
                 </div>
 
             </fieldset>
-            <Container>
-                <h5>Please select an avatar:</h5>
-                <CardGroup>
+            <h5>Please select a profile character:</h5>
+            <div className="avatarSelect">
 
-                    {
-                        profilePics?.map(profilePic => {
-                            return <ProfilePicCard key={profilePic.id} src={profilePic.src} profilePic={profilePic} />
 
-                        })
-                    }
-                </CardGroup>
-            </Container>
 
-            <UncontrolledDropdown>
+                {
+                    profilePics?.map(profilePic => {
+                        return <ProfilePicCard key={profilePic.id} src={profilePic.src} profilePic={profilePic} />
+
+                    })
+                }
+
+            </div>
+
+            <UncontrolledDropdown >
                 <DropdownToggle caret>
                     Admin?
       </DropdownToggle>
@@ -125,13 +126,13 @@ export const FamMemberForm = (props) => {
             </UncontrolledDropdown>
 
 
-            <button className="btn btn-primary"
+            <Button color="warning mt-3 mb-3"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
                     constructFamMemberObject()
                 }}>
-                {famMemberId ? <>Save Family Member</> : <>Add Family Member</>}</button>
+                {famMemberId ? <>Save Family Member</> : <>Add Family Member</>}</Button>
         </form>
     )
 }
