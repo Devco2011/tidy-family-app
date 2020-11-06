@@ -16,13 +16,13 @@ export const ChooseFamMemberCard = ({ famMember }) =>
 
             <img width="30%" hieght="35%" src={famMember.profilePic.src} alt="Picture" />
             <CardBody className="chooseFamContainer">
-                <CardTitle>{famMember.name}</CardTitle>
+                <CardTitle><h4>{famMember.name}</h4></CardTitle>
                 <Button color="warning" onClick={event => {
                     event.preventDefault()
                     sessionStorage.setItem("family_member", famMember.name)
                     sessionStorage.setItem("family_memberId", famMember.id)
                     sessionStorage.setItem("admin", famMember.admin)
-                }}><Link to={`/famMembers/detail/${famMember.id}`}>This is me!</Link></Button>
+                }}><Link to={`/famMembers/detail/${famMember.id}`}>Choose</Link></Button>
             </CardBody>
 
 

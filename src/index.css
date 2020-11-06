@@ -4,6 +4,13 @@
   padding-top: 3em;
 }
 
+.individualCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
 .chooseListMain {
 margin-top: 3em;
 }
@@ -21,8 +28,14 @@ justify-content: space-evenly;
   padding-bottom: 3em;
   justify-content: space-evenly;
   align-items: center;
-  
+}
 
+.memberDetailAdmin {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 3em;
+  
 }
 
 .form--login {
