@@ -6,40 +6,24 @@ import {
     CardTitle, CardText,
 } from 'reactstrap';
 
-export const WheelAwardsDetail = () => {
-    const { getWheelAwardById } = useContext(WheelAwardContext)
-
-    const [wheelAward, setWheelAward] = useState({})
 
 
+export const WheelAwardsDetail = ({ wheelAward }) => (
 
-    const { wheelAwardsId } = useParams();
-    const history = useHistory();
-
-    useEffect(() => {
-        getWheelAwardById(wheelAwardsId)
-            .then((response) => {
-                setWheelAward(response)
-            })
-    }, [])
-
-    return (
-
-        <Container>
-            <Card>
-                <CardHeader tag="h3">{wheelAward.name}</CardHeader>
-                <CardBody>
-                    <CardTitle>Description:</CardTitle>
-                    <CardText>{wheelAward.description}</CardText>
-                    <Button onClick={event => {
-                        event.preventDefault()
-                    }}><Link to={`/wheelAwards/edit/${wheelAward.id}`}>
-                            Edit</Link></Button>
-                </CardBody>
-                <CardFooter className="text-muted"></CardFooter>
-            </Card>
-        </Container>
+    <Container>
+        <Card>
+            <CardHeader tag="h3">{wheelAward.name}</CardHeader>
+            <CardBody>
+                <CardTitle>Description:</CardTitle>
+                <CardText>{wheelAward.description}</CardText>
+                <Button onClick={event => {
+                    event.preventDefault()
+                }}><Link to={`/wheelAwards/edit/${wheelAward.id}`}>
+                        Edit</Link></Button>
+            </CardBody>
+            <CardFooter className="text-muted"></CardFooter>
+        </Card>
+    </Container>
 
 
-    )
-}
+);

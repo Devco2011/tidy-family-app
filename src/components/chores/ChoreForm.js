@@ -1,9 +1,13 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { ChoreContext } from "./ChoreProvider"
 import { useHistory, useParams } from 'react-router-dom';
+import {
+    Container, Card, Button, CardHeader, CardFooter, CardBody,
+    CardTitle, CardText,
+} from 'reactstrap';
 
 export const ChoreForm = (props) => {
-    const { addChore, getChoreById, updateChore } = useContext(ChoreContext)
+    const { addChore, getChoreById, updateChore, deleteChore } = useContext(ChoreContext)
 
     const choreName = useRef()
 
@@ -61,7 +65,7 @@ export const ChoreForm = (props) => {
                     completed: chore.completed,
                     date: chore.date
                 })
-                    .then(() => history.push(`/chores/detail/${chore.id}`))
+                    .then(() => history.push("/chores/allChores"))
             } else {
                 //POST - add
                 addChore({
@@ -96,7 +100,7 @@ export const ChoreForm = (props) => {
                     <input type="text" id="choreInstructions" name="instructions" required autoFocus className="form-control"
                         placeholder="Instructions"
                         onChange={handleControlledInputChange}
-                        defaultValue={chore.description} />
+                        defaultValue={chore.instructions} />
                 </div>
             </fieldset>
             <fieldset>
@@ -110,13 +114,23 @@ export const ChoreForm = (props) => {
             </fieldset>
 
 
-            <button className="btn btn-primary"
+            <Button
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
                     constructChoreObject()
                 }}>
-                {choreId ? <>Save Chore</> : <>Add Chore</>}</button>
+                {choreId ? <>Save Chore</> : <>Add Chore</>}</Button>
+
+            <Button onClick={
+                () => {
+                    deleteChore(chore.id)
+                        .then(() => {
+                            history.push("/chores/allChores")
+                        })
+                }}>Delete this Chore</Button>
+
+
         </form>
     )
 }

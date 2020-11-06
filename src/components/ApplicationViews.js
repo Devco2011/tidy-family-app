@@ -30,6 +30,9 @@ import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
 import { IndiWheelList } from "./wheelAwards/IndiWheelList";
+import { Wheel } from "./wheel/WheelComponent"
+
+import { CountDown } from "./countDown/CountDown"
 
 
 import { Container, Row, Col } from "reactstrap"
@@ -54,27 +57,28 @@ export const ApplicationViews = () => {
                 </Route>
             </FamMemProvider>
 
-            <Container>
-                <ChoreProvider>
-                    <FamMemProvider>
-                        <FamiliesProvider>
-                            <MainAwardsProvider>
-                                <Route exact path="/">
-                                    <Home />
-                                    <Container>
-                                        <Row>
-                                            <Col xs="6 pt-5"><FamMemberList /></Col>
-                                            <Col xs="6 pt-5"><SelectedMainList />
-                                                <PointsCounter />
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Route>
-                            </MainAwardsProvider>
-                        </FamiliesProvider>
-                    </FamMemProvider>
-                </ChoreProvider>
-            </Container>
+
+            <ChoreProvider>
+                <FamMemProvider>
+                    <FamiliesProvider>
+                        <MainAwardsProvider>
+                            <Route exact path="/">
+                                <Home />
+                                <Container>
+                                    <Row>
+                                        <Col xs="6 pt-5"><FamMemberList /></Col>
+                                        <Col xs="6 pt-5"><SelectedMainList />
+                                            <PointsCounter />
+                                            <CountDown timeTillDate="11 11 2020, 12:10 am" timeFormat="MM DD YYYY, h:mm a" />
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </Route>
+                        </MainAwardsProvider>
+                    </FamiliesProvider>
+                </FamMemProvider>
+            </ChoreProvider>
+
 
             <FamMemProvider>
                 <ChoreProvider>
@@ -84,8 +88,7 @@ export const ApplicationViews = () => {
                             <NavBar />
                             <Container>
                                 <Row>
-                                    <Col xs="6 pt-5"><FamMemberDetail /></Col>
-                                    <Col xs="6 pt-5"><IndiWheelList /></Col>
+                                    <Col><FamMemberDetail /></Col>
                                 </Row>
                             </Container>
                         </Route>
@@ -290,6 +293,15 @@ export const ApplicationViews = () => {
                     <PointsCounter />
                 </Route>
             </ChoreProvider>
+
+            <WheelAwardsProvider>
+                <Route exact path="/spin-the-wheel">
+                    <Home />
+                    <Wheel />
+                </Route>
+            </WheelAwardsProvider>
+
+
 
 
 

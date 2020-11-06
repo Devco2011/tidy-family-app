@@ -3,6 +3,7 @@ import { ChoreContext } from "./ChoreProvider"
 import { ChoreCard } from "./ChoreCard"
 import { useHistory } from "react-router-dom"
 import { Button } from 'reactstrap';
+import { ChoreDetail } from "./ChoreDetail"
 
 export const AllChoresList = () => {
     const { chores, getChores } = useContext(ChoreContext)
@@ -21,7 +22,7 @@ export const AllChoresList = () => {
             <div className="chores">
                 {chores.map(chore => {
                     if (chore?.familyId === parseInt(localStorage.getItem("family_id")))
-                        return <ChoreCard key={chore.id} chore={chore} />
+                        return <ChoreDetail key={chore.id} chore={chore} />
                 })
                 }
             </div>

@@ -1,20 +1,35 @@
 import React from "react";
-import { Container, Jumbotron, Row, Col } from 'reactstrap'
+import { Container, Jumbotron, Row, Col, Button } from 'reactstrap'
+import TidyFamily from '../components/images/TidyFamily.png'
+import { useHistory } from 'react-router-dom';
 
 
 
-export const Home = () => (
-    <>
-        <div>
+export const Home = () => {
+    const history = useHistory();
+
+    return (
+        <>
+            <div>
 
 
-            <Container fluid className='bg-white'>
-                <h1 className="display-3">Tidy Family</h1>
-                <p className="lead">Clean up, get stuff.</p>
-                <h2>The {localStorage.family_name} Family Rocks!</h2>
-            </Container>
+                <Container fluid className='bg-white'>
+                    <div>
+                        <img width="40%" src={TidyFamily} alt="Tidy Family" />
+                    </div>
 
-        </div>
+                    <h2>The {localStorage.family_name} Family Rocks!</h2>
 
-    </>
-)
+                    <Button className="float-right" shadow="2px 2px 3px" onClick={
+                        () => {
+
+                            history.push("/login")
+
+                        }}>Logout</Button>
+                </Container>
+
+            </div>
+
+        </>
+    )
+}

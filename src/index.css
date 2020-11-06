@@ -1,5 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
+.loginGetBusy {
+  padding-top: 3em;
+}
+
+.bg-white {
+  box-shadow: 5px 5px 10px;
+}
+
+.loginButton {
+  padding-top: 2em;
+  margin-left: 5em;
+}
+
+
+.selected_main {
+  color: whitesmoke;
+}
+.spinWinHeading {
+color: whitesmoke;
+}
+
+.spinWinButton {
+  padding-top: 3em;
+}
+
+.points_needed {
+  background-color: rgb(194, 193, 193);
+  width: 40%;
+  height: 10em;
+  padding-top: 2em;
+  color: black;
+  font-size: medium;
+  box-shadow: 5px 5px 10px;
+}
+
+.total_fam_points {
+  background-color: rgb(235, 232, 232);
+  width: 42%;
+  height: 10em;
+  padding-top: 2em;
+  color: black;
+  font-size: medium;
+  box-shadow: 5px 5px 10px;
+
+}
+
+h6 {
+ color: rgb(240, 20, 20);
+}
+
+h2 {
+  text-shadow: 2px 2px 3px;
+}
+
 body {
   background-color: rgb(240, 81, 81);
   margin: 0;

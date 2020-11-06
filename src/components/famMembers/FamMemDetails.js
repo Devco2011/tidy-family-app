@@ -2,9 +2,13 @@ import React, { useContext, useEffect, useState } from "react"
 import { FamMemberContext } from "./FamMemProvider"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { useParams, useHistory, Link } from "react-router-dom"
+import { Wheel } from "../wheel/WheelComponent"
+import { WheelAwardsProvider } from "../wheelAwards/WheelAwardsProvider";
+import { CountDown } from "../countDown/CountDown"
+import { SpinButton } from "../wheelAwards/SpinButton"
 import {
     Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText, Container, Row
+    CardTitle, CardText, Container, Row, Col
 } from 'reactstrap';
 
 export const FamMemberDetail = () => {
@@ -60,7 +64,7 @@ export const FamMemberDetail = () => {
 
         getFamMemberChores(famMember.id)
         getFamMemberPoints()
-
+        sessionStorage.setItem("fam_member_points", `${totalPoints()}`)
         return (
             <>
                 <Container>
@@ -95,18 +99,29 @@ export const FamMemberDetail = () => {
 
         getFamMemberChores(famMember.id)
         getFamMemberPoints()
+        sessionStorage.setItem("fam_member_points", `${totalPoints()}`)
 
 
-        return (<Container>
-            <Card>
-                <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
-                <CardBody>
-                    <CardTitle>Current Points: {totalPoints()}</CardTitle>
-                    <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
-                    <Row><Button onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button></Row>
-                </CardBody>
+        return (
+            <Container>
+                <Row>
+                    <Col xs="6 pt-5">
+                        <Card>
+                            <CardHeader><img src={famMember.profilePic?.src} alt="Picture" /> {famMember.name}</CardHeader>
+                            <CardBody>
+                                <CardTitle>Current Points: {totalPoints()}</CardTitle>
+                                <Button onClick={() => { history.push("/chores/available") }}>Available Chores</Button>
+                                <Row><Button onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button></Row>
+                            </CardBody>
 
-            </Card>
-        </Container>)
+                        </Card>
+                    </Col>
+
+                    <Col xs="6 pt-5">
+                        <SpinButton />
+                        <CountDown timeTillDate="11 11 2020, 12:10 am" timeFormat="MM DD YYYY, h:mm a" />
+                    </Col>
+                </Row>
+            </Container>)
     }
 }
