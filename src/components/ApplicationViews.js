@@ -100,6 +100,7 @@ export const ApplicationViews = () => {
                 <ProfilePicProvider>
                     <Route exact path="/famMembers/create">
                         <Home />
+                        <NavBar />
                         <FamMemberForm />
                     </Route>
                 </ProfilePicProvider>

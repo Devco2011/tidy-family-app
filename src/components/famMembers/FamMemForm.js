@@ -77,10 +77,10 @@ export const FamMemberForm = (props) => {
 
     return (
         <form align="center" className="famMemberForm">
-            <h2 className="famMemberForm__title">Add a Family Member</h2>
+            <h2 className="famMemberForm__title mb-4">Add a Family Member</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="famMemberName">What does the family call this person? </label>
+                    <label htmlFor="famMemberName"><h5>What does the family call this person?</h5> </label>
                     <input ref={famMemberName} type="text"
                         id="famMemberName"
                         name="name"
@@ -92,7 +92,7 @@ export const FamMemberForm = (props) => {
                 </div>
 
             </fieldset>
-            <h5>Please select a profile character:</h5>
+            <h5 className="selector mt-5">Please select a profile character:</h5>
             <div className="avatarSelect">
 
 
