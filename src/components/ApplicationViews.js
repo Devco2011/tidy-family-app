@@ -53,7 +53,7 @@ export const ApplicationViews = () => {
             <FamMemProvider>
                 <Route exact path="/famMembers/choose">
                     <Home />
-                    <Col xs="6 pt-5"><ChooseFamMemberList /></Col>
+                    <Col><ChooseFamMemberList /></Col>
                 </Route>
             </FamMemProvider>
 

@@ -4,6 +4,31 @@
   padding-top: 3em;
 }
 
+.chooseListMain {
+margin-top: 3em;
+}
+
+.chooseListContainer {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+}
+
+.chooseFamCard {
+  display: flex;
+  padding-left: 2em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  justify-content: space-evenly;
+  align-items: center;
+  
+
+}
+
+.form--login {
+padding-top: 4em;
+}
+
 .bg-white {
   box-shadow: 5px 5px 10px;
 }
