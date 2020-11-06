@@ -11,6 +11,10 @@
   
 }
 
+.mainAwards {
+ padding-top: 3em;
+}
+
 
 .familyName {
   font-size: 3em;
@@ -76,7 +80,9 @@ padding-top: 4em;
 
 .selected_main {
   color: whitesmoke;
+
 }
+
 .spinWinHeading {
 color: whitesmoke;
 }
@@ -86,18 +92,18 @@ color: whitesmoke;
 }
 
 .points_needed {
-  background-color: rgb(194, 193, 193);
-  width: 40%;
+  background-color: rgb(241, 239, 239);
+  width: 50%;
   height: 10em;
   padding-top: 2em;
   color: black;
-  font-size: medium;
+  font-size: large;
   box-shadow: 5px 5px 10px;
 }
 
 .total_fam_points {
-  background-color: rgb(235, 232, 232);
-  width: 42%;
+  background-color: rgb(7, 211, 0);
+  width: 53%;
   height: 10em;
   padding-top: 2em;
   color: black;

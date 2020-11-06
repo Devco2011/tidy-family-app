@@ -13,10 +13,10 @@ export const SelectedMainList = () => {
     }, [])
     return (
         <>
-
+            <h4 align="center">This week's Family Goal:</h4>
 
             <div className="mainAwards" align="center">
-                <p>This week's Goal:</p>
+
                 {mainAwards.map(mainAward => {
                     if (mainAward?.familyId === parseInt(localStorage.getItem("family_id")) && mainAward.inUse === true)
                         return (
