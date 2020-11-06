@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
-import { Container, Row, Col, CardGroup } from 'reactstrap';
+import { Container, Row, Col, CardGroup, Button } from 'reactstrap';
 import TidyFamily from '../images/TidyFamily.png'
 import "./Login.css";
 
@@ -70,11 +70,13 @@ export const Login = props => {
                             placeholder="Family Name"
                             required autoFocus />
                     </fieldset>
-                    <fieldset>
-                        <button type="submit">
-                            Sign in
-                        </button>
-                    </fieldset>
+                    <div className="loginButton">
+                        <fieldset>
+                            <Button type="submit">
+                                Sign in
+                        </Button>
+                        </fieldset>
+                    </div>
                 </form>
             </section>
             <section className="link--register">

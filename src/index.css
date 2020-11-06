@@ -8,6 +8,11 @@
   box-shadow: 5px 5px 10px;
 }
 
+.loginButton {
+  padding-top: 2em;
+  margin-left: 5em;
+}
+
 
 .selected_main {
   color: whitesmoke;
