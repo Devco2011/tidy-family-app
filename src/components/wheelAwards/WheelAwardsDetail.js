@@ -10,20 +10,19 @@ import {
 
 export const WheelAwardsDetail = ({ wheelAward }) => (
 
-    <Container>
-        <Card>
-            <CardHeader tag="h3">{wheelAward.name}</CardHeader>
-            <CardBody>
-                <CardTitle>Description:</CardTitle>
-                <CardText>{wheelAward.description}</CardText>
-                <Button onClick={event => {
-                    event.preventDefault()
-                }}><Link to={`/wheelAwards/edit/${wheelAward.id}`}>
-                        Edit</Link></Button>
-            </CardBody>
-            <CardFooter className="text-muted"></CardFooter>
-        </Card>
-    </Container>
+    <div className="wheelAwardDetail mt-4">
+
+        <h3>{wheelAward.name}</h3>
+
+        <p><strong>Description:</strong></p>
+        <p>{wheelAward.description}</p>
+        <Button color="warning mb-3" onClick={event => {
+            event.preventDefault()
+        }}><Link to={`/wheelAwards/edit/${wheelAward.id}`}>
+                Edit</Link></Button>
+
+
+    </div>
 
 
 );

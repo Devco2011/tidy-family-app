@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "./ChoreProvider"
 import { AvailableChoreCard } from "./AvailableChoreCard"
 import { useHistory } from "react-router-dom"
+import "./Chores.css"
 
 export const AvailableChoreList = () => {
     const { chores, getChores } = useContext(ChoreContext)

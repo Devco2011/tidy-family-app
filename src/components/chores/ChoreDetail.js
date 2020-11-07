@@ -9,20 +9,20 @@ import {
 
 export const ChoreDetail = ({ chore }) => (
 
-    <Container>
-        <Card>
-            <CardHeader tag="h3">{chore.name}</CardHeader>
-            <CardBody>
-                <CardTitle>Instructions:</CardTitle>
-                <CardText>{chore.instructions}</CardText>
-                <Button onClick={event => {
-                    event.preventDefault()
-                }}><Link to={`/chores/edit/${chore.id}`}>
-                        Edit</Link></Button>
-            </CardBody>
-            <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
-        </Card>
-    </Container>
+    <div className="allChoreDetail">
+
+        <h3>{chore.name}</h3>
+
+        <p><strong>Instructions:</strong></p>
+        <p>{chore.instructions}</p>
+        <Button color="warning mb-3 ml-3" onClick={event => {
+            event.preventDefault()
+        }}><Link to={`/chores/edit/${chore.id}`}>
+                Edit</Link></Button>
+
+        <h4>Points Value: {chore.pointsValue}</h4>
+
+    </div>
 
 
 );

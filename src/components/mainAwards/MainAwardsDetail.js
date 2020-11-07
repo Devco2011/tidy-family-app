@@ -9,21 +9,21 @@ import {
 
 export const MainAwardsDetail = ({ mainAward }) => (
 
-    <Container>
-        <Card>
-            <CardHeader tag="h3">{mainAward.name}</CardHeader>
-            <CardBody>
-                <CardTitle>Description:</CardTitle>
-                <CardText>{mainAward.description}</CardText>
-                <Button onClick={event => {
-                    event.preventDefault()
-                }}><Link to={`/mainAwards/edit/${mainAward.id}`}>
-                        Edit</Link></Button>
+    <div className="mainAwardDetail mt-4">
 
-            </CardBody>
-            <CardFooter className="text-muted">Points Value: {mainAward.pointsValue}</CardFooter>
-        </Card>
-    </Container>
+        <h3>{mainAward.name}</h3>
+
+        <p><strong>Description:</strong></p>
+
+        <p>{mainAward.description}</p>
+
+        <h4>Points Value: {mainAward.pointsValue}</h4>
+        <Button color="warning mb-3" onClick={event => {
+            event.preventDefault()
+        }}><Link to={`/mainAwards/edit/${mainAward.id}`}>
+                Edit</Link></Button>
+
+    </div >
 
 
 );

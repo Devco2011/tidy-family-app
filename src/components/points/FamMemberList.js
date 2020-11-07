@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { FamMemberContext } from "../famMembers/FamMemProvider"
 import { useHistory, Link } from "react-router-dom"
-import { Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
+import { Container, Button } from 'reactstrap';
 
 export const FamMemberList = () => {
     const { chores, getChores } = useContext(ChoreContext)
@@ -43,36 +43,38 @@ export const FamMemberList = () => {
 
     return (
         <>
-            <Container>
-                <h4>Family Members</h4>
+            <h4 align="center">Family Members</h4>
+            <div className="FamListTop">
 
-                <div className="famMembers">
-                    {/* Map over all family members and get those that match the family Id in local storage */}
-                    {famMembers.map(famMember => {
-                        if (famMember?.familyId === parseInt(localStorage.getItem("family_id"))) {
 
-                            getFamMemberChores(famMember.id)
-                            getFamMemberPoints()
-                            console.log(points)
-                            return <Container key={famMember.id}>
 
-                                <ListGroup>
-                                    <ListGroupItem>{famMember.name}</ListGroupItem>
-                                    <ListGroupItem tag="button" action><Link to={`/famMembers/detail/${famMember.id}`}>
+                {/* Map over all family members and get those that match the family Id in local storage */}
+                {famMembers.map(famMember => {
+                    if (famMember?.familyId === parseInt(localStorage.getItem("family_id"))) {
 
-                                        <img src={famMember.profilePic.src} alt="Picture" />
-                                    </Link></ListGroupItem>
-                                    <ListGroupItem>Current Points: {totalPoints()}</ListGroupItem>
-                                </ListGroup>
-                            </Container>
-                        }
-                    })
+                        getFamMemberChores(famMember.id)
+                        getFamMemberPoints()
+                        console.log(points)
+                        return <div className="famList" key={famMember.id}>
+
+
+
+
+
+                            <img width="20%" hieght="25%" src={famMember.profilePic.src} alt="Picture" />
+
+                            <Link to={`/famMembers/detail/${famMember.id}`}><h4>{famMember.name}</h4></Link>
+                            <p></p><h4>Current Points: {totalPoints()}</h4>
+
+                        </div>
                     }
-                </div>
-                <button onClick={() => { history.push("/famMembers/create") }}>
+                })
+                }
+
+                <Button color="warning" onClick={() => { history.push("/famMembers/create") }}>
                     Add A Family Member
-        </button>
-            </Container>
+               </Button>
+            </div>
 
         </>
     )

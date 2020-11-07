@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
-import { Container } from 'reactstrap'
+import { Container, Button } from 'reactstrap'
+import TidyFamily from '../images/TidyFamily.png'
 import "./Login.css"
 
 export const Register = (props) => {
@@ -68,8 +69,9 @@ export const Register = (props) => {
     return (
         <main style={{ textAlign: "center" }}>
             <Container fluid>
-                <h1 className="display-3">Tidy Family</h1>
-                <p className="lead">Clean up, get stuff.</p>
+                <div>
+                    <img width="40%" src={TidyFamily} alt="Tidy Family" />
+                </div>
             </Container>
 
             <dialog className="dialog dialog--password" ref={conflictDialog}>
@@ -78,7 +80,7 @@ export const Register = (props) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h2 className="h3 mb-3 font-weight-normal">Welcome to the Family!</h2>
+                <h4 className="h3 mb-3 font-weight-normal">Welcome to the Family!</h4>
                 <fieldset>
                     <label htmlFor="famName"> Family Name </label>
                     <input ref={famName} type="text" name="famName" className="form-control" placeholder="Family name" required autoFocus />
@@ -89,7 +91,7 @@ export const Register = (props) => {
                 </fieldset>
 
                 <fieldset>
-                    <button type="submit"> Sign in </button>
+                    <Button type="submit"> Sign in </Button>
                 </fieldset>
             </form>
         </main>

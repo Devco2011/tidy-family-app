@@ -13,16 +13,20 @@ export const ChooseFamMemberList = () => {
     }, [])
     return (
         <>
-            <Container fluid >
-                <h4>Hey there! Which family member are you?</h4>
-                <CardGroup>
-                    {famMembers.map(famMember => {
-                        if (famMember?.familyId === parseInt(localStorage.getItem("family_id")))
-                            return <ChooseFamMemberCard key={famMember.id} famMember={famMember} />
-                    })
-                    }
-                </CardGroup>
-            </Container>
+            <div className="chooseListMain" align="center">
+                <Row>
+                    <Col>
+                        <h4>Which family member are you?</h4>
+                        <div className="chooseListContainer">
+                            {famMembers.map(famMember => {
+                                if (famMember?.familyId === parseInt(localStorage.getItem("family_id")))
+                                    return <ChooseFamMemberCard key={famMember.id} famMember={famMember} />
+                            })
+                            }
+                        </div>
+                    </Col>
+                </Row>
+            </div>
         </>
     )
 

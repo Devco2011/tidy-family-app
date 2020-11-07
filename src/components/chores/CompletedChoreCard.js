@@ -8,17 +8,17 @@ import {
 
 export const CompletedChoreCard = ({ chore }) => (
 
-    <Container>
-        <Card>
-            <CardHeader tag="h3">{chore.name}</CardHeader>
-            <CardBody>
-                <CardTitle>Instructions:</CardTitle>
-                <CardText>{chore.instructions}</CardText>
-                <CardTitle>Completed by: {chore.familyMember.name}</CardTitle>
-                <CardTitle>When this chore was completed: {chore.date}</CardTitle>
-            </CardBody>
-            <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
-        </Card>
-    </Container>
+    <div className="compChoreCard mt-3">
+
+        <h3>{chore.name}</h3>
+
+        <p><strong>Instructions:</strong></p>
+        <p>{chore.instructions}</p>
+        <p>Completed by: <h5>{chore.familyMember.name}</h5></p>
+        <p>Completed: {chore.date}</p>
+
+        <h4>Points Value: {chore.pointsValue}</h4>
+
+    </div>
 
 );

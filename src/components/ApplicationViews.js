@@ -53,7 +53,7 @@ export const ApplicationViews = () => {
             <FamMemProvider>
                 <Route exact path="/famMembers/choose">
                     <Home />
-                    <Col xs="6 pt-5"><ChooseFamMemberList /></Col>
+                    <Col><ChooseFamMemberList /></Col>
                 </Route>
             </FamMemProvider>
 
@@ -100,6 +100,7 @@ export const ApplicationViews = () => {
                 <ProfilePicProvider>
                     <Route exact path="/famMembers/create">
                         <Home />
+                        <NavBar />
                         <FamMemberForm />
                     </Route>
                 </ProfilePicProvider>
@@ -130,6 +131,7 @@ export const ApplicationViews = () => {
             <ChoreProvider>
                 <Route path="/chores/completedForm/:choreId(\d+)">
                     <Home />
+                    <MyDashNavBar />
                     <CompletedChoreModal />
                 </Route>
             </ChoreProvider>
@@ -169,7 +171,7 @@ export const ApplicationViews = () => {
                     <Route exact path="/awards/allAwards">
                         <Home />
                         <MyDashNavBar />
-                        <h3>Manage All Awards</h3>
+                        <h3><center>Manage All Awards</center></h3>
                         <Container>
                             <Row>
                                 <Col><MainAwardsList /></Col>
@@ -297,6 +299,7 @@ export const ApplicationViews = () => {
             <WheelAwardsProvider>
                 <Route exact path="/spin-the-wheel">
                     <Home />
+                    <MyDashNavBar />
                     <Wheel />
                 </Route>
             </WheelAwardsProvider>

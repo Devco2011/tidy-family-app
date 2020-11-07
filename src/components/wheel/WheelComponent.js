@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import wheel from "../images/wheel.png"
+import './wheel.css'
 
 
 import WheelComponent from 'react-wheel-of-prizes'
@@ -22,15 +24,19 @@ export const Wheel = () => {
         "#FF9000",
     ];
     const onFinished = (winner) => {
+
         console.log(winner);
     }
     console.log(segments)
-    return <WheelComponent
-        segments={segments}
-        segColors={segColors}
+    return <div className="wheelOfPrizes">
+        <p><img width="60%" src={wheel} alt="Wheel of Prizes"></img></p>
+        <WheelComponent
+            segments={segments}
+            segColors={segColors}
 
-        onFinished={(winner) => onFinished(winner)}
-        primaryColor='white'
-        contrastColor='black'
-        buttonText='Spin' />
+            onFinished={(winner) => onFinished(winner)}
+            primaryColor='white'
+            contrastColor='black'
+            buttonText='SPIN' />
+    </div>
 }

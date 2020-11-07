@@ -10,7 +10,7 @@ export const Home = () => {
 
     return (
         <>
-            <div>
+            <div className="homeMainContainer">
 
 
                 <Container fluid className='bg-white'>
@@ -18,7 +18,7 @@ export const Home = () => {
                         <img width="40%" src={TidyFamily} alt="Tidy Family" />
                     </div>
 
-                    <h2>The {localStorage.family_name} Family Rocks!</h2>
+                    <div align="right" className="familyName">The {localStorage.family_name} Family Rocks!</div>
 
                     <Button className="float-right" shadow="2px 2px 3px" onClick={
                         () => {

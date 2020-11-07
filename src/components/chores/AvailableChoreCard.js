@@ -9,19 +9,20 @@ import {
 
 export const AvailableChoreCard = ({ chore }) => (
 
-    <Container>
-        <Card>
-            <CardHeader tag="h3">{chore.name}</CardHeader>
-            <CardBody>
-                <CardTitle>Instructions</CardTitle>
-                <CardText>{chore.instructions}</CardText>
-                <Button className="completedChore" onClick={event => {
-                    event.preventDefault()
-                }}><Link to={`/chores/completedForm/${chore.id}`}>
-                        I Completed This!</Link></Button>
-            </CardBody>
-            <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
-        </Card>
-    </Container>
+
+    <div className="availChoreCard">
+        <h3>{chore.name}</h3>
+
+        <p><strong>Instructions:</strong></p>
+        {chore.instructions}
+        <Button className="completedChore mb-3 mt-3" color="warning" onClick={event => {
+            event.preventDefault()
+        }}><Link to={`/chores/completedForm/${chore.id}`}>
+                Did you complete this?</Link></Button>
+
+        <h4>Points Value: {chore.pointsValue}</h4>
+
+    </div>
+
 
 );

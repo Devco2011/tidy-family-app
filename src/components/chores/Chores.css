@@ -1,0 +1,65 @@
+
+
+ .chores {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    align-items: center; 
+    
+    
+} 
+.completedConfirm {
+    width: 35%;
+    padding-right: 1em;
+    padding-left: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px;
+    border-radius: 10px;
+}
+
+.completedChores {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    align-items: center;
+
+}
+
+.availChoreCard {
+    width: 20%;
+    padding-right: 1em;
+    padding-left: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px;
+    border-radius: 10px;
+}
+
+.compChoreCard {
+    width: 20%;
+    padding-left: 2em;
+    padding-right: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px;
+    border-radius: 10px;
+}
+
+.allChoreDetail {
+    width: 22%;
+    padding-left: 2em;
+    padding-right: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px;
+    border-radius: 10px;
+}

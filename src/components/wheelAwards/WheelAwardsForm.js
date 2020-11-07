@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { WheelAwardContext } from "./WheelAwardsProvider"
 import { useHistory, useParams } from 'react-router-dom';
+import { Button } from 'reactstrap'
 
 export const WheelAwardsForm = (props) => {
     const { addWheelAwards, getWheelAwardById, updateWheelAward } = useContext(WheelAwardContext)
@@ -104,13 +105,13 @@ export const WheelAwardsForm = (props) => {
             </fieldset>
 
 
-            <button className="btn btn-primary"
+            <Button color="warning"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
                     constructWheelAwardObject()
                 }}>
-                {wheelAwardsId ? <>Save Award</> : <>Add Award</>}</button>
+                {wheelAwardsId ? <>Save Award</> : <>Add Award</>}</Button>
         </form>
     )
 }
