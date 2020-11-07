@@ -4,6 +4,7 @@ import { ChoreCard } from "./ChoreCard"
 import { useHistory } from "react-router-dom"
 import { Button } from 'reactstrap';
 import { ChoreDetail } from "./ChoreDetail"
+import "./Chores.css"
 
 export const AllChoresList = () => {
     const { chores, getChores } = useContext(ChoreContext)
@@ -16,7 +17,7 @@ export const AllChoresList = () => {
         <>
             <h2>Manage All Chores</h2>
 
-            <Button onClick={() => history.push("/chores/create")}>
+            <Button color="warning" onClick={() => history.push("/chores/create")}>
                 Add a Chore</Button>
 
             <div className="chores">
