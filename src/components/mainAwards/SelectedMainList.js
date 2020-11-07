@@ -15,7 +15,7 @@ export const SelectedMainList = () => {
         <>
             <h4 align="center">This week's Family Goal:</h4>
 
-            <div className="mainAwards" align="center">
+            <div className="selectedMainAwards" align="center">
 
                 {mainAwards.map(mainAward => {
                     if (mainAward?.familyId === parseInt(localStorage.getItem("family_id")) && mainAward.inUse === true)

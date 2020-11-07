@@ -19,9 +19,9 @@ export const SpinButton = () => {
 
         return (
             <Container align="center">
-                <h5>You already had a spin on the Wheel of Prizes this week.</h5>
-                <h5> Keep earning points for the family award!</h5>
-            </Container>
+                <h5><strong>You already had a spin on The Wheel of Prizes this week.</strong></h5>
+                <h5 className="keepEarning pt-5"> Keep earning points for the family award!</h5>
+            </Container >
         )
     } else {
         return (
