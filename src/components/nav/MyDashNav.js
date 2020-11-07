@@ -8,11 +8,11 @@ export const MyDashNavBar = (props) => {
 
     return (
         <div>
-            <Button type="button" onClick={() => history.push("/")}>
+            <Button type="button mr-3" onClick={() => history.push("/")}>
                 Family Home
       </Button>
 
-            <Button type="button" onClick={() => history.goBack()}>
+            <Button className="button ml-3" onClick={() => history.goBack()}>
                 Go Back
       </Button>
         </div>

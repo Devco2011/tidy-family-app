@@ -5,6 +5,7 @@ import {
     Container, Card, Button, CardHeader, CardFooter, CardBody,
     CardTitle, CardText
 } from 'reactstrap';
+import "./Chores.css"
 
 export const CompletedChoreModal = () => {
 
@@ -59,27 +60,28 @@ export const CompletedChoreModal = () => {
 
     return (
 
-        <Container>
-            <Card>
-                <CardHeader tag="h3">Just confirming... Did you {chore.name}?</CardHeader>
-                <CardBody>
-                    <CardTitle>Did you follow these instructions?</CardTitle>
-                    <CardText>{chore.instructions}</CardText>
-                    <Button className="completedChore"
-                        disabled={isLoading}
-                        onClick={event => {
-                            event.preventDefault()
-                            constructChoreObject()
+        <div className="completedConfirm mt-5">
 
-                        }}>
-                        Yeah, baby!</Button>
-                    <Button type="button" onClick={() => history.goBack()}>
-                        Nope!
+            <h3>Just confirming... Did you {chore.name}?</h3>
+
+            <p><strong>Did you follow these instructions?</strong></p>
+            <p>{chore.instructions}</p>
+            <h4>Points Value: {chore.pointsValue}</h4>
+            <Button color="warning mt-2 mr-3 mb-3" className="completedChore"
+                disabled={isLoading}
+                onClick={event => {
+                    event.preventDefault()
+                    constructChoreObject()
+
+                }}>
+                Yeah, baby!</Button>
+            <Button color="warning mt-2 mr-3 mb-3" onClick={() => history.goBack()}>
+                Nope!
       </Button>
-                </CardBody>
-                <CardFooter className="text-muted">Points Value: {chore.pointsValue}</CardFooter>
-            </Card>
 
-        </Container>
+
+
+        </div>
+
     );
 }

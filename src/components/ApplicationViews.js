@@ -131,6 +131,7 @@ export const ApplicationViews = () => {
             <ChoreProvider>
                 <Route path="/chores/completedForm/:choreId(\d+)">
                     <Home />
+                    <MyDashNavBar />
                     <CompletedChoreModal />
                 </Route>
             </ChoreProvider>
