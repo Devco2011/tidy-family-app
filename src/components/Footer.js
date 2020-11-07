@@ -1,5 +1,8 @@
 import React from 'react';
-import './Footer.css'
+import GitHub from '../components/images/GitHub.png'
+import LILogo from '../components/images/LILogo.png'
+import dcPortfolio from '../components/images/dcPortfolio.png'
+import './Footer.css';
 
 export const Footer = () => {
     return (
@@ -30,9 +33,9 @@ export const Footer = () => {
                     <div className="col">
                         <ul className="list-unstyled">
                             <h6>Connect</h6>
-                            <li>Github</li>
-                            <li>LinkedIn</li>
-                            <li>Website</li>
+                            <li><a href="https://github.com/Devco2011"><img width="15%" src={GitHub} alt=" GitHub" /></a></li>
+                            <li><a href="www.linkedin.com/in/devonhcox"><img width="18%" src={LILogo} alt=" LinkedIn" /></a></li>
+                            <li><a href=""><img width="20%" src={dcPortfolio} alt=" Devon Cox Portfolio" /></a></li>
                         </ul>
                     </div>
                 </div>
