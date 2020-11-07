@@ -105,7 +105,7 @@ export const MainAwardsForm = (props) => {
             </fieldset>
 
 
-            <Button color="warning"
+            <Button color="warning mb-5"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
@@ -113,7 +113,7 @@ export const MainAwardsForm = (props) => {
                 }}>
                 {mainAwardsId ? <>Save Award</> : <>Add Award</>}</Button>
 
-            <Button color="warning float-right" onClick={
+            <Button color="warning float-right mb-5" onClick={
                 () => {
                     deleteMainAward(mainAward.id)
                         .then(() => {

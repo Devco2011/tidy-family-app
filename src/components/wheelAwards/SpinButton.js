@@ -29,7 +29,7 @@ export const SpinButton = () => {
                 <h4 className="spinWinHeading">Nice work!</h4>
                 <h5>You have earned a spin on the Wheel of Prizes!</h5>
                 <div className="spinWinButton">
-                    <Button color="info" onClick={event => {
+                    <Button color="warning" onClick={event => {
 
                         (parseInt(sessionStorage.setItem("has_spun", true)))
                     }}><Link to={`/spin-the-wheel`}>

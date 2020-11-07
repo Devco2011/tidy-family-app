@@ -49,6 +49,7 @@ margin-top: 3em;
 }
 
 .chooseListContainer {
+  width: 60%;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;

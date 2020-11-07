@@ -78,7 +78,7 @@ export const WheelAwardsForm = (props) => {
             <h2 className="wheelAwardsForm__title">{wheelAwardsId ? `Edit: ${wheelAward.name}` : "New Wheel Award"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="wheelAwardName">Award name: </label>
+                    <label htmlFor="wheelAwardName">What do you want to call this award? </label>
                     <input ref={wheelAwardName} type="text" id="wheelAwardName" name="name" required autoFocus className="form-control"
                         placeholder="Award name"
                         onChange={handleControlledInputChange}
@@ -87,7 +87,7 @@ export const WheelAwardsForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="wheelAwardDescription">Description: </label>
+                    <label htmlFor="wheelAwardDescription">What will this award entail? </label>
                     <input type="text" id="wheelAwardDescription" name="description" required autoFocus className="form-control"
                         placeholder="Description"
                         onChange={handleControlledInputChange}
@@ -96,7 +96,7 @@ export const WheelAwardsForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="wheelAwardPointsReq">Points Required: </label>
+                    <label htmlFor="wheelAwardPointsReq">How many points does the family need in order to recieve this award? </label>
                     <input type="text" id="wheelAwardPointsReq" name="pointsReq" required autoFocus className="form-control"
                         placeholder="Points Required"
                         onChange={handleControlledInputChange}
@@ -105,7 +105,7 @@ export const WheelAwardsForm = (props) => {
             </fieldset>
 
 
-            <Button color="warning"
+            <Button color="warning mb-5"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
