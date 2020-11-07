@@ -114,7 +114,7 @@ export const ChoreForm = (props) => {
             </fieldset>
 
 
-            <Button
+            <Button color="warning"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
@@ -122,7 +122,7 @@ export const ChoreForm = (props) => {
                 }}>
                 {choreId ? <>Save Chore</> : <>Add Chore</>}</Button>
 
-            <Button onClick={
+            <Button color="warning float-right" onClick={
                 () => {
                     deleteChore(chore.id)
                         .then(() => {

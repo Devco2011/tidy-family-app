@@ -4,6 +4,13 @@
   padding-top: 3em;
 }
 
+.choreForm {
+  width: 60%;
+  padding-left: 12em;
+  padding-top: 3em;
+ margin-bottom: 3em;
+}
+
 .individualCard {
   display: flex;
   flex-wrap: wrap;
