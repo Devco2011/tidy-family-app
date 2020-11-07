@@ -1,0 +1,43 @@
+
+
+ .chores {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    align-items: center; 
+    
+    
+} 
+
+.completedChores {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    align-items: center;
+
+}
+
+.availChoreCard {
+    width: 20%;
+    padding-right: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: rgb(245, 188, 0);
+    box-shadow: 5px 5px 5px;
+    border-radius: 10px;
+}
+
+.compChoreCard {
+    width: 20%;
+    padding-right: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: rgb(245, 188, 0);
+    box-shadow: 5px 5px 5px;
+    border-radius: 10px;
+}
+
