@@ -7,7 +7,7 @@ export const SpinButton = () => {
 
 
     if (parseInt(sessionStorage.getItem("fam_member_points")) < 50) {
-        (parseInt(sessionStorage.setItem("has_spun", false)))
+        (parseInt(sessionStorage.getItem("has_spun", false)))
         return (
 
             < Container align="center" >

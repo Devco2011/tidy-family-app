@@ -171,7 +171,7 @@ export const ApplicationViews = () => {
                     <Route exact path="/awards/allAwards">
                         <Home />
                         <MyDashNavBar />
-                        <h3>Manage All Awards</h3>
+                        <h3><center>Manage All Awards</center></h3>
                         <Container>
                             <Row>
                                 <Col><MainAwardsList /></Col>
@@ -299,6 +299,7 @@ export const ApplicationViews = () => {
             <WheelAwardsProvider>
                 <Route exact path="/spin-the-wheel">
                     <Home />
+                    <MyDashNavBar />
                     <Wheel />
                 </Route>
             </WheelAwardsProvider>
