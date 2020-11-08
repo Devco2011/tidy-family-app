@@ -121,14 +121,15 @@ export const ChoreForm = (props) => {
                     constructChoreObject()
                 }}>
                 {choreId ? <>Save Chore</> : <>Add Chore</>}</Button>
-
-            <Button color="warning float-right" onClick={
-                () => {
-                    deleteChore(chore.id)
-                        .then(() => {
-                            history.push("/chores/allChores")
-                        })
-                }}>Delete this Chore</Button>
+            {choreId ?
+                <Button color="warning float-right" onClick={
+                    () => {
+                        deleteChore(chore.id)
+                            .then(() => {
+                                history.push("/chores/allChores")
+                            })
+                    }}>Delete this Chore</Button>
+                : <></>}
 
 
         </form>

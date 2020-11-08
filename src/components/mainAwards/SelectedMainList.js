@@ -18,7 +18,7 @@ export const SelectedMainList = () => {
             <div className="selectedMainAwards" align="center">
 
                 {mainAwards.map(mainAward => {
-                    if (mainAward?.familyId === parseInt(localStorage.getItem("family_id")) && mainAward.inUse === true)
+                    if (mainAward?.familyId === parseInt(localStorage.getItem("family_id")) && mainAward?.id === parseInt(sessionStorage.getItem("family_Award")))
                         return (
                             <section className="selected_main">
                                 <h3 align="center" color="#ff0000">{mainAward.name}</h3>

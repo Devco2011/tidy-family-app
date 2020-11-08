@@ -9,7 +9,7 @@ import {
 
 export const ChoreDetail = ({ chore }) => (
 
-    <div className="allChoreDetail">
+    <div className="allChoreDetail mb-3">
 
         <h3>{chore.name}</h3>
 
