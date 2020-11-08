@@ -8,8 +8,8 @@ export const NavBar = (props) => {
 
     return (
 
-        <div>
-            <Button type="button" onClick={() => history.push("/")}>
+        <div className="FamilyHomeBtn ml-3">
+            <Button type="button pl-3" onClick={() => history.push("/")}>
                 Family Home
       </Button>
         </div>

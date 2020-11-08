@@ -121,7 +121,7 @@ export const FamMemberDetail = () => {
 
                     <Col xs="6 pt-5">
                         <SpinButton />
-                        <CountDown timeTillDate="11 11 2020, 12:10 am" timeFormat="MM DD YYYY, h:mm a" />
+                        <CountDown timeTillDate="11 15 2020, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
                     </Col>
                 </Row>
             </Container>)
