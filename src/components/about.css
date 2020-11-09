@@ -1,0 +1,16 @@
+.about-main-content{
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 90%;
+    font-size: medium;
+}
+
+.about{
+    background-color: whitesmoke;
+    margin-left: 10%;
+    margin-bottom: 5em;
+    padding-top: 2em;
+    border-radius: 15px;
+    box-shadow: 3px 3px 4px;
+}

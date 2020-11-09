@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { MainAwardContext } from "./MainAwardsProvider"
 import { useHistory, useParams } from 'react-router-dom';
-import { Button } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export const MainAwardsForm = (props) => {
     const { addMainAwards, getMainAwardById, updateMainAward, deleteMainAward } = useContext(MainAwardContext)
@@ -76,9 +76,21 @@ export const MainAwardsForm = (props) => {
     return (
         <form className="mainAwardsForm">
             <h2 className="mainAwardsForm__title">{mainAwardsId ? `Edit ${mainAward.name}` : "New Main Award"}</h2>
+
+            {mainAwardsId ?
+                <Form className="awardForm mb-3"><FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" onClick={event => {
+                            sessionStorage.setItem("family_Award", mainAward.id)
+                        }}></Input>{' '}
+         Make this the family award for the week
+        </Label>
+                </FormGroup>
+                </Form>
+                : <></>}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="mainAwardName">Award name: </label>
+                    <label htmlFor="mainAwardName">What do you want to call this award?</label>
                     <input ref={mainAwardName} type="text" id="mainAwardName" name="name" required autoFocus className="form-control"
                         placeholder="Award name"
                         onChange={handleControlledInputChange}
@@ -87,7 +99,7 @@ export const MainAwardsForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="mainAwardDescription">Description: </label>
+                    <label htmlFor="mainAwardDescription">What will this award entail? </label>
                     <input type="text" id="mainAwardDescription" name="description" required autoFocus className="form-control"
                         placeholder="Description"
                         onChange={handleControlledInputChange}
@@ -96,7 +108,7 @@ export const MainAwardsForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="mainAwardPointsValue">Points Value: </label>
+                    <label htmlFor="mainAwardPointsValue">How many points does the family need in order to recieve this award? </label>
                     <input type="text" id="mainAwardPointsValue" name="pointsValue" required autoFocus className="form-control"
                         placeholder="Points Value"
                         onChange={handleControlledInputChange}
@@ -105,21 +117,22 @@ export const MainAwardsForm = (props) => {
             </fieldset>
 
 
-            <Button color="warning"
+            <Button color="warning mb-5"
                 disabled={isLoading}
                 onClick={event => {
                     event.preventDefault() // Prevent browser from submitting the form
                     constructMainAwardObject()
                 }}>
                 {mainAwardsId ? <>Save Award</> : <>Add Award</>}</Button>
-
-            <Button color="warning float-right" onClick={
-                () => {
-                    deleteMainAward(mainAward.id)
-                        .then(() => {
-                            history.push("/awards/allAwards")
-                        })
-                }}>Delete Award</Button>
+            {mainAwardsId ?
+                <Button color="warning float-right mb-5" onClick={
+                    () => {
+                        deleteMainAward(mainAward.id)
+                            .then(() => {
+                                history.push("/awards/allAwards")
+                            })
+                    }}>Delete Award</Button>
+                : <></>}
         </form>
     )
 }

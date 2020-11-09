@@ -15,8 +15,7 @@ export const WheelAwardsList = () => {
     return (
         <>
             <div className="wheelAwardMainContainer mt-5">
-                <h4>Wheel Awards</h4><Button color="warning" onClick={() => history.push("/wheelAwards/create")}>
-                    Add a Wheel Award</Button>
+                <h4>Wheel Awards</h4>
                 <div className="wheel_awards">
                     {wheelAwards.map(wheelAward => {
                         if (wheelAward?.familyId === parseInt(localStorage.getItem("family_id")))

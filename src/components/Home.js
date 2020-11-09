@@ -26,6 +26,12 @@ export const Home = () => {
                             history.push("/login")
 
                         }}>Logout</Button>
+                    <Button className="float-right mr-3" onClick={
+                        () => {
+
+                            history.push("/about")
+
+                        }}>About</Button>
                 </Container>
 
             </div>

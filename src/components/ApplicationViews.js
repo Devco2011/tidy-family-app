@@ -30,7 +30,9 @@ import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
 import { IndiWheelList } from "./wheelAwards/IndiWheelList";
-import { Wheel } from "./wheel/WheelComponent"
+import { Wheel } from "./wheel/WheelComponent";
+import { Footer } from "./Footer";
+import { About } from "./About"
 
 import { CountDown } from "./countDown/CountDown"
 
@@ -40,12 +42,14 @@ import { Container, Row, Col } from "reactstrap"
 export const ApplicationViews = () => {
     return (
         <>
+
             {/* Render the location list when http://localhost:3000/ */}
             <FamMemProvider>
                 <ProfilePicProvider>
                     <Route exact path="/famMembers/firstMember">
                         <Home />
                         <AddFirstMember />
+                        <Footer />
                     </Route>
                 </ProfilePicProvider>
             </FamMemProvider>
@@ -54,8 +58,10 @@ export const ApplicationViews = () => {
                 <Route exact path="/famMembers/choose">
                     <Home />
                     <Col><ChooseFamMemberList /></Col>
+                    <Footer />
                 </Route>
             </FamMemProvider>
+
 
 
             <ChoreProvider>
@@ -69,10 +75,11 @@ export const ApplicationViews = () => {
                                         <Col xs="6 pt-5"><FamMemberList /></Col>
                                         <Col xs="6 pt-5"><SelectedMainList />
                                             <PointsCounter />
-                                            <CountDown timeTillDate="11 11 2020, 12:10 am" timeFormat="MM DD YYYY, h:mm a" />
+                                            <CountDown timeTillDate="11 15 2020, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
                                         </Col>
                                     </Row>
                                 </Container>
+                                <Footer />
                             </Route>
                         </MainAwardsProvider>
                     </FamiliesProvider>
@@ -91,6 +98,7 @@ export const ApplicationViews = () => {
                                     <Col><FamMemberDetail /></Col>
                                 </Row>
                             </Container>
+                            <Footer />
                         </Route>
                     </WheelAwardsProvider>
                 </ChoreProvider>
@@ -102,6 +110,7 @@ export const ApplicationViews = () => {
                         <Home />
                         <NavBar />
                         <FamMemberForm />
+                        <Footer />
                     </Route>
                 </ProfilePicProvider>
             </FamMemProvider>
@@ -109,6 +118,7 @@ export const ApplicationViews = () => {
             <FamMemProvider>
                 <Route path="/famMembers/edit/:famMemberId(\d+)">
                     <FamMemberForm />
+                    <Footer />
                 </Route>
             </FamMemProvider>
 
@@ -117,6 +127,7 @@ export const ApplicationViews = () => {
                     <Home />
                     <MyDashNavBar />
                     <AvailableChoreList />
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
@@ -125,6 +136,7 @@ export const ApplicationViews = () => {
                     <Home />
                     <MyDashNavBar />
                     <CompletedChoreList />
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
@@ -133,6 +145,7 @@ export const ApplicationViews = () => {
                     <Home />
                     <MyDashNavBar />
                     <CompletedChoreModal />
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
@@ -141,6 +154,7 @@ export const ApplicationViews = () => {
                     <Route exact path="/chores/points">
                         <Home />
                         <FamMemberList />
+                        <Footer />
                     </Route>
                 </FamMemProvider>
             </ChoreProvider>
@@ -150,6 +164,7 @@ export const ApplicationViews = () => {
                     <Route exact path="/chores/totalPoints">
                         <Home />
                         <PointsCounter />
+                        <Footer />
                     </Route>
                 </FamiliesProvider>
             </ChoreProvider>
@@ -163,6 +178,7 @@ export const ApplicationViews = () => {
                             <Col><AllChoresList /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
@@ -178,6 +194,7 @@ export const ApplicationViews = () => {
                                 <Col><WheelAwardsList /></Col>
                             </Row>
                         </Container>
+                        <Footer />
                     </Route>
                 </WheelAwardsProvider>
             </MainAwardsProvider>
@@ -191,6 +208,7 @@ export const ApplicationViews = () => {
                             <Col><MainAwardsDetail /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </MainAwardsProvider>
 
@@ -203,6 +221,7 @@ export const ApplicationViews = () => {
                             <Col><MainAwardsForm /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </MainAwardsProvider>
 
@@ -215,6 +234,7 @@ export const ApplicationViews = () => {
                             <Col><WheelAwardsDetail /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </WheelAwardsProvider>
 
@@ -227,6 +247,7 @@ export const ApplicationViews = () => {
                             <Col><WheelAwardsForm /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </WheelAwardsProvider>
 
@@ -239,6 +260,7 @@ export const ApplicationViews = () => {
                             <Col><WheelAwardsForm /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </WheelAwardsProvider>
 
@@ -251,6 +273,7 @@ export const ApplicationViews = () => {
                             <Col><MainAwardsForm /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </MainAwardsProvider>
 
@@ -263,6 +286,7 @@ export const ApplicationViews = () => {
                             <Col><ChoreDetail /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
@@ -275,6 +299,7 @@ export const ApplicationViews = () => {
                             <Col><ChoreForm /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
@@ -287,12 +312,14 @@ export const ApplicationViews = () => {
                             <Col><ChoreForm /></Col>
                         </Row>
                     </Container>
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
             <ChoreProvider>
                 <Route exact path="/familyPoints/">
                     <PointsCounter />
+                    <Footer />
                 </Route>
             </ChoreProvider>
 
@@ -301,8 +328,19 @@ export const ApplicationViews = () => {
                     <Home />
                     <MyDashNavBar />
                     <Wheel />
+                    <Footer />
                 </Route>
             </WheelAwardsProvider>
+
+
+            <Route exact path="/about">
+                <Home />
+                <MyDashNavBar />
+                <About />
+                <Footer />
+            </Route>
+
+
 
 
 

@@ -87,7 +87,7 @@ export const ChoreForm = (props) => {
             <h2 className="choreForm__title">{choreId ? `Edit ${chore.name}` : "New chore"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="choreName">Chore name: </label>
+                    <label htmlFor="choreName">What do you want to call this chore?</label>
                     <input ref={choreName} type="text" id="choreName" name="name" required autoFocus className="form-control"
                         placeholder="Chore name"
                         onChange={handleControlledInputChange}
@@ -96,7 +96,7 @@ export const ChoreForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="choreInstructions">Instructions: </label>
+                    <label htmlFor="choreInstructions">What does this chore entail? </label>
                     <input type="text" id="choreInstructions" name="instructions" required autoFocus className="form-control"
                         placeholder="Instructions"
                         onChange={handleControlledInputChange}
@@ -105,7 +105,7 @@ export const ChoreForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="chorePointsValue">Points Value: </label>
+                    <label htmlFor="chorePointsValue">How many points is it worth? </label>
                     <input type="text" id="chorePointsValue" name="pointsValue" required autoFocus className="form-control"
                         placeholder="Points Value"
                         onChange={handleControlledInputChange}
@@ -121,14 +121,15 @@ export const ChoreForm = (props) => {
                     constructChoreObject()
                 }}>
                 {choreId ? <>Save Chore</> : <>Add Chore</>}</Button>
-
-            <Button color="warning float-right" onClick={
-                () => {
-                    deleteChore(chore.id)
-                        .then(() => {
-                            history.push("/chores/allChores")
-                        })
-                }}>Delete this Chore</Button>
+            {choreId ?
+                <Button color="warning float-right" onClick={
+                    () => {
+                        deleteChore(chore.id)
+                            .then(() => {
+                                history.push("/chores/allChores")
+                            })
+                    }}>Delete this Chore</Button>
+                : <></>}
 
 
         </form>

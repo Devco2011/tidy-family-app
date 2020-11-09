@@ -60,7 +60,7 @@ export const CompletedChoreModal = () => {
 
     return (
 
-        <div className="completedConfirm mt-5">
+        <div className="completedConfirm mt-5 mb-5">
 
             <h3>Just confirming... Did you {chore.name}?</h3>
 
