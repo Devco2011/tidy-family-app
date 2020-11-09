@@ -31,7 +31,8 @@ import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
 import { IndiWheelList } from "./wheelAwards/IndiWheelList";
 import { Wheel } from "./wheel/WheelComponent";
-import { Footer } from "./Footer"
+import { Footer } from "./Footer";
+import { About } from "./About"
 
 import { CountDown } from "./countDown/CountDown"
 
@@ -330,6 +331,16 @@ export const ApplicationViews = () => {
                     <Footer />
                 </Route>
             </WheelAwardsProvider>
+
+
+            <Route exact path="/about">
+                <Home />
+                <MyDashNavBar />
+                <About />
+                <Footer />
+            </Route>
+
+
 
 
 
