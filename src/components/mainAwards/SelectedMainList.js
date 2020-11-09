@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { MainAwardContext } from "./MainAwardsProvider"
-import { MainAwardCard } from "./MainAwardCard"
 import { useHistory } from "react-router-dom"
-import { Button } from 'reactstrap';
+
 
 export const SelectedMainList = () => {
     const { mainAwards, getMainAwards } = useContext(MainAwardContext)

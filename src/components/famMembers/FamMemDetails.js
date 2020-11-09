@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
 import { FamMemberContext } from "./FamMemProvider"
 import { ChoreContext } from "../chores/ChoreProvider"
-import { useParams, useHistory, Link } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { CountDown } from "../countDown/CountDown"
 import { SpinButton } from "../wheelAwards/SpinButton"
 import {
-    Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText, Container, Row, Col
+    Button, CardHeader, CardBody,
+    CardTitle, Container, Row, Col
 } from 'reactstrap';
 
 export const FamMemberDetail = () => {

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "./ChoreProvider"
 import { CompletedChoreCard } from "./CompletedChoreCard"
 import { useHistory } from "react-router-dom"
-import { Row, Col } from 'reactstrap';
+
 
 export const CompletedChoreList = () => {
     const { chores, getChores } = useContext(ChoreContext)

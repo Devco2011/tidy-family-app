@@ -1,10 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { ChoreContext } from "./ChoreProvider"
 import { useHistory, useParams } from 'react-router-dom';
-import {
-    Container, Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText,
-} from 'reactstrap';
+import { Button } from 'reactstrap';
 
 export const ChoreForm = (props) => {
     const { addChore, getChoreById, updateChore, deleteChore } = useContext(ChoreContext)
@@ -23,8 +20,7 @@ export const ChoreForm = (props) => {
     //when field changes, update state. This causes a re-render and updates the view.
     //Controlled component
     const handleControlledInputChange = (event) => {
-        //When changing a state object or array, 
-        //always create a copy make changes, and then set state. Using spread operater here 
+
         const newChore = { ...chore }
         //mainAward is an object with properties. 
         //set the property to the new value
@@ -33,7 +29,6 @@ export const ChoreForm = (props) => {
         setChores(newChore)
     }
 
-    // If mainAwardId is in the URL, getMainAwardById
     useEffect(() => {
         if (choreId) {
             getChoreById(choreId)
@@ -117,7 +112,7 @@ export const ChoreForm = (props) => {
             <Button color="warning"
                 disabled={isLoading}
                 onClick={event => {
-                    event.preventDefault() // Prevent browser from submitting the form
+                    event.preventDefault()
                     constructChoreObject()
                 }}>
                 {choreId ? <>Save Chore</> : <>Add Chore</>}</Button>

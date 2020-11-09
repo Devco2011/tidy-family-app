@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
-import { Container, Row, Col, CardGroup, Button } from 'reactstrap';
+import { Container, Button } from 'reactstrap';
 import TidyFamily from '../images/TidyFamily.png'
 import "./Login.css";
 

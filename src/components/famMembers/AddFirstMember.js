@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState, useEffect } from "react"
 import { FamMemberContext } from "./FamMemProvider";
 import { ProfilePicContext } from "../profilePics/ProfilePicProvider";
-import { useHistory, useParams, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { ProfilePicCard } from "../profilePics/ProfilePicCard"
 import { Container, CardGroup } from 'reactstrap';
 

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { FamMemberContext } from "../famMembers/FamMemProvider"
 import { useHistory, Link } from "react-router-dom"
-import { Container, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 export const FamMemberList = () => {
     const { chores, getChores } = useContext(ChoreContext)

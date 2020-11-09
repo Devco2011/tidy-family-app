@@ -7,7 +7,6 @@ import { FamMemberDetail } from "./famMembers/FamMemDetails.js";
 import { ChooseFamMemberList } from "./famMembers/ChooseFamMemberList";
 import { AddFirstMember } from "./famMembers/AddFirstMember"
 import { ProfilePicProvider } from "./profilePics/ProfilePicProvider";
-import { ProfilePicList } from "./profilePics/ProfilePicList"
 import { ChoreProvider } from "./chores/ChoreProvider";
 import { AvailableChoreList } from "./chores/AvailableChoreList";
 import { AllChoresList } from "./chores/AllChoresList";
@@ -29,7 +28,7 @@ import { WheelAwardsForm } from "./wheelAwards/WheelAwardsForm";
 import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
-import { FamMemCompletedList, FamMemCompleteList } from "./chores/FamMemCompletedList";
+import { FamMemCompletedList } from "./chores/FamMemCompletedList";
 import { Wheel } from "./wheel/WheelComponent";
 import { Footer } from "./Footer";
 import { About } from "./About"

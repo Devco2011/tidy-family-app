@@ -7,7 +7,7 @@ import WheelComponent from 'react-wheel-of-prizes'
 import 'react-wheel-of-prizes/dist/index.css'
 
 export const Wheel = () => {
-    const segments = ["You get ice cream!", "You get another new toy!", "A new game!", "You get dinner date!", "Get a new sweater!", "Get a new car!", "Get a new shirt!", "Get a candy bar!"];
+    const segments = ["You get ice cream!", "You get a new toy!", "You get a new game!", "You get to have a sleepover!", "Get a new sweater!", "Get a new car!", "Get a new shirt!", "Get a candy bar!"];
 
 
 

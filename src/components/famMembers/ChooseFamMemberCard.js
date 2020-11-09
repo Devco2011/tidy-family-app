@@ -1,10 +1,6 @@
 import React from "react"
-import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom"
-import {
-    Card, Button, CardImg, CardTitle, CardText, CardDeck,
-    CardSubtitle, CardBody
-} from 'reactstrap';
+import { Button, CardTitle, CardBody } from 'reactstrap';
 
 export const ChooseFamMemberCard = ({ famMember }) =>
 

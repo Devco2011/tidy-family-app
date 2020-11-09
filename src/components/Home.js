@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Jumbotron, Row, Col, Button } from 'reactstrap'
+import { Container, Button } from 'reactstrap'
 import TidyFamily from '../components/images/TidyFamily.png'
 import { useHistory } from 'react-router-dom';
 

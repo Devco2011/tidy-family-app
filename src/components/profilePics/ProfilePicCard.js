@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom";
-import { Card, Button, CardImg, CardBody, Container } from 'reactstrap';
+import { Button, CardBody } from 'reactstrap';
 
 export const ProfilePicCard = ({ profilePic }) => (
     <div>

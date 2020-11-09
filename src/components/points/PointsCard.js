@@ -1,8 +1,7 @@
 import React from "react"
 import { Link, useHistory } from "react-router-dom";
 import {
-    Container, Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText
+    Container, Card, CardFooter
 } from 'reactstrap';
 
 
