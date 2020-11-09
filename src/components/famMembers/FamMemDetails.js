@@ -73,7 +73,7 @@ export const FamMemberDetail = () => {
                                 <CardTitle><h4>{famMember.name}</h4></CardTitle>
                                 <CardTitle>Current Points: {totalPoints()}</CardTitle>
                                 <Button color="warning" className="mb-2 mr-2" onClick={() => { history.push("/chores/available") }}>Available Chores</Button>{''}
-                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button>
+                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/memberCompleted") }}>Completed Chores</Button>
                             </CardBody>
 
                         </div>
@@ -113,7 +113,7 @@ export const FamMemberDetail = () => {
                                 <CardTitle><h4>{famMember.name}</h4></CardTitle>
                                 <CardTitle>Current Points: {totalPoints()}</CardTitle>
                                 <Button color="warning" className="mb-2 mr-2" onClick={() => { history.push("/chores/available") }}>Available Chores</Button>{''}
-                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button>
+                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/memberCompleted") }}>Completed Chores</Button>
                             </CardBody>
 
                         </div>

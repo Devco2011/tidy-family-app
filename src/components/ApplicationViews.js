@@ -29,7 +29,7 @@ import { WheelAwardsForm } from "./wheelAwards/WheelAwardsForm";
 import { ChoreDetail } from "./chores/ChoreDetail";
 import { ChoreForm } from "./chores/ChoreForm";
 import { SelectedMainList } from "./mainAwards/SelectedMainList";
-import { IndiWheelList } from "./wheelAwards/IndiWheelList";
+import { FamMemCompletedList, FamMemCompleteList } from "./chores/FamMemCompletedList";
 import { Wheel } from "./wheel/WheelComponent";
 import { Footer } from "./Footer";
 import { About } from "./About"
@@ -136,6 +136,15 @@ export const ApplicationViews = () => {
                     <Home />
                     <MyDashNavBar />
                     <CompletedChoreList />
+                    <Footer />
+                </Route>
+            </ChoreProvider>
+
+            <ChoreProvider>
+                <Route exact path="/chores/memberCompleted">
+                    <Home />
+                    <MyDashNavBar />
+                    <FamMemCompletedList />
                     <Footer />
                 </Route>
             </ChoreProvider>
