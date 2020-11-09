@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
 import { FamMemberContext } from "./FamMemProvider"
 import { ChoreContext } from "../chores/ChoreProvider"
-import { useParams, useHistory, Link } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { CountDown } from "../countDown/CountDown"
 import { SpinButton } from "../wheelAwards/SpinButton"
 import {
-    Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText, Container, Row, Col
+    Button, CardHeader, CardBody,
+    CardTitle, Container, Row, Col
 } from 'reactstrap';
 
 export const FamMemberDetail = () => {
@@ -73,7 +73,7 @@ export const FamMemberDetail = () => {
                                 <CardTitle><h4>{famMember.name}</h4></CardTitle>
                                 <CardTitle>Current Points: {totalPoints()}</CardTitle>
                                 <Button color="warning" className="mb-2 mr-2" onClick={() => { history.push("/chores/available") }}>Available Chores</Button>{''}
-                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button>
+                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/memberCompleted") }}>Completed Chores</Button>
                             </CardBody>
 
                         </div>
@@ -113,7 +113,7 @@ export const FamMemberDetail = () => {
                                 <CardTitle><h4>{famMember.name}</h4></CardTitle>
                                 <CardTitle>Current Points: {totalPoints()}</CardTitle>
                                 <Button color="warning" className="mb-2 mr-2" onClick={() => { history.push("/chores/available") }}>Available Chores</Button>{''}
-                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/completed") }}>Completed Chores</Button>
+                                <Button color="warning" className="mb-2 ml-2" onClick={() => { history.push("/chores/memberCompleted") }}>Completed Chores</Button>
                             </CardBody>
 
                         </div>

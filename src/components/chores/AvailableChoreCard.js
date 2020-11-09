@@ -1,16 +1,12 @@
 import React from "react"
-import { Link, useHistory } from "react-router-dom";
-import { CompletedChoreModal } from "./CompletedChoreModal"
-import {
-    Container, Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText
-} from 'reactstrap';
+import { Link } from "react-router-dom";
+import { Button } from 'reactstrap';
 
 
 export const AvailableChoreCard = ({ chore }) => (
 
 
-    <div className="availChoreCard">
+    <div className="availChoreCard mb-3">
         <h3>{chore.name}</h3>
 
         <p><strong>Instructions:</strong></p>

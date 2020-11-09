@@ -1,36 +1,25 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { MainAwardContext } from "./MainAwardsProvider"
 import { useHistory, useParams } from 'react-router-dom';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export const MainAwardsForm = (props) => {
     const { addMainAwards, getMainAwardById, updateMainAward, deleteMainAward } = useContext(MainAwardContext)
-
     const mainAwardName = useRef()
-
-    //for edit, hold on to state of award in this view
     const [mainAward, setMainAwards] = useState({})
-    //wait for data before button is active
     const [isLoading, setIsLoading] = useState(true);
-
     const { mainAwardsId } = useParams();
-
     const history = useHistory();
 
-    //when field changes, update state. This causes a re-render and updates the view.
-    //Controlled component
+
     const handleControlledInputChange = (event) => {
-        //When changing a state object or array, 
-        //always create a copy make changes, and then set state. Using spread operater here 
+
         const newMainAward = { ...mainAward }
-        //mainAward is an object with properties. 
-        //set the property to the new value
+
         newMainAward[event.target.name] = event.target.value
-        //update state
         setMainAwards(newMainAward)
     }
 
-    // If mainAwardId is in the URL, getMainAwardById
     useEffect(() => {
         if (mainAwardsId) {
             getMainAwardById(mainAwardsId)
@@ -48,10 +37,8 @@ export const MainAwardsForm = (props) => {
         if (mainAwardName.current.value === "") {
             window.alert("Please enter an award name!")
         } else {
-            //disable the button - no extra clicks
             setIsLoading(true);
             if (mainAwardsId) {
-                //PUT - update
                 updateMainAward({
                     id: mainAward.id,
                     name: mainAward.name,
@@ -61,7 +48,6 @@ export const MainAwardsForm = (props) => {
                 })
                     .then(() => history.push("/awards/allAwards"))
             } else {
-                //POST - add
                 addMainAwards({
                     name: mainAward.name,
                     pointsValue: parseInt(mainAward.pointsValue),
@@ -120,7 +106,7 @@ export const MainAwardsForm = (props) => {
             <Button color="warning mb-5"
                 disabled={isLoading}
                 onClick={event => {
-                    event.preventDefault() // Prevent browser from submitting the form
+                    event.preventDefault()
                     constructMainAwardObject()
                 }}>
                 {mainAwardsId ? <>Save Award</> : <>Add Award</>}</Button>

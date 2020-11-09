@@ -1,10 +1,6 @@
-import React, { useContext, useEffect, useState } from "react"
-import { MainAwardContext } from "./MainAwardsProvider"
-import { useParams, useHistory, Link } from "react-router-dom"
-import {
-    Container, Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText,
-} from 'reactstrap';
+import React from "react"
+import { Link } from "react-router-dom"
+import { Button } from 'reactstrap';
 
 
 export const MainAwardsDetail = ({ mainAward }) => (

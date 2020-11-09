@@ -1,8 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import {
-    Container, Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText
+    Container, Card, Button, CardHeader, CardFooter, CardBody
 } from 'reactstrap';
 
 

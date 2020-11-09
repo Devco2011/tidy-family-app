@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews.js";
-import { Home } from "./Home";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import 'bootstrap/dist/css/bootstrap.min.css';

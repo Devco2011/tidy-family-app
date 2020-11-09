@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ChoreContext } from "../chores/ChoreProvider"
 import { FamMemberContext } from "../famMembers/FamMemProvider"
 import { useHistory, Link } from "react-router-dom"
-import { Container, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 export const FamMemberList = () => {
     const { chores, getChores } = useContext(ChoreContext)
@@ -61,7 +61,7 @@ export const FamMemberList = () => {
 
 
 
-                            <img width="20%" hieght="25%" src={famMember.profilePic.src} alt="Picture" />
+                            <img width="20%" hieght="25%" src={famMember.profilePic?.src} alt="Picture" />
 
                             <Link to={`/famMembers/detail/${famMember.id}`}><h4>{famMember.name}</h4></Link>
                             <p></p><h4>Current Points: {totalPoints()}</h4>

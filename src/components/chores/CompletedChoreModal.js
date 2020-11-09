@@ -1,10 +1,7 @@
-import React, { useContext, useState, useEffect, Component } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { ChoreContext } from "./ChoreProvider"
 import { useHistory, useParams } from 'react-router-dom';
-import {
-    Container, Card, Button, CardHeader, CardFooter, CardBody,
-    CardTitle, CardText
-} from 'reactstrap';
+import { Button } from 'reactstrap';
 import "./Chores.css"
 
 export const CompletedChoreModal = () => {
@@ -54,9 +51,7 @@ export const CompletedChoreModal = () => {
 
 
     }
-    const Cancel = () => {
-        history.push("/")
-    }
+
 
     return (
 

@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react"
 import { WheelAwardContext } from "./WheelAwardsProvider"
-import { WheelAwardCard } from "./WheelAwardsCard"
 import { useHistory } from "react-router-dom"
 
 export const IndiWheelList = () => {
