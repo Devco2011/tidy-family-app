@@ -5,7 +5,9 @@
 This was my capstone project at Nashville Software School. This was a solo project and was completed after 3 months of front-end training. 
 ## Planning
 
-![First wireframe](images/20201102_094752.jpg)
+**Wireframes and Mockups**
+
+<img src = "images/20201102_094752.jpg" width =200>
 
 ## WireFrame
 https://www.figma.com/file/yMUWi5qsjeeRdSTHcqikoT/Untitled?node-id=6%3A3398
