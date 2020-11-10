@@ -7,12 +7,12 @@ This was my capstone project at Nashville Software School. This was a solo proje
 
 **Wireframes and Mockups**
 
-<img src = "images/20201102_094752.jpg" width =200>
+<img src = "images/20201102_094752.jpg" width =200>   <img src = "images/figmaFar.png" width =200>    <img src = "images/figmaClose.png" width =200>
 
-## WireFrame
+## View Wireframe Figma
 https://www.figma.com/file/yMUWi5qsjeeRdSTHcqikoT/Untitled?node-id=6%3A3398
 
-## ERD
+## View ERD
 https://lucid.app/invitations/accept/2aeabe95-c1d2-4869-ac0d-614abd6f5338
 
 
