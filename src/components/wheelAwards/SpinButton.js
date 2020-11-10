@@ -6,7 +6,7 @@ import { Container, Button } from 'reactstrap';
 export const SpinButton = () => {
 
 
-    if (parseInt(sessionStorage.getItem("fam_member_points")) < 50) {
+    if (parseInt(sessionStorage.getItem("fam_member_points")) < 100) {
         (parseInt(sessionStorage.getItem("has_spun", false)))
         return (
 
@@ -21,7 +21,7 @@ export const SpinButton = () => {
             <Container align="center">
                 <h5><strong>You already had a spin on The Wheel of Prizes this week.</strong></h5>
                 <h5 className="keepEarning pt-5"> Keep earning points for the family award!</h5>
-            </Container >
+            </Container>
         )
     } else {
         return (

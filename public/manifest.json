@@ -3,7 +3,7 @@
   "name": "Tidy Family",
   "icons": [
     {
-      "src": "./broomFavicon.png",
+      "src": "./favicon.ico",
       "sizes": "302x302",
       "type": "any"
     }

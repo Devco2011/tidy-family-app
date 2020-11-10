@@ -10,7 +10,7 @@ export const ChooseFamMemberCard = ({ famMember }) =>
         < div className="chooseFamCard">
 
 
-            <img width="30%" hieght="35%" src={famMember.profilePic.src} alt="Picture" />
+            <img width="40%" hieght="45%" src={famMember.profilePic.src} alt="Picture" />
             <CardBody className="chooseFamContainer">
                 <CardTitle><h4>{famMember.name}</h4></CardTitle>
                 <Button color="warning" onClick={event => {

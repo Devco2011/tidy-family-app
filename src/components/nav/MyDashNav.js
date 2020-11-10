@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from "react-router-dom";
-import { Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 export const MyDashNavBar = (props) => {
 
