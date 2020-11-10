@@ -5,7 +5,7 @@
 This was my capstone project at Nashville Software School. This was a solo project and was completed after 3 months of front-end training. 
 ## Planning
 
-![First wireframe](https://github.com/Devco2011/tidy-family-app/src/components/images/20201102_094752.jpg "First Wireframe")
+![First wireframe](images/20201102_094752.jpg)
 
 ## WireFrame
 https://www.figma.com/file/yMUWi5qsjeeRdSTHcqikoT/Untitled?node-id=6%3A3398
