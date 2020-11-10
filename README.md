@@ -1,9 +1,10 @@
 # Tidy-Family
 
 ### An App for managing weekly family chores. 
-##Capstone Project 
-## Nashville Software School
-##Nov 2020
+
+## Capstone Project
+Nashville Software School
+Nov 2020
 
 ## Planning
 
