@@ -1,4 +1,12 @@
 .wheelOfPrizes {
-    padding-left: 23%;
+    padding-left: 24%;
     padding-top: 1em;
+}
+
+.theWheelGraphic {
+    padding-left: 5%;
+}
+
+.wheel {
+    padding-left: 5%;
 }
