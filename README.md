@@ -3,9 +3,7 @@
 ### An App for managing weekly family chores. 
 
 ## Capstone Project
-Nashville Software School
-Nov 2020
-
+This was my capstone project at Nashville Software School. This project was a solo project and was completed after 3 months of front-end training. 
 ## Planning
 
 ## WireFrame
