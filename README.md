@@ -7,7 +7,7 @@ This was my front-end capstone project at Nashville Software School. This was a 
 
 **User Persona, Wireframes and Mockups**
 
-<img src = "images/20201102_094752.jpg" width =200>   <img src = "images/figmaFar.png" width =200>    <img src = "images/figmaClose.png" width =200>
+<img src = "images/20201102_094752.jpg" width =200>     <img src = "images/20201102_094752.jpg" width =200>   <img src = "images/figmaFar.png" width =200>    <img src = "images/figmaClose.png" width =200>
 
 ## View Wireframe Figma
 https://www.figma.com/file/yMUWi5qsjeeRdSTHcqikoT/Untitled?node-id=6%3A3398
