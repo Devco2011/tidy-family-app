@@ -2,10 +2,10 @@
 
 ### An App for managing weekly family chores. 
 
-This was my capstone project at Nashville Software School. This was a solo project and was completed after 3 months of front-end training. 
+This was my front-end capstone project at Nashville Software School. This was a solo project and was completed after 3 months of front-end training. 
 ## Planning
 
-**Wireframes and Mockups**
+**User Persona, Wireframes and Mockups**
 
 <img src = "images/20201102_094752.jpg" width =200>   <img src = "images/figmaFar.png" width =200>    <img src = "images/figmaClose.png" width =200>
 
