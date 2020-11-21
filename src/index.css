@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 .loginGetBusy {
   padding-top: 3em;
@@ -148,7 +150,7 @@ h2 {
 body {
   background-color: rgb(240, 81, 81);
   margin: 0;
-  font-family:'Short Stack', cursive;
+  font-family: 'Varela Round', sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
