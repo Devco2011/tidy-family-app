@@ -11,7 +11,7 @@ How might we make managing household chores easy for parents and fun for kids?
 
 **User Persona, Wireframes and Mockups**
 
-<img src = "images/TFUserPersona.jpg" width =200>     <img src = "images/20201102_094752.jpg" width =200>   <img src = "images/figmaFar.png" width =200>    <img src = "images/figmaClose.png" width =200>
+<img src = "images/TidyFamilyUser.jpg" width =250>     <img src = "images/20201102_094752.jpg" width =250>   <img src = "images/figmaFar.png" width =250>    <img src = "images/figmaClose.png" width =250>
 
 ## View Wireframe Figma
 https://www.figma.com/file/yMUWi5qsjeeRdSTHcqikoT/Untitled?node-id=6%3A3398
