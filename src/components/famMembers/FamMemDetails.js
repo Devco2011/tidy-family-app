@@ -85,7 +85,7 @@ export const FamMemberDetail = () => {
                                 <Button color="warning" className="mb-2 mr-2" onClick={() => { history.push("/chores/allChores") }}>Manage All Chores</Button>
                                 <Button color="warning" className="mb-2 mr-2" onClick={() => { history.push("/awards/allAwards") }}>Manage All Awards</Button>
                             </CardBody>
-                            <CountDown timeTillDate="11 27 2020, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
+                            <CountDown timeTillDate="01 6 2021, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
                         </div>
 
                     </Row>
@@ -121,7 +121,7 @@ export const FamMemberDetail = () => {
 
                     <Col xs="6 pt-5">
                         <SpinButton />
-                        <CountDown timeTillDate="11 27 2020, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
+                        <CountDown timeTillDate="01 6 2021, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
                     </Col>
                 </Row>
             </Container>)

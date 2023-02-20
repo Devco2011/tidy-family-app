@@ -19,7 +19,7 @@ export const PointsCounter = () => {
 
 
 
-    // getFamChores filters all chores and get the ones that have been completed, defined as newFamilyChores. 
+    // getFamChores filters all chores and gets the ones that have been completed, defined as newFamilyChores. 
     //Then return a new array called familyChores and add (push) all the newFamilyChores to familyChores via spread operater
 
     const getFamChores = (familyId) => {
